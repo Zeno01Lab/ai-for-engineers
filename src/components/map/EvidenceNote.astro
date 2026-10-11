@@ -1,0 +1,5 @@
+---
+import { href } from '../../lib/content';
+import { historyNodes, reportCount } from '../../lib/history';
+---
+<details class="evidence-note"><summary>来源与核验范围：{historyNodes.length} 个历史节点 · {reportCount} 个记录了 JRC 报告对照</summary><p>首轮数据包记录了原始出版元数据或摘要核对；{reportCount} 个节点另有 JRC 报告对照。JRC CSV 逐行匹配为 0，不能将报告对照称作数据集逐行核验。</p><p>本次接入检查数据结构、方法映射和站内链接，未重新逐篇审核全文。来源等级描述资料类型，不代表核验已经完整。</p><a class="text-link" href={href('map/sources/')}>查看来源与编辑标准 →</a></details>

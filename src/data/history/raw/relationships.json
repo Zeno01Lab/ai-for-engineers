@@ -1,0 +1,170 @@
+[
+  {
+    "source": "mcculloch-pitts",
+    "target": "perceptron",
+    "type": "historical_intellectual_lineage",
+    "explanation_zh": "早期神经计算思想与后来的可学习感知机有概念联系，不是同一模型。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "dartmouth",
+    "target": "astar",
+    "type": "field_context",
+    "explanation_zh": "AI 学科发展包含后续启发式搜索研究，不声称达特茅斯直接促成 A*。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "dendral",
+    "target": "eliza",
+    "type": "contemporary_parallel",
+    "explanation_zh": "同时代的规则驱动系统，分别强调专家推理与对话；不构成直接继承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "perceptron",
+    "target": "backprop-1986",
+    "type": "addresses_limitations",
+    "explanation_zh": "多层网络训练拓展了早期浅层网络的表达与学习能力。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "backprop-1986",
+    "target": "cnn-1989",
+    "type": "method_used_in",
+    "explanation_zh": "后者利用反向传播学习带有任务结构的网络。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "cnn-1989",
+    "target": "alexnet",
+    "type": "same_architectural_family",
+    "explanation_zh": "CNN 技术延续并结合现代训练规模与算力，不是单篇直接继承证据。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "imagenet",
+    "target": "alexnet",
+    "type": "benchmark_enabled",
+    "explanation_zh": "ImageNet 作为统一数据与挑战推动并衡量大规模视觉模型发展。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "q-learning",
+    "target": "dqn",
+    "type": "combines_with_neural_representation",
+    "explanation_zh": "DQN 将 Q 学习思路与深度神经网络的表示能力结合。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "dqn",
+    "target": "alphago",
+    "type": "shared_deep_rl_paradigm",
+    "explanation_zh": "两者都结合深度学习与强化学习，但算法架构不同。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "astar",
+    "target": "alphago",
+    "type": "search_family_not_direct_influence",
+    "explanation_zh": "说明启发式图搜索与蒙特卡洛树搜索都是搜索家族，不是直接算法继承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "lstm",
+    "target": "transformer",
+    "type": "different_solution_to_sequence_modeling",
+    "explanation_zh": "两者均用于序列建模；Transformer 采用注意力减少对递归计算的依赖。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "transformer",
+    "target": "bert",
+    "type": "architecture_adopted",
+    "explanation_zh": "BERT 使用 Transformer 编码器预训练文本表示。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "transformer",
+    "target": "gpt3",
+    "type": "architecture_family",
+    "explanation_zh": "GPT-3 使用自回归 Transformer 语言建模。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "gpt3",
+    "target": "instructgpt",
+    "type": "base_model_adaptation",
+    "explanation_zh": "InstructGPT 从 GPT-3 系列模型出发进行指令与偏好优化。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "instructgpt",
+    "target": "chatgpt",
+    "type": "related_training_approach",
+    "explanation_zh": "ChatGPT 的早期介绍明确提及与 InstructGPT 相关的 RLHF 方法。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "gpt3",
+    "target": "rag",
+    "type": "alternative_system_architecture",
+    "explanation_zh": "RAG 在参数模型之外增加外部检索；并非直接改造 GPT-3 原型。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "gpt3",
+    "target": "react",
+    "type": "language_model_component",
+    "explanation_zh": "ReAct 将语言模型推理轨迹和环境动作交错组织。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "react",
+    "target": "toolformer",
+    "type": "related_parallel_research",
+    "explanation_zh": "二者都关注 LM 使用工具，但工具学习机制不同，不能标为直接传承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "o1",
+    "target": "deepseek-r1",
+    "type": "shared_reasoning_rl_direction",
+    "explanation_zh": "都强调强化学习与推理能力，未在此断言具体算法直接传承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "gan",
+    "target": "ddpm",
+    "type": "alternative_generative_model_family",
+    "explanation_zh": "GAN 和扩散属于不同的生成建模机制，不是线性升级。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "ego",
+    "target": "nsga-ii",
+    "type": "complementary_optimization_problem",
+    "explanation_zh": "前者强调昂贵黑盒的样本效率，后者强调多目标 Pareto 搜索；无直接继承关系。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "pearl-1988",
+    "target": "ego",
+    "type": "shared_uncertainty_reasoning",
+    "explanation_zh": "都使用概率/不确定性相关思想，但这是概念连接而非特定方法继承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "random-forests",
+    "target": "alexnet",
+    "type": "different_model_family",
+    "explanation_zh": "树集成与深度网络是不同的预测建模路线，非直接先后继承。",
+    "relationship_is_editorial_interpretation": true
+  },
+  {
+    "source": "alphafold2",
+    "target": "imagenet",
+    "type": "benchmark_methodology_comparison",
+    "explanation_zh": "跨领域比较科学基准的价值，并非技术依赖关系。",
+    "relationship_is_editorial_interpretation": true
+  }
+]

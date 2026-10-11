@@ -1,0 +1,10 @@
+---
+import steps from '../../data/learning-path.json';
+interface Props{materials:typeof steps[number]['materials']}
+const{materials}=Astro.props;
+const isVideo=(m:typeof materials[number])=>/^Video/.test(m.kind);
+const video=materials.filter(isVideo),text=materials.filter(m=>!isVideo(m));
+---
+{video.length>0&&<p class="tiny">Video or text · 可选视频或文字入口；以下为本关片段，时间不代表整门课程。</p>}
+{(video.length?video:text).map(m=><div class="level-material"><span class="tag">{m.language} · {m.kind}</span><a class="resource-launch" href={m.url} target="_blank" rel="noopener noreferrer">{m.label} ↗</a><p><strong>Assigned scope · 本关范围：</strong>{m.scope}</p></div>)}
+{video.length>0&&text.length>0&&<details class="unit-details"><summary>Text & practice · 文字与练习</summary>{text.map(m=><div class="level-material"><a class="resource-launch" href={m.url} target="_blank" rel="noopener noreferrer">{m.label} ↗</a><p>{m.scope}</p></div>)}</details>}

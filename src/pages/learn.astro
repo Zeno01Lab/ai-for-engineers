@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from '../components/Heading.astro';
+import LearningJourney from '../components/learn/LearningJourney.astro';
+import paths from '../data/learning/paths.json';
+import {href} from '../lib/content';
+---
+<Layout wide title="Learning Paths · 学习路径" description="选择学习目标，从五分钟开始。">
+<Heading eyebrow="LEARNING PATHS" title="Choose a learning path." description="选择一个目标。已有学习进度会保留。"/>
+<p class="secondary-entry"><a class="button" href={href('learn/personalize/')}>Personalize my path · 定制我的路径 →</a> <a class="text-link" href={href('resources/courses/')}>University video courses · 名校视频课程 →</a></p>
+<div class="path-hall">{paths.map(p=><a class="path-hall-card" href={href(`learn/${p.id}/`)}><span class="eyebrow">{p.unitIds.length} CHECKPOINTS · 选读关卡</span><h2>{p.title.en}<small>{p.title.zh}</small></h2><p>{p.description}</p><span data-curated-path-count={p.id}>0/{p.unitIds.length} recorded · 已记录</span><strong>Open path · 打开路径 →</strong></a>)}</div>
+<section class="curriculum-library" id="curriculum-library" aria-label="Full curriculum · 完整课程"><LearningJourney compactCatalog/></section>
+<p class="secondary-entry"><a href={href('start/#practice')}>Practice · 入门实验</a> · <a href={href('tutorials/')}>Tutorials · 教程与方法图鉴</a></p>
+</Layout>

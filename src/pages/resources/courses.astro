@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import Filters from '../../components/Filters.astro';
+import ResourceCards from '../../components/ResourceCards.astro';
+import {resources,href} from '../../lib/content';
+const entries=(await resources()).filter(e=>e.data.videoUrl).sort((a,b)=>Number(a.data.videoAccess!=='public')-Number(b.data.videoAccess!=='public'));
+---
+<Layout title="University Video Courses · 名校视频课程">
+<Heading eyebrow="WATCH & PRACTICE" title="University video courses." description="7 门公开课程。选一门主课，按关卡观看片段。"/>
+<p class="secondary-entry"><a href={href('learn/')}>Learning paths · 学习路径 →</a> · <a href={href('learn/personalize/')}>Prefer video? Personalize a path · 定制视频优先路径 →</a></p>
+<Filters options={[...new Set(entries.map(e=>e.data.category))]} placeholder="Search courses · 搜课程、大学或主题…" resourceFilters/>
+<ResourceCards entries={entries}/>
+<p class="tiny">链接指向官方公开资源，完整课程版权属于原作者。公开视频年份与当前学期可能不同；YouTube 的访问取决于所在网络。</p>
+</Layout>

@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import { historyNodes, reportCount } from '../../lib/history';
+import { href } from '../../lib/content';
+---
+<Layout title="历史来源与编辑标准"><Heading eyebrow="证据与口径" title="每一个日期，都应有依据。" description="区分原始记录、机构回顾与编辑性关系；保留核查范围和不同年份的解释。" />
+<div class="reading prose"><h2>来源类型与核验范围</h2><table><thead><tr><th>类型</th><th>资料</th><th>用于什么</th></tr></thead><tbody><tr><td>A</td><td>原始论文、出版记录、原始研究或产品发布</td><td>确认具体记录、日期与公开贡献</td></tr><tr><td>B</td><td>机构历史回顾、研究综述</td><td>交叉检查背景与历史意义</td></tr><tr><td>C</td><td>社区时间线、教程与知识组织</td><td>发现候选节点，不作为首创断言的唯一依据</td></tr></tbody></table><p>等级描述来源类型。链接是原始出版记录，并不意味着已获取全文或完成学术审稿。机构周年回顾也不会因出自大学而自动归为当年的原始记录。</p>
+<h2>这批内容检查到了哪里？</h2><ul><li>{historyNodes.length} 个节点沿用首轮数据包的元数据或摘要核对记录。</li><li>{reportCount} 个节点记录了 JRC 历史报告页码与年份对照。</li><li>JRC CSV 的逐行匹配为 0；未获得行标识前，不将其标为数据集匹配。</li><li>本轮网站接入检查结构、关系端点、方法映射与站内链接。尚未逐篇重新核验全文，完整作者、出版元数据和逐项核查日期仍需继续补充。</li></ul>
+<h2>为什么同一技术可能有几个年份？</h2><p>技术提出、项目启动、预印本与正式发表可能是不同记录。这里按每条记录的年份依据展示对应口径，并保留首轮核对发现的年份差异。例如，感知机节点使用代表论文年份，同时显示 JRC 报告中的技术节点年份。</p>
+<h2 id="relation-rules">怎样理解关系图？</h2><p>实线与箭头描述方法采用、组件组合或回应局限的语义方向；虚线描述比较、家族、背景和并行联系。所有当前关系都属于编辑性阐释，不能仅凭连线断言直接技术继承或全面替代。</p><p>关系少于节点并非错误。没有证据或明确说明的地方保持空缺，后续再补充。</p>
+<h2>JRC 数据来源与署名</h2><p><a href="https://data.jrc.ec.europa.eu/dataset/76625e38-36a1-417f-b28f-b3380376643e">European Commission, Joint Research Centre：Selected AI Breakthroughs for the AI Watch Timeline</a> 的官方目录列明 CC BY 4.0。当前节点说明来自所提供数据包的中文概述，未复制或逐行匹配该 CSV。后续直接复用 JRC 数据时，应注明来源、许可与修改。</p><p><a href="https://ai-watch.ec.europa.eu/publications/historical-evolution-artificial-intelligence_en">Historical Evolution of Artificial Intelligence</a> 用于报告对照；<a href="https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai">Stanford AI100</a> 与 <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report">Stanford AI Index</a> 是另外的历史及当代综述入口。</p></div>
+<section class="section"><h2>历史节点来源索引</h2><div class="source-index">{historyNodes.map(n=><article><h3><a href={href(`map/history/${n.id}/`)}>{n.year} · {n.title.zh} →</a></h3><p class="tiny">{n.yearLabel} · {n.subjectLabel}</p>{n.references.map(ref=><p><span class="tag">{ref.grade}</span><a href={ref.url}>{ref.label} ↗</a><small>{ref.sourceKind}</small></p>)}</article>)}</div></section>
+</Layout>

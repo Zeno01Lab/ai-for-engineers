@@ -1,0 +1,12 @@
+---
+import {href,resources} from '../lib/content';
+import units from '../data/learning/units.json';
+interface Props {entries:Awaited<ReturnType<typeof resources>>}
+const {entries}=Astro.props;
+---
+{entries.map(e=><section class="resource-card" id={e.id} data-item data-category={e.data.category} data-difficulty={e.data.difficulty} data-coding={e.data.coding} data-format={e.data.media.join('|')} data-search={`${e.data.title} ${e.data.provider} ${e.data.description} ${e.data.prerequisites} ${e.data.editorial} ${e.data.audience} ${e.data.videoEdition||''}`}>
+<div><h2>{e.data.title}</h2><span class="provider">{e.data.provider}</span><p><span class="tag">{e.data.category}</span><span class="tag">{e.data.difficulty}</span></p>
+{e.data.videoUrl?<><p class="tiny">{e.data.videoEdition}</p><a class="button" href={e.data.videoUrl} target="_blank" rel="noopener noreferrer">{e.data.videoAccess==='public'?'Watch videos · 看视频 ↗':'Recordings · 录播需登录 ↗'}</a><p class="tiny"><a href={e.data.url} target="_blank" rel="noopener noreferrer">Course materials · 课程资料 ↗</a></p></>:<a class="button" href={e.data.url} target="_blank" rel="noopener noreferrer">Open resource · 打开资料 ↗</a>}
+</div><div><p class="resource-recommendation">{e.data.editorial}</p>
+{e.data.unitIds.length>0&&<p class="tiny">Use in a path · 对应关卡：{e.data.unitIds.map(id=><a style="margin-right:12px" href={href(`learn/#level-${id}`)}>{units.find(u=>u.id===id)!.title.en}</a>)}</p>}
+<details class="resource-details"><summary>Course guide · 选学与先修</summary><p>{e.data.description}</p><dl><dt>Start · 起点</dt><dd>{e.data.start}</dd><dt>Audience · 适合谁</dt><dd>{e.data.audience}</dd><dt>Math · 数学</dt><dd>{e.data.math}</dd><dt>Programming · 编程</dt><dd>{e.data.programming}</dd><dt>Prerequisites · 其他先修</dt><dd>{e.data.prerequisites}</dd><dt>Practice · 练习</dt><dd>{e.data.exercises}</dd><dt>Skip for now · 暂缓</dt><dd>{e.data.skip}</dd><dt>Language · 语言</dt><dd>{e.data.language}</dd><dt>Checked · 核查</dt><dd>{e.data.verified} · 官方页面与链接；未逐节验证播放，也未记录亲学体验。</dd></dl></details></div></section>)}

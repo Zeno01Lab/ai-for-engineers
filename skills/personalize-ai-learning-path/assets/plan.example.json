@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "visibility": "local_only",
+  "coverage": "first_stage",
+  "path": {
+    "id": "local-experiment-intro",
+    "title": {"en": "Experiment Optimization: First Stage", "zh": "实验优化：第一阶段"},
+    "goal": "experiment-optimization-intro",
+    "description": "A synthetic introductory stage: prediction, evaluation, probability, experiment design and Bayesian Optimization. Not a complete optimization curriculum.",
+    "unitIds": ["first-step", "first-prediction", "basecamp", "chance", "experiment-design", "bo-route"],
+    "parallelGroups": [["chance", "experiment-design"]],
+    "optionalUnitIds": [],
+    "entryConceptIds": []
+  }
+}

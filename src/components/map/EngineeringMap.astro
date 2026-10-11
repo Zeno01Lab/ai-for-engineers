@@ -1,0 +1,9 @@
+---
+import { engineeringProfiles } from '../../data/engineering-profiles';
+import { engineeringQuestions } from '../../data/engineering';
+import { algorithms, href } from '../../lib/content';
+import { eventById } from '../../lib/history';
+const names=new Map((await algorithms()).map(a=>[a.id,a.data.title]));
+---
+<div class="view-intro"><h2>从你的问题，走到候选方法。</h2><p>这些入口提供选择依据。先检查数据、约束和预算，再用小实验判断是否适合。</p></div>
+<div class="engineering-grid">{engineeringQuestions.map((q,i)=><section class="engineering-card" id={`problem-${q.id}`}><span class="lesson-number">{String(i+1).padStart(2,'0')}</span><h3>{q.title}</h3><p class="problem-example">{q.example}</p><dl><dt>先明确</dt><dd>{q.inputs}</dd><dt>判断条件</dt><dd>{q.conditions}</dd></dl><div class="problem-baseline"><strong>先比较的基线</strong><p>{engineeringProfiles[q.id].baseline}</p><small>{engineeringProfiles[q.id].check}</small></div><div class="problem-methods"><span class="tiny">候选方法与基础</span>{q.methods.map(id=><a href={href(`atlas/${id}/`)}>{names.get(id)} →</a>)}</div>{q.events.length>0 && <details class="problem-history"><summary>相关历史节点</summary>{q.events.map(id=><a href={href(`map/history/${id}/`)}>{eventById.get(id)!.year} · {eventById.get(id)!.title.zh} →</a>)}</details>}{q.lesson && <a class="text-link" href={href(`notes/${q.lesson}/`)}>先做一个小实验 →</a>}</section>)}</div>

@@ -1,0 +1,7 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Heading from '../../../components/Heading.astro';
+import HistoryTimeline from '../../../components/map/HistoryTimeline.astro';
+import { href } from '../../../lib/content';
+---
+<Layout title="AI 历史节点"><Heading eyebrow="完整历史目录" title="沿着问题，回看代表工作。" description="按技术分支、年份与动机检索历史节点。每个节点保留年份依据、技术贡献、局限和来源。" /><a class="text-link" href={href('map/')}>回到三种地图视角 →</a><HistoryTimeline showAll /></Layout>

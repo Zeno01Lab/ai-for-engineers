@@ -1,0 +1,47 @@
+[
+  {
+    "id": "symbolic",
+    "label": "符号、搜索与逻辑",
+    "note": "用规则、状态和约束描述问题"
+  },
+  {
+    "id": "learning",
+    "label": "机器学习的任务",
+    "note": "任务范式与模型架构相互交叉"
+  },
+  {
+    "id": "neural",
+    "label": "神经表示与深度学习",
+    "note": "架构可用于不同学习任务"
+  },
+  {
+    "id": "decision",
+    "label": "交互与序贯决策",
+    "note": "行动会影响后续状态"
+  },
+  {
+    "id": "probabilistic",
+    "label": "概率与统计建模",
+    "note": "表达不确定性，检查假设"
+  },
+  {
+    "id": "optimization",
+    "label": "优化与实验设计",
+    "note": "目标、约束与评价成本"
+  },
+  {
+    "id": "generation",
+    "label": "生成与基础模型",
+    "note": "建模数据，迁移到不同任务"
+  },
+  {
+    "id": "systems",
+    "label": "检索、工具与智能体",
+    "note": "模型与外部信息、行动组合"
+  },
+  {
+    "id": "foundations",
+    "label": "共同基础",
+    "note": "概念联系与课程顺序分别组织。"
+  }
+]

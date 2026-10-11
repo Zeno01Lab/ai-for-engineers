@@ -1,0 +1,36 @@
+---
+import {href} from '../../lib/content';
+import {knowledgeMap} from '../../lib/global-map';
+import steps from '../../data/learning-path.json';
+import '../../styles/path.css';
+import StudyResources from './StudyResources.astro';
+import PathGraph from './PathGraph.astro';
+import {pathLanes} from '../../lib/path-layout.mjs';
+
+import ProgressControls from './ProgressControls.astro';
+import paths from '../../data/learning/paths.json';
+interface Props{path?:typeof paths[number];compactCatalog?:boolean}
+const{path,compactCatalog=false}=Astro.props;
+const displayed=path?path.unitIds.map(id=>({...steps.find(s=>s.id===id)!,optional:path.optionalUnitIds.includes(id)})):steps;
+const requiredCount=displayed.filter(s=>!s.optional).length;
+
+const camps=pathLanes.filter(l=>displayed.some(s=>s.camp===l.id)).map(l=>({id:l.id,label:l.en+' · '+l.zh,note:({trail:'先认识预测任务。分类与评价可以并行；神经网络在数学基础之后继续。',supplies:'向量与概率可并行；梯度下降接在向量之后。',data:'经典模型、聚类与自监督分别按各自前置开放。',representations:'CNNs、LSTM、Transformers、GNNs 是平级选择，不必全学。',symbolic:'Search 与 Logic 可并行；Formal Verification 接在 Logic 之后。',decisions:'Bayesian Inference 与 Sequential Decisions 分开走；Deep RL 汇合两个方向。',experiments:'Multi-objective Optimization 与 Bayesian Optimization 可以分别选择。',generation:'生成基础之后，GANs 与 Diffusion Models 是平级路线。',systems:'LLMs 之后，RAG 与 Tool Use 分叉；Tool Use 再连接 Agents。'} as Record<string,string>)[l.id]}));
+const byId=new Map(steps.map(s=>[s.id,s]));const knowledgeById=new Map(knowledgeMap.nodes.map(n=>[n.id,n]));
+---
+<div data-learning-path data-current-learning-path={path?.id||''}>
+
+<section class="trail-dashboard" aria-label="我的学习进度"><div><span class="eyebrow">MY PROGRESS · 学习进度</span><strong data-path-count>0/{requiredCount} required covered · 必修已覆盖</strong><progress data-path-meter value="0" max={requiredCount} aria-label="所选课程范围的学习进度"/><p data-path-summary>学习记录为空。第一关不需要安装环境。</p></div><div class="trail-next"><a class="button" data-path-next href="#level-first-step">Start first unit · 开始第一步 · 约 5 分钟 →</a><a class="text-link" href={href('map/')}>查看已经点亮的地图 →</a></div></section>
+<p class="tiny" data-path-storage role="status">记录保存在此浏览器。</p>
+<ProgressControls currentPath={path?.id}/>
+<PathGraph steps={displayed}/>
+<details class="course-catalog" id="unit-library" open={!compactCatalog}><summary>Course list · 全部课程与任务 <span>{displayed.length}</span></summary>
+<nav class="camp-jumps" aria-label="关卡目录">{camps.map(c=><a href={`#camp-${c.id}`}>{c.label}</a>)}</nav>
+{camps.map(c=><section class="trail-camp" id={`camp-${c.id}`}><header><h2>{c.label}</h2></header><div class="level-grid">{displayed.filter(s=>s.camp===c.id).map(s=><details class="level-card" id={`level-${s.id}`} data-level={s.id} open={s.id==='first-step'}><summary><span class="level-status" data-level-status>○ 未走</span><h3><span lang="en">{s.titleEn}</span><small>{s.titleZh}</small></h3><span class="level-time">{path?.optionalUnitIds.includes(s.id)?'Optional · 选修 / ':'Required · 必修 / '}约 {s.minutes} 分钟 · 本关选读</span><span class="level-expand">Resources & task · 资料与任务 ↓</span></summary><div class="level-body"><p class="level-unlock" data-level-unlock></p><StudyResources materials={s.materials}/><div class="checkpoint"><strong>Checkpoint · 完成检查</strong><p>{s.check}</p><label><input type="checkbox" data-level-check/> I can do this · 我能完成此项检查</label></div><div class="level-actions"><button type="button" class="text-button" data-level-start>Start · 开始</button><button type="button" class="button" data-level-done disabled>Complete · 完成并点亮</button><button type="button" class="text-button" data-level-prior disabled>Already known · 已有基础</button><button type="button" class="text-button" data-level-undo hidden>Undo · 撤销</button></div><details class="unit-details"><summary>Prerequisites & concepts · 前置与知识点</summary>{s.prerequisites.length>0&&<div class="prereq-links">{s.prerequisites.map(id=><a href={`#level-${id}`}>↖ {byId.get(id)!.title}</a>)}</div>}<div class="unit-concepts">{s.knowledge.map(id=><p><strong>{knowledgeById.get(id)!.fullLabel}</strong><br/>{knowledgeById.get(id)!.description}</p>)}</div><div class="lights"><strong>Knowledge unlocked · 本关点亮</strong>{s.knowledge.map(id=><a href={href(`map/?view=structure&node=${id}#view-structure`)}>✧ {knowledgeById.get(id)!.fullLabel}</a>)}</div><p class="tiny">点亮表示覆盖本关检查，不表示完成整门课程。</p></details></div></details>)}</div></section>)}
+</details>
+<details class="learning-rules"><summary>How progress works · 进度规则</summary><p>资料随时可读。确认检查且前置已覆盖后可记录完成；已有基础可逐关声明。撤销前置后，下游记录保留为待复核。课程进度与能力自评分开保存。</p><a href={href('start/#practice')}>Practice · 入门实验 →</a></details>
+<p class="tiny" role="status" aria-live="polite" data-path-message></p>
+<noscript><p>所有课程链接与前置关系可以直接阅读。记录进度与点亮地图需要启用 JavaScript。</p></noscript>
+<script type="application/json" data-path-data set:html={JSON.stringify(displayed).replace(/</g,'\\u003c')}/>
+</div>
+
+<script>import '../../scripts/learning-path';import '../../scripts/path-graph';</script>

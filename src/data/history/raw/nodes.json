@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "mcculloch-pitts",
+    "year": 1943,
+    "year_basis": "paper",
+    "title": {
+      "zh": "神经活动的逻辑模型",
+      "en": "McCulloch–Pitts Neuron"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "能否用可计算的结构描述神经活动？",
+    "contribution_zh": "用逻辑网络抽象神经活动，为神经计算思想提供早期数学形式。",
+    "limitations_or_editorial_caution_zh": "不是现代数据训练的神经网络。",
+    "engineering_connection_zh": "理解模型抽象与物理系统之间的差别",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1007/BF02478259"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "turing-1950",
+    "year": 1950,
+    "year_basis": "paper",
+    "title": {
+      "zh": "图灵的机器智能讨论",
+      "en": "Computing Machinery and Intelligence"
+    },
+    "track": "Foundations & Symbolic AI",
+    "problem_or_motivation_zh": "机器能否表现出可被认为具有智能的行为？",
+    "contribution_zh": "提出模仿游戏的讨论框架，并审视机器智能和学习的可能性。",
+    "limitations_or_editorial_caution_zh": "不是一种具体的学习算法，也不能直接作为通用智能定义。",
+    "engineering_connection_zh": "理解评测目标与实际能力的区别",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://academic.oup.com/mind/article/LIX/236/433/986238"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1950,
+        "jrc_report_printed_page": 7,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    },
+    "editor_note_zh": "原始论文发表于 Mind (1950)；当前链接通往原始期刊文章。"
+  },
+  {
+    "id": "dartmouth",
+    "year": 1956,
+    "year_basis": "event",
+    "title": {
+      "zh": "达特茅斯夏季研讨会",
+      "en": "Dartmouth Summer Research Project on AI"
+    },
+    "track": "Foundations & Symbolic AI",
+    "problem_or_motivation_zh": "能否将机器智能作为独立的系统性研究目标？",
+    "contribution_zh": "1955 年提案提出人工智能研究计划，1956 年研讨会推动学科形成。",
+    "limitations_or_editorial_caution_zh": "提案年份 1955，会议年份 1956；不等于 AI 研究此前不存在。",
+    "engineering_connection_zh": "理解研究范式如何形成",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904/0"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1956,
+        "jrc_report_printed_page": 7,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": "会议发生于 1956；原始提案编写于 1955。"
+      }
+    }
+  },
+  {
+    "id": "perceptron",
+    "year": 1958,
+    "year_basis": "paper",
+    "title": {
+      "zh": "感知机",
+      "en": "Perceptron"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "能否通过样本调整模型权重，实现模式识别？",
+    "contribution_zh": "提供早期可学习线性判别模型。",
+    "limitations_or_editorial_caution_zh": "单层线性模型表达能力有限；1958 论文并非多层深度学习。",
+    "engineering_connection_zh": "以最简单分类器理解学习和模型限制",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/13602029/"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1957,
+        "jrc_report_printed_page": 7,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": "JRC 记录 1957 技术节点，期刊论文发表于 1958；不同年份口径。"
+      }
+    }
+  },
+  {
+    "id": "samuel-checkers",
+    "year": 1959,
+    "year_basis": "paper",
+    "title": {
+      "zh": "Samuel 跳棋学习程序",
+      "en": "Some Studies in Machine Learning Using the Game of Checkers"
+    },
+    "track": "Sequential Decision & RL",
+    "problem_or_motivation_zh": "机器能否根据经验逐步改善策略，而非依赖固定规则？",
+    "contribution_zh": "展示通过经验改进跳棋程序的早期机器学习研究。",
+    "limitations_or_editorial_caution_zh": "不能直接等同于今天的深度强化学习。",
+    "engineering_connection_zh": "理解基于反馈改进决策",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1147/rd.33.0210"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1952,
+        "jrc_report_printed_page": 7,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": "JRC 记录早期跳棋项目 1952，经典 IBM 论文发表于 1959。"
+      }
+    }
+  },
+  {
+    "id": "dendral",
+    "year": 1965,
+    "year_basis": "project_start",
+    "title": {
+      "zh": "DENDRAL 项目",
+      "en": "Heuristic DENDRAL"
+    },
+    "track": "Foundations & Symbolic AI",
+    "problem_or_motivation_zh": "如何把化学专家的领域知识用于分子结构推断？",
+    "contribution_zh": "Stanford 于 1965 年成立 Heuristic DENDRAL 项目，代表早期知识驱动专家系统。",
+    "limitations_or_editorial_caution_zh": "1965 是项目成立年，不是单篇奠基论文的发表年。",
+    "engineering_connection_zh": "比较人工规则与数据驱动系统",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://engineering100.stanford.edu/stories/new-spaces-and-expanding-influence"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "Stanford 的工程史及校内档案支持 1965 项目成立。若做论文发表节点，应另选具体论文。"
+  },
+  {
+    "id": "eliza",
+    "year": 1966,
+    "year_basis": "paper",
+    "title": {
+      "zh": "ELIZA 对话程序",
+      "en": "ELIZA"
+    },
+    "track": "Foundations & Symbolic AI",
+    "problem_or_motivation_zh": "能否用规则处理人与计算机的自然语言交互？",
+    "contribution_zh": "使用关键词触发的分解和重组规则产生对话。",
+    "limitations_or_editorial_caution_zh": "不是现代 LLM；语言表现不能直接证明语义理解。",
+    "engineering_connection_zh": "区分规则对话与统计语言模型",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1145/365153.365168"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1965,
+        "jrc_report_printed_page": 7,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": "JRC 记录 1965 的系统，ACM 期刊发表于 1966。"
+      }
+    }
+  },
+  {
+    "id": "astar",
+    "year": 1968,
+    "year_basis": "paper",
+    "title": {
+      "zh": "A* 启发式搜索",
+      "en": "A* Search"
+    },
+    "track": "Search & Planning",
+    "problem_or_motivation_zh": "怎样在巨大图搜索空间中更高效地找到低成本路径？",
+    "contribution_zh": "将领域启发式纳入路径搜索，并分析特定条件下的最优性。",
+    "limitations_or_editorial_caution_zh": "启发式性质与问题条件会影响保证。",
+    "engineering_connection_zh": "理解工程搜索和规划的启发式",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1109/TSSC.1968.300136"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "backprop-1986",
+    "year": 1986,
+    "year_basis": "paper",
+    "title": {
+      "zh": "反向传播的重要推广",
+      "en": "Learning representations by back-propagating errors"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "多层网络如何有效调整隐藏层参数？",
+    "contribution_zh": "经典论文展示通过误差反向传播学习隐藏表示。",
+    "limitations_or_editorial_caution_zh": "反向传播思想早于 1986 年；不是首次发明。",
+    "engineering_connection_zh": "理解可微模型的优化",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1038/323533a0"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "1986 经典 Nature 论文并非反向传播思想的第一次历史出现。"
+  },
+  {
+    "id": "pearl-1988",
+    "year": 1988,
+    "year_basis": "book",
+    "title": {
+      "zh": "概率推理与信念网络",
+      "en": "Probabilistic Reasoning in Intelligent Systems"
+    },
+    "track": "Probabilistic Modeling",
+    "problem_or_motivation_zh": "证据不完整时如何系统推断？",
+    "contribution_zh": "系统化介绍概率网络和不确定性推理方法。",
+    "limitations_or_editorial_caution_zh": "1988 是该书出版年，不表示贝叶斯方法当年诞生。",
+    "engineering_connection_zh": "理解诊断、不确定性与预测置信度",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://www.sciencedirect.com/book/monograph/9780080514895/probabilistic-reasoning-in-intelligent-systems"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "cnn-1989",
+    "year": 1989,
+    "year_basis": "paper",
+    "title": {
+      "zh": "用于手写邮编识别的卷积网络",
+      "en": "Backpropagation Applied to Handwritten Zip Code Recognition"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "如何让网络利用图像局部结构与领域先验？",
+    "contribution_zh": "展示通过网络结构纳入任务约束进行图像识别。",
+    "limitations_or_editorial_caution_zh": "卷积和共享权重的历史不是单一论文独立完成。",
+    "engineering_connection_zh": "判断何时采用结构归纳偏置",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1162/neco.1989.1.4.541"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1989,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "q-learning",
+    "year": 1992,
+    "year_basis": "paper",
+    "title": {
+      "zh": "Q-learning 收敛理论",
+      "en": "Q-learning"
+    },
+    "track": "Sequential Decision & RL",
+    "problem_or_motivation_zh": "环境反馈延迟且未知时，如何学习行动价值？",
+    "contribution_zh": "给出无模型状态—动作价值学习的重要收敛分析。",
+    "limitations_or_editorial_caution_zh": "Watkins 在 1989 年已有相关工作；1992 是经典论文发表年。",
+    "engineering_connection_zh": "理解状态、动作、回报与策略",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1007/BF00992698"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1989,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": "JRC 记载 Watkins 1989 早期工作；本节点为 1992 Watkins & Dayan 收敛论文。"
+      }
+    },
+    "editor_note_zh": "1992 论文摘要明确引用 Watkins 1989 年的工作，因此禁用“首次发明于1992”。"
+  },
+  {
+    "id": "svm-1995",
+    "year": 1995,
+    "year_basis": "paper",
+    "title": {
+      "zh": "支持向量机",
+      "en": "Support-vector Networks"
+    },
+    "track": "Statistical ML",
+    "problem_or_motivation_zh": "在高维特征下如何学习泛化较好的分类边界？",
+    "contribution_zh": "用最大间隔与核方法构造分类器，并扩展到不可完全分离的数据。",
+    "limitations_or_editorial_caution_zh": "并不对所有小数据问题都优于树模型或线性模型。",
+    "engineering_connection_zh": "构造稳健分类 baseline",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1007/BF00994018"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1995,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "lstm",
+    "year": 1997,
+    "year_basis": "paper",
+    "title": {
+      "zh": "长短期记忆网络",
+      "en": "Long Short-Term Memory"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "普通 RNN 为什么难以学习长期依赖？",
+    "contribution_zh": "通过门控与记忆机制改善跨较长时间间隔的信息学习。",
+    "limitations_or_editorial_caution_zh": "不能简化为“LSTM 解决了全部长序列问题”。",
+    "engineering_connection_zh": "理解时间序列与状态记忆",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1162/neco.1997.9.8.1735"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 1997,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "ego",
+    "year": 1998,
+    "year_basis": "paper",
+    "title": {
+      "zh": "高成本黑盒全局优化",
+      "en": "Efficient Global Optimization (EGO)"
+    },
+    "track": "Optimization",
+    "problem_or_motivation_zh": "如果真实实验或仿真昂贵，怎样减少函数评价次数？",
+    "contribution_zh": "通过响应面与顺序选点评估昂贵目标，是现代 Bayesian Optimization 的经典基础。",
+    "limitations_or_editorial_caution_zh": "高维、噪声或复杂约束下仍可能困难。",
+    "engineering_connection_zh": "昂贵工程实验和仿真优化",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1023/A:1008306431147"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "random-forests",
+    "year": 2001,
+    "year_basis": "paper",
+    "title": {
+      "zh": "随机森林",
+      "en": "Random Forests"
+    },
+    "track": "Statistical ML",
+    "problem_or_motivation_zh": "如何改善单棵决策树不稳定、易过拟合的问题？",
+    "contribution_zh": "通过随机化构造树集合进行预测与集成。",
+    "limitations_or_editorial_caution_zh": "可能缺乏跨分布外推能力。",
+    "engineering_connection_zh": "中小规模表格数据的强 baseline",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1023/A:1010933404324"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "nsga-ii",
+    "year": 2002,
+    "year_basis": "paper",
+    "title": {
+      "zh": "NSGA-II 多目标优化",
+      "en": "NSGA-II"
+    },
+    "track": "Optimization",
+    "problem_or_motivation_zh": "如何在多个相互冲突的目标下搜索多样化的 Pareto 解？",
+    "contribution_zh": "提出更高效的非支配排序与精英保留策略。",
+    "limitations_or_editorial_caution_zh": "并非唯一多目标优化方法；目标数增多时性能可能下降。",
+    "engineering_connection_zh": "Power、Accuracy、Latency 等工程权衡",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1109/4235.996017"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "imagenet",
+    "year": 2009,
+    "year_basis": "paper",
+    "title": {
+      "zh": "ImageNet 数据集",
+      "en": "ImageNet"
+    },
+    "track": "Benchmarks & Scientific AI",
+    "problem_or_motivation_zh": "图像学习为什么缺少大规模统一数据资源？",
+    "contribution_zh": "构建大规模层级标注图像资源，促进统一数据驱动研究与比较。",
+    "limitations_or_editorial_caution_zh": "2009 为代表论文年份；后续竞赛和挑战另有发展历程。",
+    "engineering_connection_zh": "理解数据集及标准化 benchmark 的重要性",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1109/CVPR.2009.5206848"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2009,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "alexnet",
+    "year": 2012,
+    "year_basis": "paper",
+    "title": {
+      "zh": "AlexNet",
+      "en": "ImageNet Classification with Deep Convolutional Neural Networks"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "在大规模视觉分类任务上，深层 CNN 能否显著改善表现？",
+    "contribution_zh": "大规模数据、GPU 训练和深层网络共同推动视觉识别突破。",
+    "limitations_or_editorial_caution_zh": "不是 CNN 首次出现，也不是深度学习的唯一转折点。",
+    "engineering_connection_zh": "理解算法、算力、数据与 benchmark 的协同",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2012,
+        "jrc_report_printed_page": 13,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "gan",
+    "year": 2014,
+    "year_basis": "paper",
+    "title": {
+      "zh": "生成对抗网络",
+      "en": "Generative Adversarial Nets"
+    },
+    "track": "Generative Models",
+    "problem_or_motivation_zh": "怎样训练可产生新样本的生成模型？",
+    "contribution_zh": "生成器与判别器通过对抗目标学习数据分布。",
+    "limitations_or_editorial_caution_zh": "对抗训练可能不稳定；不是唯一生成建模路线。",
+    "engineering_connection_zh": "理解生成与预测的区别",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2014,
+        "jrc_report_printed_page": 14,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "dqn",
+    "year": 2015,
+    "year_basis": "paper",
+    "title": {
+      "zh": "深度 Q 网络",
+      "en": "Deep Q-Network (DQN)"
+    },
+    "track": "Sequential Decision & RL",
+    "problem_or_motivation_zh": "如何直接利用高维观测学习控制策略？",
+    "contribution_zh": "用深度神经网络近似行动价值并应用于 Atari。",
+    "limitations_or_editorial_caution_zh": "2013 年有早期预印本，2015 是 Nature 发表年。",
+    "engineering_connection_zh": "理解表示学习与决策方法结合",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1038/nature14236"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2015,
+        "jrc_report_printed_page": 14,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "alphago",
+    "year": 2016,
+    "year_basis": "paper",
+    "title": {
+      "zh": "AlphaGo",
+      "en": "AlphaGo"
+    },
+    "track": "Sequential Decision & RL",
+    "problem_or_motivation_zh": "当组合搜索空间巨大且局面评价困难时，如何结合学习与搜索？",
+    "contribution_zh": "结合策略/价值网络、监督和强化学习及蒙特卡洛树搜索。",
+    "limitations_or_editorial_caution_zh": "不意味着搜索不再重要，恰恰体现系统整合。",
+    "engineering_connection_zh": "结合领域仿真器和学习策略",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1038/nature16961"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2016,
+        "jrc_report_printed_page": 14,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "transformer",
+    "year": 2017,
+    "year_basis": "paper",
+    "title": {
+      "zh": "Transformer",
+      "en": "Attention Is All You Need"
+    },
+    "track": "Neural & Deep Learning",
+    "problem_or_motivation_zh": "能否摆脱序列模型的递归计算并提升并行训练效率？",
+    "contribution_zh": "提出仅基于 Attention 的序列转换架构。",
+    "limitations_or_editorial_caution_zh": "标准 Attention 长序列成本较高；原始论文主要解决翻译任务。",
+    "engineering_connection_zh": "理解自然语言、序列与多模态模型",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://arxiv.org/abs/1706.03762"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "checked_against_JRC_historical_report",
+        "jrc_report_displayed_year": 2017,
+        "jrc_report_printed_page": 14,
+        "report_url": "https://ai-watch.ec.europa.eu/document/download/bbbcf11e-efd3-4f9c-81a3-cf300f7ccad7_en",
+        "year_difference_note_zh": null
+      }
+    }
+  },
+  {
+    "id": "bert",
+    "year": 2018,
+    "year_basis": "preprint",
+    "title": {
+      "zh": "BERT 双向预训练",
+      "en": "BERT"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "如何获得能够适配多种语言理解任务的上下文表示？",
+    "contribution_zh": "提出双向 Transformer 预训练表示并通过微调适配任务。",
+    "limitations_or_editorial_caution_zh": "2018 为 arXiv 首发年，2019 为 NAACL 发表年。",
+    "engineering_connection_zh": "理解预训练与下游迁移",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://arxiv.org/abs/1810.04805"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "2018 arXiv 首发；2019 NAACL 正式出版。"
+  },
+  {
+    "id": "gpt3",
+    "year": 2020,
+    "year_basis": "paper",
+    "title": {
+      "zh": "GPT-3 与上下文学习",
+      "en": "Language Models are Few-Shot Learners"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "能否用少量示例完成多种任务而无需任务专用参数更新？",
+    "contribution_zh": "展示大规模自回归 LM 的 in-context few-shot 能力。",
+    "limitations_or_editorial_caution_zh": "并非完全无需训练；推理可靠性与偏差问题仍在。",
+    "engineering_connection_zh": "通过预训练模型快速探索科研工具",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "rag",
+    "year": 2020,
+    "year_basis": "paper",
+    "title": {
+      "zh": "检索增强生成",
+      "en": "Retrieval-Augmented Generation (RAG)"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "如何让语言模型利用可更新的外部事实与来源？",
+    "contribution_zh": "将参数记忆和外部非参数检索结合用于知识密集型生成。",
+    "limitations_or_editorial_caution_zh": "检索正确并不自动保证生成事实正确。",
+    "engineering_connection_zh": "结合实验文档、技术手册和知识库",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "ddpm",
+    "year": 2020,
+    "year_basis": "paper",
+    "title": {
+      "zh": "去噪扩散概率模型",
+      "en": "Denoising Diffusion Probabilistic Models"
+    },
+    "track": "Generative Models",
+    "problem_or_motivation_zh": "是否存在对抗训练以外的高质量生成途径？",
+    "contribution_zh": "使用逐步噪声与去噪概率建模生成数据。",
+    "limitations_or_editorial_caution_zh": "扩散模型的历史更早；2020 是该代表论文年份。",
+    "engineering_connection_zh": "理解生成模型的另一技术分支",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "alphafold2",
+    "year": 2021,
+    "year_basis": "paper",
+    "title": {
+      "zh": "AlphaFold2",
+      "en": "Highly accurate protein structure prediction with AlphaFold"
+    },
+    "track": "Benchmarks & Scientific AI",
+    "problem_or_motivation_zh": "如何改善昂贵且困难的蛋白质三维结构预测？",
+    "contribution_zh": "结构化科学模型与大规模生物学数据相结合，在 CASP 评测中取得突破。",
+    "limitations_or_editorial_caution_zh": "不是对所有结构和动态生物问题的完整解决。",
+    "engineering_connection_zh": "领域结构先验、科学 benchmark 与模型设计",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://doi.org/10.1038/s41586-021-03819-2"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "instructgpt",
+    "year": 2022,
+    "year_basis": "paper",
+    "title": {
+      "zh": "InstructGPT / RLHF",
+      "en": "Training language models to follow instructions with human feedback"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "更大语言模型为什么仍不总能按人类意图响应？",
+    "contribution_zh": "结合监督微调、人类偏好排序与 RLHF 改善指令跟随。",
+    "limitations_or_editorial_caution_zh": "不是首次提出人类反馈或 RLHF；不同任务仍有失误。",
+    "engineering_connection_zh": "理解行为对齐与任务质量评估",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "chatgpt",
+    "year": 2022,
+    "year_basis": "release",
+    "title": {
+      "zh": "ChatGPT 公开研究预览",
+      "en": "Introducing ChatGPT"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "如何通过多轮对话让通用模型更易被使用和评估？",
+    "contribution_zh": "2022-11-30 公开发布对话式产品研究预览。",
+    "limitations_or_editorial_caution_zh": "这是产品发布节点，不是 Transformer 或聊天机器人首次发明。",
+    "engineering_connection_zh": "理解研究能力如何进入工具生态",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://openai.com/index/chatgpt/"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "react",
+    "year": 2022,
+    "year_basis": "preprint",
+    "title": {
+      "zh": "ReAct：交替推理与行动",
+      "en": "ReAct"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "仅靠内部推理难以获取外界反馈，如何结合行动？",
+    "contribution_zh": "让语言模型交替产生推理过程与外部动作。",
+    "limitations_or_editorial_caution_zh": "2022 为预印本，2023 为 ICLR 会议；不是 Agent 概念诞生。",
+    "engineering_connection_zh": "把模型与仿真/查询工具结合",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://arxiv.org/abs/2210.03629"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "2022 arXiv 首发；2023 ICLR 正式出版。"
+  },
+  {
+    "id": "toolformer",
+    "year": 2023,
+    "year_basis": "paper",
+    "title": {
+      "zh": "Toolformer",
+      "en": "Toolformer"
+    },
+    "track": "Foundation Models & Agents",
+    "problem_or_motivation_zh": "LM 在精确计算和事实查找中为何不如专门工具？",
+    "contribution_zh": "研究模型学习选择 API、输入参数并利用工具输出。",
+    "limitations_or_editorial_caution_zh": "与 ReAct 相关但不构成直线继承关系。",
+    "engineering_connection_zh": "让 AI 调用可验证的工程工具",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    }
+  },
+  {
+    "id": "o1",
+    "year": 2024,
+    "year_basis": "release",
+    "title": {
+      "zh": "o1 推理时计算",
+      "en": "Learning to reason with LLMs"
+    },
+    "track": "Reasoning & Evaluation",
+    "problem_or_motivation_zh": "能否通过训练和推理时计算改善困难推理任务？",
+    "contribution_zh": "公布训练与测试阶段计算投入对推理能力的影响。",
+    "limitations_or_editorial_caution_zh": "发布公告是机构自述，不能代替独立的科学评估。",
+    "engineering_connection_zh": "成本/准确率与推理验证权衡",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://openai.com/index/learning-to-reason-with-llms/"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "一手产品/研究发布，属于厂商报告性质，未宣称独立验证其效果。"
+  },
+  {
+    "id": "deepseek-r1",
+    "year": 2025,
+    "year_basis": "paper",
+    "title": {
+      "zh": "DeepSeek-R1 推理强化学习",
+      "en": "DeepSeek-R1"
+    },
+    "track": "Reasoning & Evaluation",
+    "problem_or_motivation_zh": "能否通过强化学习促进推理行为并减少对人工推理示例的依赖？",
+    "contribution_zh": "报告基于可验证奖励的 RL 推理训练及其观察到的能力。",
+    "limitations_or_editorial_caution_zh": "2025 年早期模型发布与 9 月 Nature 期刊文章应区分；性能依赖评价设置。",
+    "engineering_connection_zh": "理解可验证奖励、推理与测试成本",
+    "references": [
+      {
+        "type": "primary_publisher_or_first_party",
+        "url": "https://www.nature.com/articles/s41586-025-09422-z"
+      }
+    ],
+    "verification": {
+      "primary_source_metadata_or_abstract_checked": true,
+      "jrc_csv_row_matched": false,
+      "jrc_reason": "JRC zip archive not programmatically accessible in this environment; no per-row check claimed.",
+      "jrc_report_crosscheck": {
+        "status": "not_located_in_checked_JRC_report_tables"
+      }
+    },
+    "editor_note_zh": "Nature 2025 正式发表，与更早的公开发布不同。"
+  }
+]

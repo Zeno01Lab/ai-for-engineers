@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "res-scikit-learn-org-64104a5181",
+    "title": "scikit-learn 实验陷阱",
+    "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+    "provider": "scikit-learn.org",
+    "language": "英文",
+    "kind": "官方图文与代码示例",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-stanford-cs221-github-io-58dc17ac80",
+    "title": "Stanford CS221",
+    "url": "https://stanford-cs221.github.io/",
+    "provider": "stanford-cs221.github.io",
+    "language": "英文",
+    "kind": "课程讲义与作业",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-csdiy-wiki-fccc4d8154",
+    "title": "CS 自学指南",
+    "url": "https://csdiy.wiki/",
+    "provider": "csdiy.wiki",
+    "language": "中文",
+    "kind": "中文课程导航",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-ax-dev-de6e11afbe",
+    "title": "Ax",
+    "url": "https://ax.dev/",
+    "provider": "ax.dev",
+    "language": "英文",
+    "kind": "官方文档与示例",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-huggingface-co-b6c643b138",
+    "title": "Hugging Face Agents Course",
+    "url": "https://huggingface.co/learn/agents-course/",
+    "provider": "huggingface.co",
+    "language": "英文",
+    "kind": "在线教程与代码实践",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-ee6765d9c1",
+    "title": "Berkeley CS188",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "在线教材与课程",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-cs229-stanford-edu-b6f4bca4fe",
+    "title": "Stanford CS229",
+    "url": "https://cs229.stanford.edu/",
+    "provider": "cs229.stanford.edu",
+    "language": "英文",
+    "kind": "课程讲义与作业",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-introtodeeplearning-com-89247b19be",
+    "title": "MIT 6.S191",
+    "url": "https://introtodeeplearning.com/",
+    "provider": "introtodeeplearning.com",
+    "language": "英文",
+    "kind": "Video course · 视频课程",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "res-developers-google-com-d78d5ccdf6",
+    "title": "Google ML Crash Course",
+    "url": "https://developers.google.com/machine-learning/crash-course/",
+    "provider": "developers.google.com",
+    "language": "英文",
+    "kind": "图文、视频与交互练习",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-pymoo-org-9d6ad8f27d",
+    "title": "pymoo",
+    "url": "https://pymoo.org/",
+    "provider": "pymoo.org",
+    "language": "英文",
+    "kind": "官方文档与示例",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-z3prover-github-io-bea2dcd166",
+    "title": "Programming Z3",
+    "url": "https://z3prover.github.io/papers/programmingz3.html",
+    "provider": "z3prover.github.io",
+    "language": "英文",
+    "kind": "作者教程与代码示例",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-www-cs-cmu-edu-ba2efeda19",
+    "title": "CMU 10-601",
+    "url": "https://www.cs.cmu.edu/~mgormley/courses/10601/",
+    "provider": "www.cs.cmu.edu",
+    "language": "英文",
+    "kind": "课程页面、讲义与作业",
+    "verifiedAt": "2026-10-09",
+    "verification": "previous-editorial-check"
+  },
+  {
+    "id": "res-developers-google-com-d2e89a7c61",
+    "title": "Google · Introduction to ML",
+    "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-e6ea2ed78a",
+    "title": "Google · Linear Regression · 线性回归",
+    "url": "https://developers.google.com/machine-learning/crash-course/linear-regression?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-5aaef929d8",
+    "title": "Google · Classification · 分类",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-95d5eee347",
+    "title": "Google · Classification Threshold · 分类阈值",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification/thresholding?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "交互练习",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-188d3088c2",
+    "title": "Google · Generalization & Overfitting · 泛化与过拟合",
+    "url": "https://developers.google.com/machine-learning/crash-course/overfitting?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-911cab8534",
+    "title": "Google · Dataset Splits · 数据划分",
+    "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-4be218a88d",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 2.3",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-5df1ef65f3",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 2.6",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-962c2b68aa",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 11.3",
+    "url": "https://zh.d2l.ai/chapter_optimization/gd.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-4f891233cd",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 4.1",
+    "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-scikit-learn-org-a3bde06f62",
+    "title": "scikit-learn · Support Vector Machines · 支持向量机",
+    "url": "https://scikit-learn.org/stable/modules/svm.html",
+    "provider": "scikit-learn.org",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-scikit-learn-org-73de612c66",
+    "title": "scikit-learn · Random Forests · 随机森林",
+    "url": "https://scikit-learn.org/stable/modules/ensemble.html",
+    "provider": "scikit-learn.org",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-scikit-learn-org-3e48badc01",
+    "title": "scikit-learn · Clustering",
+    "url": "https://scikit-learn.org/stable/modules/clustering.html",
+    "provider": "scikit-learn.org",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-eb0c6b5b62",
+    "title": "Dive into Deep Learning · 动手学深度学习 · BERT",
+    "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-7c2badc284",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 6.1",
+    "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/why-conv.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-dbed84149c",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 9.2",
+    "url": "https://zh.d2l.ai/chapter_recurrent-modern/lstm.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-zh-d2l-ai-c974032d3e",
+    "title": "Dive into Deep Learning · 动手学深度学习 · 10.7",
+    "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+    "provider": "zh.d2l.ai",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-web-stanford-edu-fc94e1f3fb",
+    "title": "Stanford · CS224W",
+    "url": "https://web.stanford.edu/class/cs224w/",
+    "provider": "web.stanford.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-831d25bec9",
+    "title": "Berkeley · CS188 1.2",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/search/state.html",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-d9b7e8caf4",
+    "title": "Berkeley · CS188 10.2",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/language.html",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-816d7bbae3",
+    "title": "Berkeley · CS188 6.3",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/representation.html",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-3344ef980a",
+    "title": "Berkeley · CS188 4.1",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/markov-decision-processes.html",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-inst-eecs-berkeley-edu-19bd536f50",
+    "title": "Berkeley · CS188 5.3",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/rl/mfl.html",
+    "provider": "inst.eecs.berkeley.edu",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-pymoo-org-950177fe9b",
+    "title": "pymoo · Getting started",
+    "url": "https://pymoo.org/getting_started/index.html",
+    "provider": "pymoo.org",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-introtodeeplearning-com-fa269e16b1",
+    "title": "MIT · Deep Generative Modeling",
+    "url": "https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L4.pdf",
+    "provider": "introtodeeplearning.com",
+    "language": "英文",
+    "kind": "讲义 PDF",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-huggingface-co-b8bd5e3543",
+    "title": "Hugging Face · Diffusion Course",
+    "url": "https://huggingface.co/learn/diffusion-course/en/unit1/1.1",
+    "provider": "huggingface.co",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-394a40476a",
+    "title": "Google · Large Language Models · 大语言模型",
+    "url": "https://developers.google.com/machine-learning/crash-course/llm?hl=zh-cn",
+    "provider": "developers.google.com",
+    "language": "中文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-huggingface-co-0671127e4d",
+    "title": "Hugging Face · Tools",
+    "url": "https://huggingface.co/learn/agents-course/en/unit1/tools",
+    "provider": "huggingface.co",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-huggingface-co-d3a62a9a11",
+    "title": "Hugging Face · Agent steps",
+    "url": "https://huggingface.co/learn/agents-course/en/unit1/agent-steps-and-structure",
+    "provider": "huggingface.co",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-huggingface-co-116732f0a8",
+    "title": "Hugging Face · RAG Cookbook",
+    "url": "https://huggingface.co/learn/cookbook/en/rag_zephyr",
+    "provider": "huggingface.co",
+    "language": "英文",
+    "kind": "选读",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-arxiv-org-4cd8fde22d",
+    "title": "DeepSeek-R1 · 原始研究论文",
+    "url": "https://arxiv.org/abs/2501.12948",
+    "provider": "arxiv.org",
+    "language": "英文",
+    "kind": "论文",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-28441f697f",
+    "title": "McCulloch–Pitts Neuron",
+    "url": "https://doi.org/10.1007/BF02478259",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-academic-oup-com-c0af2eabf7",
+    "title": "Computing Machinery and Intelligence",
+    "url": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+    "provider": "academic.oup.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-ojs-aaai-org-a1e0bcd13f",
+    "title": "Dartmouth Summer Research Project on AI",
+    "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904/0",
+    "provider": "ojs.aaai.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-pubmed-ncbi-nlm-nih-gov-580715e8eb",
+    "title": "Perceptron",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/13602029/",
+    "provider": "pubmed.ncbi.nlm.nih.gov",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-eda36d5a8c",
+    "title": "Some Studies in Machine Learning Using the Game of Checkers",
+    "url": "https://doi.org/10.1147/rd.33.0210",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-engineering100-stanford-edu-dfd6f5bb1d",
+    "title": "Heuristic DENDRAL",
+    "url": "https://engineering100.stanford.edu/stories/new-spaces-and-expanding-influence",
+    "provider": "engineering100.stanford.edu",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-cddb0c5476",
+    "title": "ELIZA",
+    "url": "https://doi.org/10.1145/365153.365168",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-11d2050a91",
+    "title": "A* Search",
+    "url": "https://doi.org/10.1109/TSSC.1968.300136",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-a74e400d56",
+    "title": "Learning representations by back-propagating errors",
+    "url": "https://doi.org/10.1038/323533a0",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-www-sciencedirect-com-9c38bd8367",
+    "title": "Probabilistic Reasoning in Intelligent Systems",
+    "url": "https://www.sciencedirect.com/book/monograph/9780080514895/probabilistic-reasoning-in-intelligent-systems",
+    "provider": "www.sciencedirect.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-95730df3c2",
+    "title": "Backpropagation Applied to Handwritten Zip Code Recognition",
+    "url": "https://doi.org/10.1162/neco.1989.1.4.541",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-b574dff1f4",
+    "title": "Q-learning",
+    "url": "https://doi.org/10.1007/BF00992698",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-770871b23b",
+    "title": "Support-vector Networks",
+    "url": "https://doi.org/10.1007/BF00994018",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-48958bb24f",
+    "title": "Long Short-Term Memory",
+    "url": "https://doi.org/10.1162/neco.1997.9.8.1735",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-89b218cf4f",
+    "title": "Efficient Global Optimization (EGO)",
+    "url": "https://doi.org/10.1023/A:1008306431147",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-334909c8d7",
+    "title": "Random Forests",
+    "url": "https://doi.org/10.1023/A:1010933404324",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-a940ead8bd",
+    "title": "NSGA-II",
+    "url": "https://doi.org/10.1109/4235.996017",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-196ea3a84f",
+    "title": "ImageNet",
+    "url": "https://doi.org/10.1109/CVPR.2009.5206848",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-d704c33ec5",
+    "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+    "url": "https://proceedings.neurips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-5e7488b853",
+    "title": "Generative Adversarial Nets",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-6036b93a79",
+    "title": "Deep Q-Network (DQN)",
+    "url": "https://doi.org/10.1038/nature14236",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-0ebbaa185c",
+    "title": "AlphaGo",
+    "url": "https://doi.org/10.1038/nature16961",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-arxiv-org-a7468c6851",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "provider": "arxiv.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-arxiv-org-32f3c7d144",
+    "title": "BERT",
+    "url": "https://arxiv.org/abs/1810.04805",
+    "provider": "arxiv.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-b85c634296",
+    "title": "Language Models are Few-Shot Learners",
+    "url": "https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-nips-cc-545ae2742f",
+    "title": "Retrieval-Augmented Generation (RAG)",
+    "url": "https://proceedings.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+    "provider": "proceedings.nips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-2f461f2739",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-doi-org-e6d75a9e15",
+    "title": "Highly accurate protein structure prediction with AlphaFold",
+    "url": "https://doi.org/10.1038/s41586-021-03819-2",
+    "provider": "doi.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-b0c61e133e",
+    "title": "Training language models to follow instructions with human feedback",
+    "url": "https://proceedings.neurips.cc/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-openai-com-60cfe5fed3",
+    "title": "Introducing ChatGPT",
+    "url": "https://openai.com/index/chatgpt/",
+    "provider": "openai.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-arxiv-org-7647307fe4",
+    "title": "ReAct",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "provider": "arxiv.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-proceedings-neurips-cc-b08aa47003",
+    "title": "Toolformer",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+    "provider": "proceedings.neurips.cc",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-openai-com-9edf2bd593",
+    "title": "Learning to reason with LLMs",
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "provider": "openai.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-www-nature-com-b7585011e5",
+    "title": "DeepSeek-R1",
+    "url": "https://www.nature.com/articles/s41586-025-09422-z",
+    "provider": "www.nature.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-scikit-learn-org-a0a701fbf2",
+    "title": "scikit-learn Linear Models",
+    "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+    "provider": "scikit-learn.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-41c32b4592",
+    "title": "Google：分类",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-bbeed2b245",
+    "title": "Google：分类指标",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-d922e6fab0",
+    "title": "Google：聚类导论",
+    "url": "https://developers.google.com/machine-learning/clustering",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-20dd1f0c9d",
+    "title": "Google：什么是聚类",
+    "url": "https://developers.google.com/machine-learning/clustering/overview",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-6189892c46",
+    "title": "Google：神经网络",
+    "url": "https://developers.google.com/machine-learning/crash-course/neural-networks",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-arxiv-org-f5d4559d7d",
+    "title": "Kipf & Welling: Semi-Supervised Classification with GCNs",
+    "url": "https://arxiv.org/abs/1609.02907",
+    "provider": "arxiv.org",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "res-developers-google-com-f25a435a83",
+    "title": "Google：数据划分",
+    "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets",
+    "provider": "developers.google.com",
+    "language": "English / 英文",
+    "kind": "Reference · 参考资料",
+    "verifiedAt": null,
+    "verification": "retained-source"
+  },
+  {
+    "id": "video-stanford-cs229-2018",
+    "title": "Stanford CS229 · Machine Learning · 机器学习（Andrew Ng, 2018）",
+    "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+    "provider": "Stanford Online",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-stanford-see-supervised",
+    "title": "Stanford SEE CS229 · Supervised Learning · 监督学习",
+    "url": "https://see.stanford.edu/Course/CS229/47",
+    "provider": "Stanford Engineering Everywhere",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-stanford-see-linear",
+    "title": "Stanford SEE CS229 · Linear Regression & Gradient Descent · 线性回归与梯度下降",
+    "url": "https://see.stanford.edu/Course/CS229/54",
+    "provider": "Stanford Engineering Everywhere",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-stanford-see-generalization",
+    "title": "Stanford SEE CS229 · Generalization & Logistic Regression · 泛化与逻辑回归",
+    "url": "https://see.stanford.edu/Course/CS229/42",
+    "provider": "Stanford Engineering Everywhere",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-sp26",
+    "title": "Berkeley CS188 · Introduction to AI · 人工智能导论（2026）",
+    "url": "https://www.youtube.com/playlist?list=PLp8QV47qJEg5tSxKiwcZt4LVwN_ek2Kxy",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "course-berkeley-cs188-sp26",
+    "title": "Berkeley CS188 · Spring 2026 · 课程大纲",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/sp26/",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Course · 课程",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-search",
+    "title": "Berkeley CS188 · Uninformed Search · 无信息搜索",
+    "url": "https://youtu.be/ypTy6kf2X6Y",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-probability",
+    "title": "Berkeley CS188 · Probability · 概率",
+    "url": "https://youtu.be/Q9TPylxjNoA",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-mdp",
+    "title": "Berkeley CS188 · Markov Decision Processes · 马尔可夫决策过程",
+    "url": "https://youtu.be/0CDpYf1KpOc",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-rl",
+    "title": "Berkeley CS188 · Reinforcement Learning · 强化学习",
+    "url": "https://youtu.be/H70q_bRnm6Q",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-berkeley-cs188-bayes",
+    "title": "Berkeley CS188 · Bayesian Networks · 贝叶斯网络",
+    "url": "https://youtu.be/XRNWpZLjETs",
+    "provider": "UC Berkeley",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-mit6s191-2026-intro",
+    "title": "MIT 6.S191 · Introduction to Deep Learning · 深度学习导论（2026）",
+    "url": "https://www.youtube.com/watch?v=II4giR4vOOo",
+    "provider": "MIT / Alexander Amini",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-mit6034-course",
+    "title": "MIT 6.034 · Artificial Intelligence · 人工智能（2010）",
+    "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/video_galleries/lecture-videos/",
+    "provider": "MIT OpenCourseWare",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-mit1806-course",
+    "title": "MIT 18.06 · Linear Algebra · 线性代数（OCW 2010）",
+    "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/",
+    "provider": "MIT OpenCourseWare",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-mit1806-geometry",
+    "title": "MIT 18.06 · Geometry of Linear Equations · 线性方程的几何",
+    "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-1-the-geometry-of-linear-equations/",
+    "provider": "MIT / Gilbert Strang",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-stanford-cs224n-2024",
+    "title": "Stanford CS224N · NLP with Deep Learning · 深度学习与自然语言处理（2024）",
+    "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+    "provider": "Stanford Online",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "course-stanford-cs224n",
+    "title": "Stanford CS224N · Course & assignments · 大纲与作业",
+    "url": "https://web.stanford.edu/class/cs224n/",
+    "provider": "Stanford University",
+    "language": "English · 英文",
+    "kind": "Course · 课程",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-stanford-cs231n-public",
+    "title": "Stanford CS231n · Deep Learning for Computer Vision · 计算机视觉深度学习（往年公开版）",
+    "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16",
+    "provider": "Stanford Online",
+    "language": "English · 英文",
+    "kind": "Video · 视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "course-stanford-cs231n",
+    "title": "Stanford CS231n · Course & assignments · 大纲与作业",
+    "url": "https://cs231n.stanford.edu/",
+    "provider": "Stanford University",
+    "language": "English · 英文",
+    "kind": "Course · 课程",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  },
+  {
+    "id": "video-cmu10601-restricted",
+    "title": "CMU 10-301 / 10-601 · Recordings · 录播（需登录）",
+    "url": "https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=d5bf275d-ff88-4bf6-a865-b065010f55c2",
+    "provider": "Carnegie Mellon University",
+    "language": "English · 英文",
+    "kind": "Restricted video · 需登录的视频",
+    "verifiedAt": "2026-10-10",
+    "verification": "official-page-checked"
+  }
+]

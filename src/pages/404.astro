@@ -1,0 +1,6 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from '../components/Heading.astro';
+import { href } from '../lib/content';
+---
+<Layout title="页面未找到" noindex><Heading eyebrow="404 / 找不到这一页" title="换一个入口，继续探索。" description="链接可能已变更，或者这篇内容尚未发布。" /><div class="actions"><a class="button" href={href()}>返回首页 →</a><a class="text-link" href={href('map/')}>查看知识地图 →</a></div></Layout>

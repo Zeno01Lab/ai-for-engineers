@@ -1,0 +1,23 @@
+name: 推荐学习资源
+description: 推荐适合工科学生的课程、教材或实践
+title: "[资源] "
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 资源名称与链接
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: 适合谁，先修是什么
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由与选读入口
+      description: 请区分亲自学过的体验与根据目录提出的建议。
+    validations:
+      required: true

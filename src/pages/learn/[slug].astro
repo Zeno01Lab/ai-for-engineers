@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import LearningJourney from '../../components/learn/LearningJourney.astro';
+import paths from '../../data/learning/paths.json';
+import {href} from '../../lib/content';
+export function getStaticPaths(){return paths.map(path=>({params:{slug:path.id},props:{path}}));}
+const{path}=Astro.props;
+---
+<Layout wide title={path.title.en+' · '+path.title.zh} description={path.description}>
+<a class="text-link" href={href('learn/')}>All learning paths · 返回路径大厅 →</a>
+<Heading eyebrow="CURATED LEARNING PATH · 精选学习路径" title={path.title.en} description={path.title.zh+'。'+path.description}/>
+
+<LearningJourney path={path}/>
+</Layout>

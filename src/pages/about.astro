@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from '../components/Heading.astro';
+import { href } from '../lib/content';
+import { site } from '../config';
+---
+<Layout title="关于 Zeno"><Heading eyebrow="Zeno01Lab · 独立学习项目" title="让工程问题成为学习的起点。" description="AI for Engineers 是面向工科学生的中文学习指南。希望通过具体例子、知识关系和小实验，降低进入 AI 的启动成本。" />
+<div class="reading prose"><h2>你可以在这里找到什么</h2><p>一条可完成的入门路线，一张帮助定位方法的知识地图，以及连接官方课程与实际问题的资源库。案例覆盖能耗、设备状态、图像、信号、实验参数与工具使用。</p><p>网站使用 Zeno 的署名。公开内容面向普遍的工程学习需求，不包含私人研究计划、未公开数据或个人日程。</p><h2>内容如何更新</h2><p>教程说明动机、机制、实践与边界；方法图鉴帮助快速判断适用性；个人学习记录仅在有实际学习或实验后发布。合成案例、编辑建议与实际体验会明确标记。</p><p>每篇内容记录日期、先修与参考。修正实质内容时记录修订时间。通过最小示例理解概念后，应回到真实应用的数据与约束检查结论。</p><p>历史节点的年份依据与参考入口单独记录；导入包的第一轮核查记录与本次结构检查分开标注。<a href={href('map/sources/')}>查看历史证据与编辑规则 →</a></p><h2 id="contribute">参与修订</h2>{site.repositoryUrl?<><p>发现错误时，可以在网站仓库提出问题；文章底部提供勘误与编辑入口。请注明页面、具体表述、修改理由及支持来源。</p><p><a href={`${site.repositoryUrl}/issues`}>提交勘误 ↗</a> · <a href={site.repositoryUrl}>查看网站源码 ↗</a></p></>:<><p>当前版本处于预览阶段，网站仓库尚未发布。你可以在本次对话中指出页面与具体问题；公开仓库启用后，这里会提供勘误与源码入口。</p><p><a href={site.githubUrl}>Zeno01Lab 的 GitHub ↗</a></p></>}<h2>最近一次更新</h2><p>2026-10-09：知识地图重做为两张可缩放全局大图：39 个知识节点支持学习阶段与当前位置标记；34 个历史节点、24 条关系按时间区间与路线展开。保留三篇入门教程及演示，补充生成建模与概率推断入口。</p><p><a href={href('start/')}>从入门路线开始 →</a></p></div>
+</Layout>

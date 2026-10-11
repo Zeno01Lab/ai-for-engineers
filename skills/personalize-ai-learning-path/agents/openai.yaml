@@ -1,0 +1,14 @@
+interface:
+  display_name: Personalize AI Learning Paths
+  short_description: Create private AI study plans from shared course units
+  default_prompt: Use $personalize-ai-learning-path to create a local learning path
+    from my goals, background, and the AI for Engineers knowledge base.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

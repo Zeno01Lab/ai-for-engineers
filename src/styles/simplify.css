@@ -1,0 +1,96 @@
+/* Progressive disclosure: keep the maps and task links, reduce default chrome. */
+.quiet-hero {padding-bottom:36px;min-height:0}
+.quiet-hero .intro {max-width:30ch}
+.overview-preview svg {margin:16px 0}
+.home-shortcuts {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:12px 0 50px}
+.home-shortcuts a {padding:22px;border:1px solid var(--line);border-radius:12px;text-decoration:none;background:var(--surface)}
+.home-shortcuts strong,.home-shortcuts span {display:block}
+.home-shortcuts span {font-size:13px;color:var(--muted);margin-top:8px}
+.curriculum-library {margin:32px auto;max-width:1400px;border-top:1px solid var(--line);padding-top:20px}
+.curriculum-library>summary {font-size:17px;font-weight:600;cursor:pointer}
+.secondary-entry {font-size:13px;color:var(--muted);text-align:center;margin:35px 0}
+.progress-controls {padding:14px 18px;margin:12px auto 24px}
+.progress-controls>summary {cursor:pointer;font-size:13px;color:var(--muted)}
+.progress-controls[open]>summary {margin-bottom:22px}
+.learning-rules {margin:28px 0;border-top:1px solid var(--line);padding-top:16px;font-size:13px}
+.learning-rules>summary,.unit-details>summary,.unit-record-options>summary,.resource-details>summary {cursor:pointer;color:var(--muted)}
+.unit-details,.unit-record-options {font-size:12px;margin-top:18px}
+.unit-details[open]>summary,.unit-record-options[open]>summary {margin-bottom:15px}
+.level-card details>summary {padding:0;list-style:disclosure-closed}
+.level-card details[open]>summary {list-style:disclosure-open}
+.level-card details>summary::-webkit-details-marker {display:inline}
+.trail-dashboard {padding:22px;margin-top:20px}
+.trail-camp header {margin-bottom:18px}
+.level-card summary {gap:7px}
+.level-card .level-expand {font-size:12px}
+.level-body .level-unlock:empty {display:none}
+.map-perspectives a {padding:13px 18px}
+.global-map-heading {padding:18px 24px 0;align-items:center}
+.global-map-heading h2 {font-size:20px;margin:0}
+.global-toolbar.simple-toolbar,.global-map.structure .global-toolbar.simple-toolbar {grid-template-columns:minmax(0,1fr) auto;align-items:end;padding:16px 24px 10px}
+.map-options>summary {cursor:pointer;min-height:41px;padding:11px 14px;border:1px solid var(--line);border-radius:7px;font-size:12px;list-style-position:inside}
+.map-options[open] {grid-column:1/-1}
+.map-filter-fields {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.map-filter-fields label[hidden] {display:none}
+.map-options .map-discovery-row {padding:5px 0 15px}
+.map-options .map-discovery-row>span {display:none}
+.map-options .map-relation-guide {margin:12px 0}
+.map-extra-actions {display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.map-extra-actions button {font-size:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:7px 10px}
+.global-map-bottom {align-items:start}
+.compact-legend {font-size:12px;color:var(--muted)}
+.compact-legend>summary {cursor:pointer;white-space:nowrap}
+.compact-legend[open] .global-legend {margin-top:12px;max-width:400px}
+.coverage-note {font-size:12px;color:var(--muted);margin:14px 0}
+.coverage-note summary {cursor:pointer}
+.coverage-note p {max-width:70ch;font-size:13px}
+.learning-position p {font-size:12px}
+.global-map-sidebar details {border-top:1px solid var(--line);padding-top:13px;margin-top:18px}
+.global-map-sidebar details>summary {cursor:pointer;font-size:13px;color:var(--muted)}
+.global-map-sidebar details[open]>summary {margin-bottom:13px}
+.global-map:not(.show-edge-labels) .map-edge-label.active-edge:not(.filtered-edge) {opacity:1;pointer-events:auto}
+.global-map:not(.show-edge-labels) .map-edge.active-edge .caption-leader {opacity:1}
+.path-graph-toolbar {display:block}
+.path-graph-toolbar>label {max-width:420px}
+.path-options {font-size:12px;margin-top:10px}
+.path-options>summary {cursor:pointer;color:var(--muted)}
+.path-options-body {display:flex;gap:12px;flex-wrap:wrap;margin-top:15px;align-items:end}
+.path-options-body label {display:flex;flex-direction:column;gap:6px}
+.path-graph-heading p,.path-map-heading p {max-width:55ch}
+.path-graph-footer details {font-size:12px}
+.path-graph-footer details>summary {cursor:pointer}
+.resource-card .resource-details dl {margin:14px 0}
+.resource-card .resource-recommendation {margin-bottom:16px}
+.practice-list {display:grid;gap:15px}
+.practice-card {border:1px solid var(--line);border-radius:10px;padding:20px}
+.practice-card>summary {cursor:pointer}
+.practice-card>summary strong {font-size:18px}
+.practice-card>summary span {font-size:12px;color:var(--muted);margin-left:16px}
+.practice-card[open]>summary {margin-bottom:18px}
+.article-deep-dive,.article-extra {border-top:1px solid var(--line);margin-top:24px;padding-top:18px}
+.article-deep-dive>summary,.article-extra>summary {cursor:pointer;font-size:15px;font-weight:600}
+.article-deep-dive[open]>summary,.article-extra[open]>summary {margin-bottom:22px}
+.article-course {margin:0 0 28px}
+.article-course p {font-size:14px}
+.path-options-body button {padding:8px 12px;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:var(--surface)}
+.global-map:fullscreen .global-toolbar.simple-toolbar,.global-map.expanded-map .global-toolbar.simple-toolbar {display:grid}
+.global-map:fullscreen .global-map-stage,.global-map.expanded-map .global-map-stage {height:calc(100dvh - 240px);min-height:300px}
+@media(max-width:760px){
+  .home-shortcuts {grid-template-columns:1fr;gap:10px}
+  .home-shortcuts a {padding:17px}
+  .quiet-hero .actions {gap:15px}
+  .global-toolbar.simple-toolbar,.global-map.structure .global-toolbar.simple-toolbar {grid-template-columns:1fr;padding:14px 16px 6px}
+  .map-options>summary {min-height:0;padding:9px 12px}
+  .map-filter-fields {grid-template-columns:1fr}
+  .global-map-heading {padding:16px;gap:10px;flex-wrap:wrap;display:flex}
+  .global-map-heading h2 {font-size:18px}
+  .global-map-bottom {flex-wrap:wrap;gap:10px}
+  .path-options-body {flex-direction:column;align-items:stretch}
+}
+@media print {.map-options,.path-options,.unit-record-options,.progress-controls{display:none}}
+
+.course-catalog {margin:24px 0;border-top:1px solid var(--line);padding-top:18px}
+.course-catalog>summary {cursor:pointer;font-size:15px;font-weight:600}
+.course-catalog>summary span {font-size:12px;color:var(--muted);margin-left:8px}
+.course-catalog[open]>summary {margin-bottom:20px}
+@media(max-width:760px){.global-map:fullscreen .global-map-stage,.global-map.expanded-map .global-map-stage{height:55dvh;min-height:250px}}

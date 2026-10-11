@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {readKnowledge} from './sync-knowledge.mjs';
+import {validateKnowledge} from '../src/lib/knowledge/validate.mjs';
+const data=await readKnowledge();validateKnowledge(data);
+const hashes={'src/data/history/raw/nodes.json':'6f8d76af2f8d11ff588397f40a25494634e6c8ff8df07207e6ffc1ac797faa95','src/data/history/raw/relationships.json':'66d3ef0136b5c04b8ace5b6e924ced2c8c896ae29b5c1de02da3c1b1cb781074'};
+for(const[file,expected]of Object.entries(hashes))assert.equal(createHash('sha256').update(await readFile(file)).digest('hex'),expected,'Imported historical evidence must remain byte-identical');
+assert.equal(data.events.filter(n=>n.verification.jrc_csv_row_matched).length,0);assert.equal(data.events.filter(n=>n.verification.jrc_report_crosscheck.status==='checked_against_JRC_historical_report').length,15);
+const invalid=change=>{const copy=structuredClone(data);change(copy);assert.throws(()=>validateKnowledge(copy));};
+invalid(d=>d.units[0].prerequisiteUnitIds=[d.units[0].id]);invalid(d=>d.units[0].resourceSelections=[]);invalid(d=>d.units[0].conceptIds=['not-a-concept']);invalid(d=>d.units[0].resourceSelections[0].resourceId='missing-resource');invalid(d=>d.resources[0].url='javascript:alert(1)');invalid(d=>d.resources.push({...d.resources[0],id:'duplicate-url'}));invalid(d=>d.paths[0].unitIds.reverse());invalid(d=>d.paths[0].parallelGroups=[['first-step','first-prediction']]);invalid(d=>d.conceptRelations[0].sourceType='event');invalid(d=>d.conceptRelations[0].source='dartmouth');invalid(d=>d.historyRelations[0].type='prerequisite');invalid(d=>d.historyRelations[0].relationship_is_editorial_interpretation=false);
+invalid(d=>d.concepts.find(c=>c.id===d.units[0].conceptIds[0]).draft=true);
+assert(new Set(data.concepts.map(c=>c.id)).size>=39);assert(data.concepts.filter(c=>c.atlas&&!c.draft).length>=15);
+console.log('PASS: canonical schemas, unique resources, typed graph layers, closed paths, parallel/optional dependencies, invalid-data rejection; original 34/24 evidence bytes and 15 report / 0 CSV statuses preserved.');

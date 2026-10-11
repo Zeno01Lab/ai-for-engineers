@@ -1,0 +1,1 @@
+export const groupResources:Record<string,string[]>={symbolic:['cs188','cs221','z3'],learning:['mlcc','sklearn','cs229'],neural:['mit6s191','cs229'],decision:['cs188','cs221'],probabilistic:['cs229','cmu10601'],optimization:['ax','pymoo'],generation:['mit6s191'],systems:['hf-agents'],foundations:['mlcc','cs229']};

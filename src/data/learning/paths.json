@@ -1,0 +1,71 @@
+[
+  {
+    "id": "engineering-ai-foundations",
+    "title": {
+      "en": "General AI Foundations",
+      "zh": "通用 AI 基础"
+    },
+    "goal": "engineering-ai-overview",
+    "description": "从预测任务开始，建立评价、搜索、逻辑与数学基础的全局认知。",
+    "unitIds": [
+      "first-step",
+      "first-prediction",
+      "first-category",
+      "basecamp",
+      "search-route",
+      "logic-route",
+      "vectors",
+      "chance"
+    ],
+    "parallelGroups": [
+      [
+        "first-category",
+        "basecamp"
+      ],
+      [
+        "search-route",
+        "logic-route"
+      ],
+      [
+        "vectors",
+        "chance"
+      ]
+    ],
+    "optionalUnitIds": [
+      "logic-route"
+    ],
+    "entryConceptIds": []
+  },
+  {
+    "id": "engineering-optimization",
+    "title": {
+      "en": "Optimization for Engineering Experiments",
+      "zh": "工程实验优化"
+    },
+    "goal": "expensive-engineering-experiments",
+    "description": "用公开教学问题定义变量、预算与评价，比较随机搜索、贝叶斯优化和多目标取舍。",
+    "unitIds": [
+      "first-step",
+      "first-prediction",
+      "basecamp",
+      "chance",
+      "experiment-design",
+      "bo-route",
+      "pareto-route"
+    ],
+    "parallelGroups": [
+      [
+        "chance",
+        "experiment-design"
+      ],
+      [
+        "bo-route",
+        "pareto-route"
+      ]
+    ],
+    "optionalUnitIds": [
+      "pareto-route"
+    ],
+    "entryConceptIds": []
+  }
+]

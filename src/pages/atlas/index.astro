@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import Filters from '../../components/Filters.astro';
+import { href, algorithms } from '../../lib/content';
+const entries = await algorithms();
+const families = [...new Set(entries.map(e=>e.data.family))];
+---
+<Layout title="方法图鉴"><Heading eyebrow="方法与边界" title="理解方法，找到选择依据。" description="每张卡片回答：它解决什么问题，为什么出现，依赖什么假设，以及什么时候应该考虑替代方法。" /><Filters options={families} /><div class="atlas-grid">{entries.map(e => <a class="algorithm-card" href={href(`atlas/${e.id}/`)} data-item data-category={e.data.family} data-search={`${e.data.title} ${e.data.english} ${e.data.description} ${e.data.tags.join(' ')}`}><div class="card-meta"><span>{e.data.family}</span><span>{e.data.difficulty} · {e.data.estimatedReadingTime} 分钟</span></div><h2>{e.data.english}<small>{e.data.title}</small></h2><p>{e.data.problem}</p><div>{e.data.tags.map(t=><span class="tag">{t}</span>)}</div><span class="card-link">理解动机、假设与局限 →</span></a>)}</div></Layout>

@@ -1,0 +1,19 @@
+{
+  "mode": "public-candidate",
+  "published": false,
+  "sourceCommit": "9c4b1dc210334741e84428b79b191293d759bae0",
+  "sourceTreeClean": true,
+  "sourceHashes": {
+    "src/data/knowledge/concepts.generated.json": "eba5bc1dcbe6a96a5311c83cdf0815e410c9b1d60703c3da8e22460c92a6fc3d",
+    "src/data/knowledge/resources.json": "090647ba8801041f82b962f395c2fbf9b2469c2f1e437c2f7bb38b0d37ce8b73",
+    "src/data/learning/units.json": "0446af4bb0808526a60ff017581d5e9aa2ba5e60f5345b116bd45b5e49e9e11e",
+    "src/data/learning/paths.json": "047b711841e0e8500895c53fa5901a30fb81fe1db9e17b605be55b980f94ad04",
+    "src/lib/schema/knowledge.mjs": "d7dada5cd01ffc27d6bf439dc3ad3f81404aac7b3217af3aea3b9d8b4e22a7e1"
+  },
+  "pathIds": [
+    "engineering-ai-foundations",
+    "engineering-optimization"
+  ],
+  "copiedFiles": 187,
+  "limits": "No dependencies or browser QA. Review all source and build output before publishing; this is not a privacy sanitizer."
+}

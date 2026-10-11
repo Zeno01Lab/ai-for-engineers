@@ -1,0 +1,24 @@
+name: 内容勘误
+description: 指出概念、代码或链接中的具体错误
+title: "[勘误] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 页面地址
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 哪里有问题
+      description: 引用具体表述，或描述代码的复现步骤。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 修改建议与来源
+      description: 优先提供官方课程、文档或原始论文。
+    validations:
+      required: true

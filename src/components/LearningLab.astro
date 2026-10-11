@@ -1,0 +1,68 @@
+---
+import { href } from '../lib/content';
+interface Props { kind: 'regression' | 'classification' | 'overfitting'; }
+const { kind } = Astro.props;
+const titles={regression:'拖动直线，观察预测误差',classification:'改变阈值，观察误报与漏报',overfitting:'改变复杂度，比较训练与验证'};
+---
+<section class="learning-lab" data-lab={kind} data-module={href('scripts/lab-models.mjs')} aria-label={titles[kind]}>
+  <div class="lab-heading"><span class="tag">动手观察</span><h2>{titles[kind]}</h2></div>
+  <p class="tiny">固定的合成教学数据。结果由浏览器计算，不代表真实设备测量。</p>
+  {kind==='regression' && <div class="lab-controls"><label>斜率 w：<output data-value>1.20</output><input type="range" data-control min="0" max="4" step="0.01" value="1.2" /></label><button class="button secondary" data-fit>用训练数据拟合</button></div>}
+  {kind==='classification' && <div class="lab-controls"><label>判为故障的阈值：<output data-value>0.50</output><input type="range" data-control min="0" max="1" step="0.05" value="0.5" /></label></div>}
+  {kind==='overfitting' && <div class="lab-controls"><label>模型复杂度<select data-control><option value="1">1 次：直线</option><option value="3">3 次：弯曲的趋势</option><option value="8">8 次：穿过全部训练点</option></select></label></div>}
+  {kind!=='classification' && <figure class="lab-figure"><svg data-plot viewBox="0 0 600 300" role="img" aria-label="模型预测曲线与训练、验证样本"><title>模型预测曲线与两组教学样本</title></svg><figcaption>● 绿色实心圆：训练数据　□ 橙色方块：验证数据　实线：模型预测</figcaption></figure>}
+  {kind==='classification' && <div class="table-scroll"><table><caption>固定的 10 个教学样本</caption><thead><tr><th>样本</th><th>故障分数</th><th>实际类别</th><th>预测类别</th><th>结果</th></tr></thead><tbody data-samples></tbody></table></div>}
+  <div class="lab-metrics" data-metrics aria-live="polite"></div>
+  <p class="lab-observation" data-observation></p>
+  <p class="tiny">这里反复查看的数据属于教学验证数据。实际项目还应保留独立测试集，用于最终评价。</p>
+  <noscript><p>启用 JavaScript 可操作演示；下方文章与 Python 示例可独立阅读和运行。</p></noscript>
+</section>
+<script>
+  type Data=number[][];
+  type Counts={tp:number;fp:number;tn:number;fn:number;accuracy:number;precision:number|null;recall:number|null};
+  type Models={regressionTrain:Data;regressionValidation:Data;classificationData:Data;curveTrain:Data;curveValidation:Data;linearFit:(d:Data)=>{w:number;b:number};mse:(d:Data,p:(x:number)=>number)=>number;confusion:(d:Data,t:number)=>Counts;polynomialFit:(d:Data,n:number)=>(x:number)=>number};
+  const ns='http://www.w3.org/2000/svg';
+  function element(tag:string, attributes:Record<string,string|number>, text?:string) {const e=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attributes))e.setAttribute(k,String(v));if(text)e.textContent=text;return e;}
+  function plot(svg:SVGElement,train:Data,validation:Data,predict:(x:number)=>number,xmax:number) {
+    const samples=Array.from({length:121},(_,i)=>[i*xmax/120,predict(i*xmax/120)]);
+    const all=[...train,...validation,...samples].map((p)=>p[1]); const low=Math.min(0,...all), high=Math.max(...all); const padding=Math.max((high-low)*.1,.1); const ymin=low-padding,ymax=high+padding;
+    const x=(v:number)=>52+v/xmax*520, y=(v:number)=>255-(v-ymin)/(ymax-ymin)*225;
+    svg.replaceChildren(element('title',{},'实线为预测；圆为训练样本，方块为验证样本。纵轴随预测范围调整。'));
+    svg.append(element('path',{d:'M52 25V255H572',fill:'none',stroke:'var(--muted)'}));
+    for(let i=0;i<=4;i++){const v=ymin+(ymax-ymin)*i/4;svg.append(element('line',{x1:52,x2:572,y1:y(v),y2:y(v),stroke:'var(--line)','stroke-dasharray':'3 5'}),element('text',{x:44,y:y(v)+4,'text-anchor':'end',fill:'var(--muted)','font-size':11},v.toFixed(1)));}
+    for(let i=0;i<=5;i++)svg.append(element('text',{x:x(i*xmax/5),y:275,'text-anchor':'middle',fill:'var(--muted)','font-size':11},(i*xmax/5).toFixed(1)));
+    svg.append(element('path',{d:samples.map(([a,b],i)=>`${i?'L':'M'}${x(a).toFixed(2)},${y(b).toFixed(2)}`).join(' '),fill:'none',stroke:'var(--accent)','stroke-width':2.5}));
+    for(const [a,b]of train)svg.append(element('circle',{cx:x(a),cy:y(b),r:5,fill:'var(--accent)',stroke:'var(--surface)','stroke-width':1.5}));
+    for(const [a,b]of validation)svg.append(element('rect',{x:x(a)-4,y:y(b)-4,width:8,height:8,fill:'var(--surface)',stroke:'var(--warm)','stroke-width':2}));
+    svg.append(element('text',{x:310,y:296,'text-anchor':'middle',fill:'var(--muted)','font-size':12},xmax===5?'输入：设备负载（教学尺度）':'输入 x（归一化）'));
+  }
+  async function init(lab:HTMLElement) {
+    const metrics=lab.querySelector<HTMLElement>('[data-metrics]')!;
+    const observation=lab.querySelector<HTMLElement>('[data-observation]')!;
+    try {
+      const model:Models=await import(/* @vite-ignore */ lab.dataset.module!);
+      const control=lab.querySelector<HTMLInputElement|HTMLSelectElement>('[data-control]')!;
+      let intercept=1;
+      const metric=(label:string,value:string)=>{const item=document.createElement('div');const name=document.createElement('span');name.textContent=label;const strong=document.createElement('strong');strong.textContent=value;item.append(name,strong);metrics.append(item);};
+      function render() {
+        metrics.replaceChildren();const value=Number(control.value);const out=lab.querySelector('output');if(out)out.textContent=value.toFixed(2);
+        if(lab.dataset.lab==='classification') {
+          const c=model.confusion(model.classificationData,value);const tbody=lab.querySelector('[data-samples]')!;tbody.replaceChildren();
+          model.classificationData.forEach(([score,label],i)=>{const positive=score>=value;const row=document.createElement('tr');const cells=[String(i+1),score.toFixed(2),label?'故障':'正常',positive?'故障':'正常',positive?(label?'命中 TP':'误报 FP'):(label?'漏报 FN':'正确排除 TN')];for(const text of cells){const td=document.createElement('td');td.textContent=text;row.append(td);}tbody.append(row);});
+          metric('命中 / 正确排除',`${c.tp} / ${c.tn}`);metric('误报 / 漏报',`${c.fp} / ${c.fn}`);metric('准确率',`${(c.accuracy*100).toFixed(0)}%`);metric('精确率 / 召回率',`${c.precision===null?'未定义':(c.precision*100).toFixed(0)+'%'} / ${c.recall===null?'未定义':(c.recall*100).toFixed(0)+'%'}`);
+          observation.textContent='阈值提高时，预测为故障的样本更少。检查误报与漏报的数量，再结合两种错误的实际代价作选择。没有预测为故障的样本时，精确率未定义。';
+        } else {
+          const overfit=lab.dataset.lab==='overfitting';const train=overfit?model.curveTrain:model.regressionTrain;const validation=overfit?model.curveValidation:model.regressionValidation;const predict=overfit?model.polynomialFit(train,value):(x:number)=>value*x+intercept;
+          plot(lab.querySelector<SVGElement>('[data-plot]')!,train,validation,predict,overfit?1:5);
+          metric('训练 MSE',model.mse(train,predict).toFixed(5));metric('验证 MSE',model.mse(validation,predict).toFixed(5));
+          if(!overfit){const mean=train.reduce((s,[,y])=>s+y,0)/train.length;metric('均值基线的验证 MSE',model.mse(validation,()=>mean).toFixed(5));observation.textContent=`当前预测：ŷ = ${value.toFixed(2)}x + ${intercept.toFixed(2)}。拟合按钮只使用训练数据；验证数据用于观察新样本误差。`;}
+          else observation.textContent=value===8?'8 次曲线几乎穿过所有训练点，但在这组验证数据上的误差明显增大。更低的训练误差不能单独证明模型更好。':'观察模型能否抓住整体趋势，再切换到 8 次模型检查点与点之间的行为。这个例子用于展示可能的过拟合，不代表复杂模型总是更差。';
+        }
+      }
+      control.addEventListener('input',render);
+      lab.querySelector('[data-fit]')?.addEventListener('click',()=>{const fitted=model.linearFit(model.regressionTrain);control.value=String(fitted.w);intercept=fitted.b;render();});
+      render();
+    } catch {observation.textContent='演示暂时无法加载。你仍可阅读文章并运行 Python 示例。';}
+  }
+  document.querySelectorAll<HTMLElement>('[data-lab]').forEach(init);
+</script>

@@ -1,0 +1,107 @@
+@layer components {
+  .brand-subtitle {display:block;font:11px/1.5 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:var(--muted);margin-top:4px;letter-spacing:.02em;}
+  .hero-experiment {display:block;padding:26px;background:var(--soft);border:1px solid var(--line);border-radius:10px;transition:border-color .2s;}
+  .hero-experiment:hover {border-color:var(--accent);}
+  .hero-experiment svg {width:100%;margin:20px 0 12px;}
+  .hero-experiment p {font-family:var(--serif);font-size:23px;color:var(--ink);margin-bottom:12px;}
+  .experiment-footer {display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted);}
+  .experiment-footer strong {font-weight:500;color:var(--accent);}
+  .lesson-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .lesson-card {display:flex;flex-direction:column;padding:27px;background:var(--surface);border:1px solid var(--line);border-radius:7px;gap:15px;}
+  .lesson-card:hover {border-color:var(--accent);}
+  .lesson-number {font-family:var(--serif);font-size:27px;color:var(--warm);}
+  .lesson-card h3 {font-size:21px;margin:0;color:var(--ink);}
+  .lesson-card p {font-size:14px;color:var(--muted);margin:0;}
+  .card-link {margin-top:auto;color:var(--accent);font-size:13px;}
+  .update-note {margin-top:24px;padding:20px 24px;background:var(--soft);border-radius:5px;font-size:14px;}
+  .update-note p {margin:5px 0 0;color:var(--muted);}
+  .start-summary {display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border:1px solid var(--line);border-radius:6px;background:var(--surface);margin-bottom:32px;gap:24px;}
+  .start-summary>div {flex:1;}
+  [data-progress-count] {margin-left:15px;color:var(--accent);}
+  progress {display:block;width:min(400px,100%);height:10px;accent-color:var(--accent);margin:13px 0;}
+  .start-summary p {margin:0;}
+  .text-button {border:0;background:none;padding:8px;color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-size:13px;}
+  .lesson-plan {display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px 15px;font-size:14px;margin:20px 0;}
+  .lesson-plan dt {color:var(--muted);}
+  .lesson-plan dd {margin:0;}
+  .completion-check,.lesson-finish label {display:flex;align-items:flex-start;gap:10px;font-size:14px;margin:22px 0;cursor:pointer;}
+  input[type=checkbox] {accent-color:var(--accent);width:18px;height:18px;margin:4px 0 0;flex-shrink:0;}
+  .button.secondary {background:var(--surface);color:var(--accent);border:1px solid var(--line);}
+  .method-directory {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:35px;}
+  .method-directory>a {display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
+  .method-directory strong {display:block;font-size:16px;font-weight:500;}
+  .method-directory small {display:block;color:var(--muted);font-size:12px;}
+  .tutorial-first {margin-top:15px;}
+  .map-toolbar {display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:26px;}
+  .map-toolbar button {border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:4px;padding:9px 16px;font-size:14px;}
+  .map-toolbar button.active {background:var(--accent);color:var(--bg);border-color:var(--accent);}
+  .map-root {width:max-content;max-width:100%;margin:0 auto 40px;padding:21px 32px;border:1px solid var(--line);border-radius:7px;background:var(--soft);text-align:center;position:relative;}
+  .map-root:after {content:'';position:absolute;bottom:-20px;left:50%;height:20px;border-left:1px solid var(--line);}
+  .map-root>span {display:block;color:var(--muted);font-size:12px;}
+  .map-root strong {display:block;font-size:20px;margin:5px 0;}
+  .map-root a {display:block;color:var(--accent);font-size:13px;}
+  .knowledge-tree {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative;align-items:start;}
+  .knowledge-tree:before {content:'';position:absolute;top:-20px;left:12%;right:12%;border-top:1px solid var(--line);}
+  .tree-branch {background:var(--surface);border:1px solid var(--line);border-radius:6px;position:relative;}
+  .tree-branch:before {content:'';position:absolute;top:-20px;height:20px;left:50%;border-left:1px solid var(--line);}
+  .tree-branch summary {display:flex;align-items:flex-start;gap:10px;padding:20px 16px;cursor:pointer;list-style:none;}
+  .tree-branch summary::-webkit-details-marker {display:none;}
+  .tree-branch summary:after {content:'+';color:var(--accent);margin-left:auto;}
+  .tree-branch[open]>summary:after {content:'−';}
+  .branch-index {font-family:var(--serif);font-size:17px;color:var(--warm);}
+  .tree-branch summary strong {font-size:16px;display:block;}
+  .tree-branch summary small {display:block;font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;}
+  .branch-body {padding:0 16px 20px;}
+  .parent-label {font-size:12px;color:var(--accent);padding-top:12px;border-top:1px solid var(--line);}
+  .branch-body ul {list-style:none;padding:0 0 0 12px;margin:0;border-left:1px solid var(--line);}
+  .branch-body li {margin:10px 0;position:relative;}
+  .branch-body li:before {content:'';position:absolute;top:16px;left:-12px;width:9px;border-top:1px solid var(--line);}
+  .branch-body a {display:block;padding:9px 11px;background:var(--bg);border-radius:3px;}
+  .branch-body strong {display:block;font-size:14px;font-weight:500;}
+  .branch-body span,.branch-body small {display:block;color:var(--muted);font-size:12px;line-height:1.65;}
+  .relationship-bridges {margin-top:40px;padding:26px;border:1px solid var(--line);border-radius:6px;}
+  .relationship-bridges h2 {font-size:22px;}
+  .relationship-bridges>div {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 30px;}
+  .relationship-bridges p {font-size:14px;color:var(--muted);margin:0;}
+  .relationship-bridges strong {color:var(--ink);font-weight:500;}
+  .motivation-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 35px;margin:25px 0;}
+  .motivation-list>div {border-top:1px solid var(--line);padding-top:17px;}
+  .motivation-list p {font-size:14px;color:var(--muted);margin:7px 0 0;}
+  .resource-intro {display:flex;gap:15px;align-items:flex-start;padding:19px 23px;background:var(--soft);margin-bottom:25px;border-radius:5px;}
+  .resource-intro p {margin:0;font-size:14px;}
+  .resource-filter-controls {display:flex;gap:18px;flex-wrap:wrap;align-items:end;margin:20px 0;}
+  .resource-filter-controls label {display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--muted);}
+  select {font:inherit;background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:9px 12px;border-radius:4px;max-width:100%;}
+  .resource-filter-controls select {font-size:14px;}
+  .resource-card dl {font-size:13px;grid-template-columns:76px minmax(0,1fr);}
+  .resource-card dd {overflow-wrap:anywhere;}
+  .resource-recommendation {padding:12px 15px;background:var(--soft);border-radius:4px;}
+  .resource-recommendation strong {color:var(--accent);font-weight:500;}
+  .resource-details {margin-top:14px;border-top:1px solid var(--line);padding-top:12px;}
+  .resource-details summary {cursor:pointer;font-size:13px;color:var(--accent);}
+  .resource-details dl {margin-top:13px;}
+  .learning-lab {border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:25px;margin:0 0 35px;}
+  .lab-heading h2 {font-size:22px;margin:12px 0;}
+  .lab-controls {display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:20px 0;}
+  .lab-controls label {display:block;flex:1;min-width:160px;font-size:14px;}
+  .lab-controls input[type=range] {display:block;width:100%;accent-color:var(--accent);margin:13px 0;}
+  .lab-controls select {display:block;margin-top:10px;width:100%;}
+  .lab-controls output {font-variant-numeric:tabular-nums;color:var(--accent);}
+  .lab-figure {margin:20px 0;}
+  .lab-figure svg {width:100%;height:auto;}
+  .lab-figure figcaption {font-size:12px;color:var(--muted);margin-top:10px;}
+  .lab-metrics {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:15px;}
+  .lab-metrics>div {border-top:1px solid var(--line);padding:12px 0;}
+  .lab-metrics span {display:block;font-size:12px;color:var(--muted);}
+  .lab-metrics strong {display:block;font-size:21px;font-weight:500;font-variant-numeric:tabular-nums;}
+  .lab-observation {font-size:14px;line-height:1.85;padding:14px;background:var(--soft);border-radius:4px;}
+  .learning-lab caption {text-align:left;font-size:13px;color:var(--muted);margin-bottom:8px;}
+  .learning-lab td,.learning-lab th {padding:9px 10px;font-size:12px;white-space:nowrap;}
+  .lesson-finish {padding:23px 26px;background:var(--soft);border-radius:5px;margin:35px 0;}
+  .lesson-finish label {margin-top:0;}
+  .revision-links {display:flex;gap:25px;padding:20px 0;border-top:1px solid var(--line);font-size:13px;color:var(--accent);}
+  @media(max-width:1000px) {.knowledge-tree {grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;}.knowledge-tree:before,.tree-branch:before {display:none;}.map-root:after {bottom:-25px;height:25px;}.lesson-card {padding:20px;}}
+  @media(max-width:700px) {.lesson-grid {grid-template-columns:1fr;}.relationship-bridges>div,.motivation-list {grid-template-columns:1fr;}.start-summary {padding:20px;}.start-summary .text-button {align-self:flex-start;}.hero-experiment {padding:22px;}.map-root {width:100%;padding:20px;}.method-directory {grid-template-columns:1fr;}.resource-filter-controls {gap:12px;}}
+  @media(max-width:600px) {.brand-subtitle {font-size:10px;}.brand {font-size:15px;gap:9px;}.brand-icon {width:36px;height:36px;line-height:33px;font-size:26px;}.knowledge-tree {grid-template-columns:1fr;}.map-toolbar .tiny {width:100%;}.learning-lab {padding:17px;}.lesson-plan {grid-template-columns:62px minmax(0,1fr);gap:10px;}.resource-intro {display:block;}.resource-intro p {margin-top:10px;}.resource-filter-controls label {flex:1 1 130px;}.start-summary {display:block;}.start-summary .text-button {margin-top:12px;padding-left:0;}.experiment-footer {font-size:13px;}.hero-experiment p {font-size:22px;}.relationship-bridges {padding:20px;}}
+  @media(max-width:380px) {.header {gap:6px;}.header-actions {gap:0;}.icon-button {width:34px;}.brand {font-size:13px;gap:7px;}.brand-icon {width:32px;height:32px;line-height:29px;font-size:24px;}.brand-subtitle {display:none;}}
+}

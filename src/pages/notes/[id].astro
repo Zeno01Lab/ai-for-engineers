@@ -1,0 +1,7 @@
+---
+import EntryPage from '../../components/EntryPage.astro';
+import { articles } from '../../lib/content';
+export async function getStaticPaths() { return (await articles()).map(entry => ({ params: { id: entry.id }, props: { entry } })); }
+const { entry } = Astro.props;
+---
+<EntryPage entry={entry} />

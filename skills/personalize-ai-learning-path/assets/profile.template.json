@@ -1,0 +1,10 @@
+{
+  "profileVersion": 1,
+  "goal": {"en": "", "zh": "", "successCriterion": ""},
+  "background": {"math": "", "coding": "", "domain": "", "explicitlyKnownUnitIds": []},
+  "availability": {"weeklyMinutes": null, "maxSessionMinutes": null, "firstSessionMinutes": 5, "deadline": null},
+  "language": {"primary": "en", "support": "zh", "englishReadingComfort": ""},
+  "constraints": {"resourceBudget": "free-only", "availableTools": [], "installationAllowed": null, "preferredFormats": [], "avoid": []},
+  "selectedMaterials": [],
+  "assumptions": []
+}

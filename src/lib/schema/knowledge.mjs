@@ -1,0 +1,11 @@
+import {z} from 'astro/zod';
+const id=z.string().regex(/^[a-z0-9][a-z0-9-]*$/);
+const url=z.url().refine(value=>['https:','http:'].includes(new URL(value).protocol),'A public HTTP(S) resource is required');
+export const resourceSchema=z.object({id,title:z.string().min(1),url,provider:z.string().min(1),language:z.string().min(1),kind:z.string().min(1),verifiedAt:z.string().nullable(),verification:z.enum(['retained-source','previous-editorial-check','official-page-checked'])}).strict();
+export const conceptSchema=z.object({
+ title:z.string().min(1),english:z.string().min(1),shortEnglish:z.string().min(1),description:z.string().min(1),date:z.coerce.date(),updated:z.coerce.date().optional(),tags:z.array(z.string()),difficulty:z.enum(['入门','进阶']),estimatedReadingTime:z.number().positive(),prerequisites:z.array(z.string()),draft:z.boolean(),family:z.string().min(1),problem:z.string().min(1),
+ group:id,mapOrder:z.number().int().nonnegative(),foundationConceptIds:z.array(id),detailConceptId:id,lessonId:id.nullable(),historyEventIds:z.array(id),referenceIds:z.array(id).min(1),atlas:z.boolean(),
+}).strict();
+export const unitSchema=z.object({id,title:z.object({en:z.string().min(1),zh:z.string().min(1)}).strict(),track:id,minutes:z.number().int().positive(),conceptIds:z.array(id).min(1),prerequisiteUnitIds:z.array(id),resourceSelections:z.array(z.object({resourceId:id,scope:z.string().min(1)}).strict()).min(1),outcomes:z.array(z.string().min(1)).min(1),checkpoint:z.string().min(1),optional:z.boolean()}).strict();
+export const pathSchema=z.object({id,title:z.object({en:z.string().min(1),zh:z.string().min(1)}).strict(),goal:id,description:z.string().min(1),unitIds:z.array(id).min(5).max(8),parallelGroups:z.array(z.array(id).min(2)),optionalUnitIds:z.array(id),entryConceptIds:z.array(id)}).strict();
+export const eventSchema=z.object({id,year:z.number().int().min(1900).max(2100),year_basis:z.enum(['paper','preprint','project_start','event','release','book']),title:z.object({zh:z.string().min(1),en:z.string().min(1)}),references:z.array(z.object({type:z.string(),url})).min(1),verification:z.object({primary_source_metadata_or_abstract_checked:z.boolean(),jrc_csv_row_matched:z.boolean(),jrc_report_crosscheck:z.object({status:z.string()}).loose()}).loose()}).loose();

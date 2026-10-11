@@ -1,0 +1,10 @@
+{
+  "profileVersion": 1,
+  "goal": {"en": "Understand experiment optimization", "zh": "理解实验优化", "successCriterion": "Explain random search versus Bayesian Optimization on a public toy example."},
+  "background": {"math": "Basic algebra; statistics needs review.", "coding": "Can read short Python examples.", "domain": "General engineering coursework; synthetic example only.", "explicitlyKnownUnitIds": []},
+  "availability": {"weeklyMinutes": 60, "maxSessionMinutes": 20, "firstSessionMinutes": 5, "deadline": null},
+  "language": {"primary": "en", "support": "zh", "englishReadingComfort": "Short technical passages with Chinese terminology support."},
+  "constraints": {"resourceBudget": "free-only", "availableTools": ["web browser"], "installationAllowed": false, "preferredFormats": ["official text", "short examples"], "avoid": []},
+  "selectedMaterials": [],
+  "assumptions": ["All values are fictional and illustrate the input format."]
+}

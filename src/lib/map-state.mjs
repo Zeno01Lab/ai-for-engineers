@@ -1,0 +1,10 @@
+export const stages=['尚未接触','了解概念','能解释原理','能完成简单实践'];
+export function prerequisiteClosure(nodes,id){const byId=new Map(nodes.map(n=>[n.id,n]));const result=new Set();function visit(key){for(const parent of byId.get(key)?.prerequisites??[]){if(!result.has(parent)){visit(parent);result.add(parent);}}}visit(id);return result;}
+export function learningPlan(nodes,id,progress){return [...prerequisiteClosure(nodes,id)].filter(key=>(progress[key]??0)<2);}
+export function parseProgress(value,ids){try{const d=JSON.parse(value);if(!d||typeof d!=='object'||Array.isArray(d))return {};return Object.fromEntries(Object.entries(d).filter(([id,stage])=>ids.has(id)&&Number.isInteger(stage)&&stage>=0&&stage<=3));}catch{return {};}}
+export function zoomBox(box,factor,point){const width=Math.max(140,Math.min(10000,box.width/factor));const ratio=width/box.width;return {x:point.x-(point.x-box.x)*ratio,y:point.y-(point.y-box.y)*ratio,width,height:box.height*ratio};}
+export function frameNodes(nodes,padding=70){const x=Math.min(...nodes.map(n=>n.x))-padding;const y=Math.min(...nodes.map(n=>n.y))-padding;const right=Math.max(...nodes.map(n=>n.x+n.width))+padding;const bottom=Math.max(...nodes.map(n=>n.y+n.height))+padding;return{x,y,width:right-x,height:bottom-y};}
+export function focusIds(edges,id){const result=new Set(id?[id]:[]);if(id)for(const e of edges)if(e.source===id||e.target===id){result.add(e.source);result.add(e.target);}return result;}
+export function personalIds(nodes,mode,progress,current){return new Set(nodes.filter(n=>mode==='structure'?n.id===current||(progress[n.id]??0)>0:n.methods.some(m=>m.id===current||(progress[m.id]??0)>0)).map(n=>n.id));}
+export function recenterBox(box,point,width,height){return{...box,x:Math.max(0,Math.min(width,point.x))-box.width/2,y:Math.max(0,Math.min(height,point.y))-box.height/2};}
+export function clampPanel(point,stage,panel,inset=8){return{x:Math.max(inset,Math.min(Math.max(inset,stage.width-panel.width-inset),point.x)),y:Math.max(inset,Math.min(Math.max(inset,stage.height-panel.height-inset),point.y))};}

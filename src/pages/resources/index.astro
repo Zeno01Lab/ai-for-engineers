@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import Filters from '../../components/Filters.astro';
+import ResourceCards from '../../components/ResourceCards.astro';
+import { href,resources } from '../../lib/content';
+const entries = (await resources()).sort((a,b)=>{const order=['mlcc','cs188','csdiy'];return (order.includes(a.id)?order.indexOf(a.id):-1+100)-(order.includes(b.id)?order.indexOf(b.id):-1+100);});
+---
+<Layout title="资源库"><Heading eyebrow="可靠资料 · 明确选读" title="找到入口，也知道怎么读。" description="挑选一份主资料，按需补充。" />
+<p class="secondary-entry"><a class="button" href={href('resources/courses/')}>University video courses · 名校视频课 →</a> <a class="text-link" href={href('learn/personalize/')}>Personalize a path · 定制路径 →</a></p>
+<Filters options={[...new Set(entries.map(e=>e.data.category))]} placeholder="搜索课程、主题、先修或适用读者…" resourceFilters />
+<ResourceCards entries={entries}/>
+<details class="learning-rules"><summary>About these recommendations · 推荐依据</summary><p>“编辑建议”依据资料目录、先修要求与网站学习路线整理。亲自学习后的体验会单独记录，并注明范围；当前目录不提供课程评分。</p></details>
+</Layout>

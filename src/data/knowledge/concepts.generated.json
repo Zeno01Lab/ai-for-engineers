@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "agents",
+    "title": "工具调用与智能体",
+    "description": "怎样让模型使用工具、观察结果，再决定下一步行动？",
+    "date": "2026-10-09",
+    "tags": [
+      "智能体",
+      "工具",
+      "决策"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "基本 Python",
+      "LLM 概念"
+    ],
+    "draft": false,
+    "family": "智能体",
+    "problem": "怎样让模型使用工具、观察结果，再决定下一步行动？",
+    "english": "Tool Calling & Agents",
+    "shortEnglish": "AI Agents",
+    "group": "systems",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "tool-use",
+      "search",
+      "data-evaluation"
+    ],
+    "detailConceptId": "agents",
+    "lessonId": null,
+    "historyEventIds": [
+      "react",
+      "toolformer"
+    ],
+    "referenceIds": [
+      "res-huggingface-co-b6c643b138"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "语言模型只能生成输出时，难以访问最新状态或执行工程任务。工具提供可操作接口，行动观察循环让系统根据工具结果继续决策。",
+      "coreIdea": "输入任务与当前上下文，模型选择工具与参数，执行器验证并调用工具，把结果回传，再决定继续或停止。固定工作流与自主选择工具的系统可以组合使用。",
+      "assumptions": "- 工具接口具有清晰参数、结果和失败定义。\n- 模型获得的观察足以支持下一步决策。\n- 权限、评价预算和终止条件由系统执行器约束。",
+      "limitations": "输出格式正确不代表参数合理。工具失败、无效循环与误读结果可能累计；模型生成的解释不能代替真实工具记录。",
+      "engineering": "示例：读取实验设定、调用仿真、提取指标，再提出下一次实验。示例系统应区分建议、实际执行和测量结果。",
+      "alternatives": "固定流程优先考虑普通脚本或工作流；纯数值参数搜索可以直接使用优化器。只有加入模型后能处理额外问题，才有理由增加复杂度。"
+    },
+    "references": [
+      {
+        "title": "Hugging Face Agents Course",
+        "url": "https://huggingface.co/learn/agents-course/"
+      }
+    ]
+  },
+  {
+    "id": "bayesian-optimization",
+    "title": "贝叶斯优化",
+    "description": "每次函数评价昂贵，如何选择更有价值的下一次实验？",
+    "date": "2026-10-09",
+    "tags": [
+      "优化",
+      "昂贵实验",
+      "代理模型"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "回归",
+      "概率分布",
+      "目标函数"
+    ],
+    "draft": false,
+    "family": "优化",
+    "problem": "每次函数评价昂贵，如何选择更有价值的下一次实验？",
+    "english": "Bayesian Optimization",
+    "shortEnglish": "Bayesian Opt.",
+    "group": "optimization",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "optimization",
+      "probabilistic-inference",
+      "regression"
+    ],
+    "detailConceptId": "bayesian-optimization",
+    "lessonId": null,
+    "historyEventIds": [
+      "ego"
+    ],
+    "referenceIds": [
+      "res-ax-dev-de6e11afbe",
+      "res-pymoo-org-9d6ad8f27d"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "网格或随机搜索可能花费大量评价预算。贝叶斯优化利用已有观测，在模型指导下分配下一次评价。它优化的是原始目标函数，不是语言模型的回答。",
+      "coreIdea": "建立目标函数的概率代理模型，再用采集函数平衡探索未知区域与利用已有好点。选点、真实评价、更新模型，构成循环。常见代理模型包括高斯过程，但 BO 不限定一种模型。",
+      "assumptions": "- 设计空间、目标与约束定义明确。\n- 代理模型的结构与不确定性估计对问题足够有用。\n- 函数评价足够昂贵，使拟合模型和求解采集函数的成本值得付出。",
+      "limitations": "高维、混合变量、强非平稳或高度不连续的空间可能增加建模难度。模型不确定性失准会误导选点；不存在对所有问题都最优的 BO 配置。",
+      "engineering": "示例：优化一个需要数小时测试的材料配方，或选择需要昂贵仿真的工程设计参数。",
+      "alternatives": "评价便宜时先比较随机搜索、差分进化或其他直接搜索；能可靠获得梯度时考虑梯度法。先检查变量规模与建模成本。"
+    },
+    "references": [
+      {
+        "title": "Ax",
+        "url": "https://ax.dev/"
+      },
+      {
+        "title": "pymoo",
+        "url": "https://pymoo.org/"
+      }
+    ]
+  },
+  {
+    "id": "classification",
+    "title": "分类与决策阈值",
+    "description": "预测离散类别，并根据错误代价选择决策规则。",
+    "date": "2026-10-09",
+    "tags": [
+      "分类",
+      "评价",
+      "共同基础"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "回归或基本比例"
+    ],
+    "draft": false,
+    "family": "机器学习",
+    "problem": "预测离散类别，并根据错误代价选择决策规则。",
+    "english": "Classification",
+    "shortEnglish": "Classification",
+    "group": "learning",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "supervised",
+      "probability"
+    ],
+    "detailConceptId": "classification",
+    "lessonId": "classification-lab",
+    "historyEventIds": [
+      "perceptron",
+      "svm-1995",
+      "random-forests"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-41c32b4592",
+      "res-developers-google-com-bbeed2b245"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "标签定义明确，训练数据能够代表实际使用场景。分数不自动等同于可靠概率；需要时应检查校准。",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google：分类",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification"
+      },
+      {
+        "title": "Google：分类指标",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+      }
+    ]
+  },
+  {
+    "id": "clustering",
+    "title": "聚类与相似性",
+    "description": "没有类别标签时，根据相似性探索样本分组。",
+    "date": "2026-10-09",
+    "tags": [
+      "无监督学习",
+      "数据",
+      "探索"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "向量与距离"
+    ],
+    "draft": false,
+    "family": "机器学习",
+    "problem": "没有类别标签时，根据相似性探索样本分组。",
+    "english": "Clustering",
+    "shortEnglish": "Clustering",
+    "group": "learning",
+    "mapOrder": 5,
+    "foundationConceptIds": [
+      "unsupervised",
+      "linear-algebra"
+    ],
+    "detailConceptId": "clustering",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-developers-google-com-d922e6fab0",
+      "res-developers-google-com-20dd1f0c9d"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "特征尺度和距离应有意义。按温度与转速分组时，不能让数值范围较大的特征在没有理由的情况下主导距离。",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": "有可靠类别标签时可考虑监督分类。存在不规则形状或噪声时，应检查其他聚类方法是否更适合，而不是仅调整 k。"
+    },
+    "references": [
+      {
+        "title": "Google：聚类导论",
+        "url": "https://developers.google.com/machine-learning/clustering"
+      },
+      {
+        "title": "Google：什么是聚类",
+        "url": "https://developers.google.com/machine-learning/clustering/overview"
+      }
+    ]
+  },
+  {
+    "id": "data-evaluation",
+    "title": "数据处理与模型评价",
+    "description": "把数据划分、预处理、基线和评价放在同一个流程里。",
+    "date": "2026-10-09",
+    "tags": [
+      "共同基础",
+      "泛化",
+      "评价"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "回归与分类的概念"
+    ],
+    "draft": false,
+    "family": "共同基础",
+    "problem": "把数据划分、预处理、基线和评价放在同一个流程里。",
+    "english": "Data & Evaluation",
+    "shortEnglish": "Data & Evaluation",
+    "group": "foundations",
+    "mapOrder": 3,
+    "foundationConceptIds": [],
+    "detailConceptId": "data-evaluation",
+    "lessonId": null,
+    "historyEventIds": [
+      "imagenet",
+      "alexnet",
+      "alphafold2"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-f25a435a83",
+      "res-scikit-learn-org-64104a5181"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google：数据划分",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+      },
+      {
+        "title": "scikit-learn 实验陷阱",
+        "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+      }
+    ]
+  },
+  {
+    "id": "formal-methods",
+    "title": "形式化方法",
+    "description": "能否在明确假设和模型下证明系统满足某个性质？",
+    "date": "2026-10-09",
+    "tags": [
+      "验证",
+      "约束",
+      "证明"
+    ],
+    "difficulty": "进阶",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "基本逻辑",
+      "系统模型"
+    ],
+    "draft": false,
+    "family": "验证",
+    "problem": "能否在明确假设和模型下证明系统满足某个性质？",
+    "english": "Formal Methods",
+    "shortEnglish": "Formal Methods",
+    "group": "symbolic",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "logic",
+      "search"
+    ],
+    "detailConceptId": "formal-methods",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-z3prover-github-io-bea2dcd166"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "有限测试只能覆盖有限输入。形式化方法把系统与性质变成数学对象，利用逻辑推理、求解器或模型检查分析满足性与反例。",
+      "coreIdea": "例如表达约束 $C(x)$，要证明性质 $P(x)$，可以尝试求解 $C(x)\\land\\neg P(x)$。若可靠求解得到 unsat，就排除了该编码下的反例；sat 给出模型，unknown 不能当作证明。",
+      "assumptions": "- 系统编码、抽象与边界条件正确。\n- 性质确实表达工程需求。\n- 求解器能力适合所用理论，结论解释与求解结果一致。",
+      "limitations": "证明的是模型中的性质。离散化、线性化或有界展开的证明不能自动推广到真实连续系统；大规模与非线性问题可能很难求解。",
+      "engineering": "示例：证明离散控制逻辑不会进入非法状态，或验证一个参数约束集合是否存在可行解。物理系统需要说明建模误差与有效范围。",
+      "alternatives": "仿真用于观察具体运行，统计测试用于估计特定分布下的表现。形式化分析、仿真与测量可以互补，各自回答不同的问题。"
+    },
+    "references": [
+      {
+        "title": "Programming Z3",
+        "url": "https://z3prover.github.io/papers/programmingz3.html"
+      }
+    ]
+  },
+  {
+    "id": "generative-models",
+    "title": "深度生成模型",
+    "description": "从数据学习生成机制，比较对抗训练与扩散两条路线。",
+    "date": "2026-10-09",
+    "tags": [
+      "深度学习",
+      "生成模型",
+      "GAN",
+      "扩散"
+    ],
+    "difficulty": "进阶",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "概率",
+      "神经网络",
+      "训练与评价"
+    ],
+    "draft": false,
+    "family": "深度学习",
+    "problem": "希望产生与训练数据具有相关结构的新样本。",
+    "english": "Deep Generative Models",
+    "shortEnglish": "Generative Models",
+    "group": "generation",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "deep-learning",
+      "probability"
+    ],
+    "detailConceptId": "generative-models",
+    "lessonId": null,
+    "historyEventIds": [
+      "gan",
+      "ddpm"
+    ],
+    "referenceIds": [
+      "res-proceedings-neurips-cc-5e7488b853",
+      "res-proceedings-neurips-cc-2f461f2739"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Generative Adversarial Nets",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html"
+      },
+      {
+        "title": "Denoising Diffusion Probabilistic Models",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html"
+      }
+    ]
+  },
+  {
+    "id": "graph-neural-networks",
+    "title": "图神经网络",
+    "description": "数据由实体和连接组成，怎样利用拓扑关系学习表示？",
+    "date": "2026-10-09",
+    "tags": [
+      "深度学习",
+      "数据",
+      "图结构"
+    ],
+    "difficulty": "进阶",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "神经网络",
+      "向量",
+      "基本图概念"
+    ],
+    "draft": false,
+    "family": "深度学习",
+    "problem": "数据由实体和连接组成，怎样利用拓扑关系学习表示？",
+    "english": "Graph Neural Networks",
+    "shortEnglish": "GNNs",
+    "group": "neural",
+    "mapOrder": 5,
+    "foundationConceptIds": [
+      "deep-learning"
+    ],
+    "detailConceptId": "graph-neural-networks",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-arxiv-org-f5d4559d7d",
+      "res-introtodeeplearning-com-89247b19be"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "图没有固定的像素网格，节点编号也常常没有物理意义。许多 GNN 以邻域聚合编码关系，减少对任意编号的依赖。GCN 是其中一种结构，不代表全部 GNN。",
+      "coreIdea": "节点接收邻居的信息，与自身表示组合，重复若干层。根据任务预测节点、边或整个图的属性；聚合与读出设计应满足所需的排列不变性或等变性。",
+      "assumptions": "- 连接与节点特征包含任务相关信息。\n- 构图规则与实际关系相符。\n- 训练与测试图之间的差异符合计划评估的泛化情形。",
+      "limitations": "构图质量、长距离依赖和表达能力影响效果。深层消息传递可能产生过平滑等问题；局部表示不天然保证全局物理约束。",
+      "engineering": "示例：将原子与化学键构成分子图，或将工程网络中的组件与连接表示为图。",
+      "alternatives": "先比较手工图特征加树模型、传统图算法或物理求解器。拓扑并非主要信息时，表格模型可能足够。"
+    },
+    "references": [
+      {
+        "title": "Kipf & Welling: Semi-Supervised Classification with GCNs",
+        "url": "https://arxiv.org/abs/1609.02907"
+      },
+      {
+        "title": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/"
+      }
+    ]
+  },
+  {
+    "id": "multi-objective",
+    "title": "多目标与约束优化",
+    "description": "目标相互冲突，怎样找到可行且有意义的性能取舍？",
+    "date": "2026-10-09",
+    "tags": [
+      "优化",
+      "Pareto",
+      "约束"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "目标函数",
+      "基本优化"
+    ],
+    "draft": false,
+    "family": "优化",
+    "problem": "目标相互冲突，怎样找到可行且有意义的性能取舍？",
+    "english": "Multi-objective & Constrained Optimization",
+    "shortEnglish": "Multi-objective Opt.",
+    "group": "optimization",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "optimization",
+      "data-evaluation"
+    ],
+    "detailConceptId": "multi-objective",
+    "lessonId": null,
+    "historyEventIds": [
+      "nsga-ii"
+    ],
+    "referenceIds": [
+      "res-pymoo-org-950177fe9b"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "把功耗、速度、重量和成本随意相加，会隐藏偏好与单位差异。多目标优化保留多个目标，让研究者看到取舍；约束规定哪些结果才允许接受。",
+      "coreIdea": "对最小化问题，如果一个解在所有目标上不差，并至少一个目标更好，它就支配另一个解。不能被支配的解构成 Pareto 解集。可行性应先依据约束明确判断。",
+      "assumptions": "- 目标的方向、单位和可接受约束事先确定。\n- 用于比较的解经过一致的评价条件。\n- 最终选择仍需要工程偏好，算法不会替你决定所有权衡。",
+      "limitations": "权重、归一化、参考点与约束处理会改变结果。有限预算得到的是近似前沿；高维目标会使比较和可视化困难。",
+      "engineering": "示例：在重量与刚度之间选择机械结构，或在精度与推理延迟之间选择模型部署方案。",
+      "alternatives": "有明确偏好时可使用标量化；有硬指标时可把它们设为约束，仅优化一个主要目标。加权和并不能覆盖所有非凸前沿。"
+    },
+    "references": [
+      {
+        "title": "pymoo · Getting started",
+        "url": "https://pymoo.org/getting_started/index.html"
+      }
+    ]
+  },
+  {
+    "id": "neural-networks",
+    "title": "神经网络与非线性表示",
+    "description": "通过多层计算学习非线性关系，再用新数据检查效果。",
+    "date": "2026-10-09",
+    "tags": [
+      "深度学习",
+      "非线性",
+      "表示"
+    ],
+    "difficulty": "进阶",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "回归",
+      "分类",
+      "向量与基本微积分"
+    ],
+    "draft": false,
+    "family": "深度学习",
+    "problem": "通过多层计算学习非线性关系，再用新数据检查效果。",
+    "english": "Neural Networks",
+    "shortEnglish": "Neural Networks",
+    "group": "neural",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "linear-algebra",
+      "training",
+      "generalization"
+    ],
+    "detailConceptId": "neural-networks",
+    "lessonId": null,
+    "historyEventIds": [
+      "mcculloch-pitts",
+      "perceptron",
+      "backprop-1986",
+      "cnn-1989",
+      "lstm",
+      "alexnet",
+      "dqn",
+      "alphafold2"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-6189892c46",
+      "res-introtodeeplearning-com-89247b19be"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "一层常由线性变换与非线性激活组成，例如 $h=\\max(0,wx+b)$。这里 $x$ 是输入，$w,b$ 是参数，$h$ 是输出；这个激活称为 ReLU。\n\n只叠加线性变换，整体仍是线性变换。加入非线性后，网络能够表示更复杂的函数。多层网络形成深度学习中的常见模型。",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google：神经网络",
+        "url": "https://developers.google.com/machine-learning/crash-course/neural-networks"
+      },
+      {
+        "title": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/"
+      }
+    ]
+  },
+  {
+    "id": "probabilistic-inference",
+    "title": "概率建模与推理",
+    "description": "用概率表达未知信息，并在获得观察后更新判断。",
+    "date": "2026-10-09",
+    "tags": [
+      "概率",
+      "推理",
+      "不确定性"
+    ],
+    "difficulty": "进阶",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "条件概率",
+      "基本代数"
+    ],
+    "draft": false,
+    "family": "推理与验证",
+    "problem": "观察不完整或带有噪声时，怎样表达与更新判断？",
+    "english": "Probabilistic Modeling & Inference",
+    "shortEnglish": "Probabilistic Inference",
+    "group": "probabilistic",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "probability"
+    ],
+    "detailConceptId": "probabilistic-inference",
+    "lessonId": null,
+    "historyEventIds": [
+      "pearl-1988"
+    ],
+    "referenceIds": [
+      "res-www-sciencedirect-com-9c38bd8367",
+      "res-inst-eecs-berkeley-edu-ee6765d9c1"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Probabilistic Reasoning in Intelligent Systems",
+        "url": "https://www.sciencedirect.com/book/monograph/9780080514895/probabilistic-reasoning-in-intelligent-systems"
+      },
+      {
+        "title": "Berkeley CS188",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/"
+      }
+    ]
+  },
+  {
+    "id": "regression",
+    "title": "回归与监督学习",
+    "description": "已知输入与连续输出的样本，预测新输入对应的结果。",
+    "date": "2026-10-09",
+    "tags": [
+      "预测",
+      "数据",
+      "泛化"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "函数",
+      "基本代数"
+    ],
+    "draft": false,
+    "family": "机器学习",
+    "problem": "已知输入与连续输出的样本，预测新输入对应的结果。",
+    "english": "Regression & Supervised Learning",
+    "shortEnglish": "Regression",
+    "group": "learning",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "supervised",
+      "linear-algebra"
+    ],
+    "detailConceptId": "regression",
+    "lessonId": "regression-lab",
+    "historyEventIds": [
+      "random-forests"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-d78d5ccdf6",
+      "res-scikit-learn-org-a0a701fbf2",
+      "res-scikit-learn-org-64104a5181"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "当解析模型难以建立，但有成对的输入与测量结果时，可以从数据估计映射。线性回归是理解这一思想的简单入口；监督学习还包括分类任务。",
+      "coreIdea": "给定样本 $(x_i,y_i)$，选择参数使预测与观测的误差较小。线性模型使用 $\\hat y=w^\\top x+b$；非线性模型改变函数族，但仍需评估新数据上的误差。\n\n$$L(w,b)=\\frac{1}{n}\\sum_{i=1}^{n}(y_i-w^\\top x_i-b)^2$$",
+      "assumptions": "- 输入特征包含与目标有关的信息。\n- 训练数据对未来使用环境有代表性；分布变化需要单独验证。\n- 标签、测量与划分方式可解释，没有来自测试集的信息泄漏。",
+      "limitations": "相关性不代表因果。测试误差小也不保证远离训练范围时准确；复杂模型可能过拟合。",
+      "engineering": "示例：用材料成分预测强度，或用设备温度与负载预测能耗。这里的案例说明任务结构，不代表已完成实验。",
+      "alternatives": "有可信机理模型时先使用解析或物理模型；小数据可考虑线性或树模型。寻找最优输入则需要额外的优化方法。"
+    },
+    "references": [
+      {
+        "title": "Google ML Crash Course",
+        "url": "https://developers.google.com/machine-learning/crash-course/"
+      },
+      {
+        "title": "scikit-learn Linear Models",
+        "url": "https://scikit-learn.org/stable/modules/linear_model.html"
+      },
+      {
+        "title": "scikit-learn 实验陷阱",
+        "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+      }
+    ]
+  },
+  {
+    "id": "reinforcement-learning",
+    "title": "强化学习",
+    "description": "行动改变未来状态，怎样学习获得较好长期结果的策略？",
+    "date": "2026-10-09",
+    "tags": [
+      "决策",
+      "MDP",
+      "策略"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "概率",
+      "状态与动作",
+      "期望"
+    ],
+    "draft": false,
+    "family": "决策",
+    "problem": "行动改变未来状态，怎样学习获得较好长期结果的策略？",
+    "english": "Reinforcement Learning",
+    "shortEnglish": "Reinforcement Learning",
+    "group": "decision",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "sequential",
+      "data-evaluation"
+    ],
+    "detailConceptId": "reinforcement-learning",
+    "lessonId": null,
+    "historyEventIds": [
+      "samuel-checkers",
+      "q-learning",
+      "dqn",
+      "alphago",
+      "deepseek-r1"
+    ],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-ee6765d9c1"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "单步预测无法直接回答如何连续行动。强化学习通过交互经验学习策略或价值；它与控制和规划有联系，但问题表述与训练方式需要具体区分。",
+      "coreIdea": "用状态、动作、转移与奖励描述环境。策略决定行动，回报汇总长期奖励。MDP 是建模框架；已知模型时可以规划，未知模型时可以从经验学习。",
+      "assumptions": "- 状态表示足以支持当前决策，或使用能够处理部分可观测性的模型。\n- 奖励与真正目标相符。\n- 交互成本、安全边界与训练预算可接受。",
+      "limitations": "训练可能消耗大量交互。奖励设计、分布变化与探索行为都会影响结果；把静态参数搜索包装成序列，并不会自动使 RL 更合适。",
+      "engineering": "示例：机器人控制、储能调度与连续资源分配。需要同时比较控制或规划基线，不能只看训练回报。",
+      "alternatives": "已知动力学时考虑模型预测控制、动态规划或规划方法；一次性黑盒参数优化可先考虑 BO 或直接搜索。"
+    },
+    "references": [
+      {
+        "title": "Berkeley CS188",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/"
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "title": "搜索与启发式",
+    "description": "给定状态、动作和目标，怎样找到解或低成本路径？",
+    "date": "2026-10-09",
+    "tags": [
+      "搜索",
+      "规划",
+      "约束"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "基本编程",
+      "图概念"
+    ],
+    "draft": false,
+    "family": "搜索",
+    "problem": "给定状态、动作和目标，怎样找到解或低成本路径？",
+    "english": "Search & Heuristics",
+    "shortEnglish": "Search & Planning",
+    "group": "symbolic",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "logic"
+    ],
+    "detailConceptId": "search",
+    "lessonId": null,
+    "historyEventIds": [
+      "samuel-checkers",
+      "dendral",
+      "astar",
+      "alphago"
+    ],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-ee6765d9c1"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "枚举所有可能行动会迅速产生巨大空间。搜索方法组织探索顺序；启发式利用问题知识，引导探索更可能有价值的状态。",
+      "coreIdea": "定义起点、后继与目标。BFS 按深度探索，DFS 沿路径深入；A* 根据已付出的路径成本与剩余成本估计排序。它们的保证依赖具体条件。",
+      "assumptions": "- 可以生成合法后继，并判断目标。\n- 成本定义与任务相符。\n- A* 的最优性需要合适的启发式与实现条件，如一致启发式下的标准图搜索。",
+      "limitations": "状态空间可能非常大。启发式质量决定效率；知识不足时搜索退化，知识错误时可能误导。",
+      "engineering": "示例：路线规划、离散工艺步骤选择或满足规则的配置搜索。连续参数问题也可以离散化，但会损失精度并扩大空间。",
+      "alternatives": "带大量逻辑约束时可考虑约束满足或 SAT/SMT；连续变量可考虑数学优化。规则未知时需要学习或系统辨识。"
+    },
+    "references": [
+      {
+        "title": "Berkeley CS188",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/"
+      }
+    ]
+  },
+  {
+    "id": "transformers",
+    "title": "Transformer 与语言模型",
+    "description": "如何建模序列关系，并将预训练能力迁移到语言任务？",
+    "date": "2026-10-09",
+    "tags": [
+      "深度学习",
+      "LLM",
+      "序列"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 4,
+    "prerequisites": [
+      "神经网络",
+      "向量与矩阵"
+    ],
+    "draft": false,
+    "family": "深度学习",
+    "problem": "如何建模序列关系，并将预训练能力迁移到语言任务？",
+    "english": "Transformers & Language Models",
+    "shortEnglish": "Transformers",
+    "group": "neural",
+    "mapOrder": 4,
+    "foundationConceptIds": [
+      "deep-learning",
+      "probability"
+    ],
+    "detailConceptId": "transformers",
+    "lessonId": null,
+    "historyEventIds": [
+      "transformer",
+      "bert",
+      "gpt3",
+      "rag",
+      "instructgpt",
+      "chatgpt",
+      "o1",
+      "deepseek-r1"
+    ],
+    "referenceIds": [
+      "res-arxiv-org-a7468c6851",
+      "res-introtodeeplearning-com-89247b19be"
+    ],
+    "atlas": true,
+    "sections": {
+      "motivation": "循环结构按步处理序列，长距离依赖和训练并行化各有困难。Transformer 以注意力建立位置之间的关系，成为现代语言模型的重要基础。",
+      "coreIdea": "注意力根据查询与键的匹配，对值进行加权组合；多头与多层结构学习不同关系。语言模型常以预测下一个 token 等目标预训练，生成阶段则根据上下文逐步输出。",
+      "assumptions": "- 序列或 token 表示适合任务。\n- 训练数据、上下文与评价任务的关系得到检查。\n- 生成结果有独立核查方式，尤其是计算、事实与工程约束。",
+      "limitations": "生成流畅与结果正确是不同指标。注意力和长上下文有计算成本；模型不会仅因见过类似文本就保证计算或事实可靠。",
+      "engineering": "示例：提取工程文档信息，生成工具调用参数，或解释结构化仿真日志。数值结果仍需来自真实工具与检查。",
+      "alternatives": "结构固定的数据提取可用解析器；表格预测可用传统模型；明确公式计算应直接使用数值工具。"
+    },
+    "references": [
+      {
+        "title": "Attention Is All You Need",
+        "url": "https://arxiv.org/abs/1706.03762"
+      },
+      {
+        "title": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/"
+      }
+    ]
+  },
+  {
+    "id": "bayes-networks",
+    "title": "贝叶斯网络",
+    "english": "Bayesian Networks",
+    "description": "用图结构描述变量之间的条件依赖，再在模型假设下进行推断。",
+    "date": "2026-10-09",
+    "tags": [
+      "probabilistic"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "用图结构描述变量之间的条件依赖，再在模型假设下进行推断。",
+    "shortEnglish": "Bayesian Networks",
+    "group": "probabilistic",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "probabilistic-inference",
+      "logic"
+    ],
+    "detailConceptId": "probabilistic-inference",
+    "lessonId": null,
+    "historyEventIds": [
+      "pearl-1988"
+    ],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-816d7bbae3"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Berkeley · CS188 6.3",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/representation.html"
+      }
+    ]
+  },
+  {
+    "id": "cnn",
+    "title": "卷积神经网络",
+    "english": "Convolutional Neural Networks (CNNs)",
+    "description": "从局部模式组织图像等结构输入；代表历史工作见手写数字识别与 AlexNet。",
+    "date": "2026-10-09",
+    "tags": [
+      "neural"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "从局部模式组织图像等结构输入；代表历史工作见手写数字识别与 AlexNet。",
+    "shortEnglish": "CNNs",
+    "group": "neural",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "deep-learning"
+    ],
+    "detailConceptId": "neural-networks",
+    "lessonId": null,
+    "historyEventIds": [
+      "cnn-1989",
+      "alexnet"
+    ],
+    "referenceIds": [
+      "res-zh-d2l-ai-7c2badc284"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 6.1",
+        "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/why-conv.html"
+      }
+    ]
+  },
+  {
+    "id": "deep-learning",
+    "title": "深度学习",
+    "english": "Deep Learning",
+    "description": "通过多层网络学习表示，可用于监督、无监督和强化学习等任务。",
+    "date": "2026-10-09",
+    "tags": [
+      "neural"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "通过多层网络学习表示，可用于监督、无监督和强化学习等任务。",
+    "shortEnglish": "Deep Learning",
+    "group": "neural",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "neural-networks"
+    ],
+    "detailConceptId": "deep-learning",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-zh-d2l-ai-4f891233cd"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 4.1",
+        "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html"
+      }
+    ]
+  },
+  {
+    "id": "deep-rl",
+    "title": "深度强化学习",
+    "english": "Deep Reinforcement Learning",
+    "description": "用神经网络表示价值或策略；DQN 和 AlphaGo 展示不同组合方式。",
+    "date": "2026-10-09",
+    "tags": [
+      "decision"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "用神经网络表示价值或策略；DQN 和 AlphaGo 展示不同组合方式。",
+    "shortEnglish": "Deep RL",
+    "group": "decision",
+    "mapOrder": 3,
+    "foundationConceptIds": [
+      "reinforcement-learning",
+      "deep-learning"
+    ],
+    "detailConceptId": "reinforcement-learning",
+    "lessonId": null,
+    "historyEventIds": [
+      "dqn",
+      "alphago"
+    ],
+    "referenceIds": [
+      "res-introtodeeplearning-com-89247b19be"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/"
+      }
+    ]
+  },
+  {
+    "id": "diffusion",
+    "title": "扩散模型",
+    "english": "Diffusion Models",
+    "description": "通过噪声与去噪过程学习生成；与 GAN 是不同的机制。",
+    "date": "2026-10-09",
+    "tags": [
+      "generation"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "通过噪声与去噪过程学习生成；与 GAN 是不同的机制。",
+    "shortEnglish": "Diffusion Models",
+    "group": "generation",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "generative-models"
+    ],
+    "detailConceptId": "generative-models",
+    "lessonId": null,
+    "historyEventIds": [
+      "ddpm"
+    ],
+    "referenceIds": [
+      "res-huggingface-co-b8bd5e3543"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Hugging Face · Diffusion Course",
+        "url": "https://huggingface.co/learn/diffusion-course/en/unit1/1.1"
+      }
+    ]
+  },
+  {
+    "id": "foundation-models",
+    "title": "基础模型",
+    "english": "Foundation Models",
+    "description": "先预训练，再以不同方式用于下游任务。模型能力需要按具体任务检查。",
+    "date": "2026-10-09",
+    "tags": [
+      "generation"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "先预训练，再以不同方式用于下游任务。模型能力需要按具体任务检查。",
+    "shortEnglish": "Foundation Models",
+    "group": "generation",
+    "mapOrder": 3,
+    "foundationConceptIds": [
+      "deep-learning",
+      "generalization",
+      "self-supervised"
+    ],
+    "detailConceptId": "transformers",
+    "lessonId": null,
+    "historyEventIds": [
+      "bert",
+      "gpt3"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-394a40476a"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google · Large Language Models · 大语言模型",
+        "url": "https://developers.google.com/machine-learning/crash-course/llm?hl=zh-cn"
+      }
+    ]
+  },
+  {
+    "id": "gan",
+    "title": "生成对抗网络",
+    "english": "Generative Adversarial Networks (GANs)",
+    "description": "生成器与判别器共同训练，是一种生成建模机制。",
+    "date": "2026-10-09",
+    "tags": [
+      "generation"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "生成器与判别器共同训练，是一种生成建模机制。",
+    "shortEnglish": "GANs",
+    "group": "generation",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "generative-models"
+    ],
+    "detailConceptId": "generative-models",
+    "lessonId": null,
+    "historyEventIds": [
+      "gan"
+    ],
+    "referenceIds": [
+      "res-introtodeeplearning-com-fa269e16b1"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "MIT · Deep Generative Modeling",
+        "url": "https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L4.pdf"
+      }
+    ]
+  },
+  {
+    "id": "generalization",
+    "title": "泛化与过拟合",
+    "english": "Generalization & Overfitting",
+    "description": "比较模型复杂度与验证误差，理解过拟合和数据泄漏。",
+    "date": "2026-10-09",
+    "tags": [
+      "foundations"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "比较模型复杂度与验证误差，理解过拟合和数据泄漏。",
+    "shortEnglish": "Generalization & Overfitting",
+    "group": "foundations",
+    "mapOrder": 4,
+    "foundationConceptIds": [
+      "data-evaluation",
+      "training"
+    ],
+    "detailConceptId": "generalization",
+    "lessonId": "overfitting-lab",
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-developers-google-com-188d3088c2",
+      "res-developers-google-com-911cab8534"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google · Generalization & Overfitting · 泛化与过拟合",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting?hl=zh-cn"
+      },
+      {
+        "title": "Google · Dataset Splits · 数据划分",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets?hl=zh-cn"
+      }
+    ]
+  },
+  {
+    "id": "language-models",
+    "title": "语言模型／大语言模型",
+    "english": "Language Models / Large Language Models (LLMs)",
+    "description": "理解语言建模、提示与上下文，再评估指令遵循和任务表现。",
+    "date": "2026-10-09",
+    "tags": [
+      "generation"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "理解语言建模、提示与上下文，再评估指令遵循和任务表现。",
+    "shortEnglish": "Language Models",
+    "group": "generation",
+    "mapOrder": 4,
+    "foundationConceptIds": [
+      "transformers",
+      "foundation-models"
+    ],
+    "detailConceptId": "transformers",
+    "lessonId": null,
+    "historyEventIds": [
+      "gpt3",
+      "instructgpt",
+      "chatgpt"
+    ],
+    "referenceIds": [
+      "res-developers-google-com-394a40476a"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google · Large Language Models · 大语言模型",
+        "url": "https://developers.google.com/machine-learning/crash-course/llm?hl=zh-cn"
+      }
+    ]
+  },
+  {
+    "id": "linear-algebra",
+    "title": "线性代数",
+    "english": "Linear Algebra",
+    "description": "用向量表达样本，用矩阵表达变换；可结合回归实验入门。",
+    "date": "2026-10-09",
+    "tags": [
+      "foundations"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "用向量表达样本，用矩阵表达变换；可结合回归实验入门。",
+    "shortEnglish": "Linear Algebra",
+    "group": "foundations",
+    "mapOrder": 0,
+    "foundationConceptIds": [],
+    "detailConceptId": "linear-algebra",
+    "lessonId": "regression-lab",
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-zh-d2l-ai-4be218a88d"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 2.3",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html"
+      }
+    ]
+  },
+  {
+    "id": "logic",
+    "title": "逻辑与知识表示",
+    "english": "Logic & Knowledge Representation",
+    "description": "把对象、关系和规则表达清楚，区分模型中的结论与真实系统。",
+    "date": "2026-10-09",
+    "tags": [
+      "symbolic"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "把对象、关系和规则表达清楚，区分模型中的结论与真实系统。",
+    "shortEnglish": "Logic & KR",
+    "group": "symbolic",
+    "mapOrder": 0,
+    "foundationConceptIds": [],
+    "detailConceptId": "logic",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-d9b7e8caf4"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Berkeley · CS188 10.2",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/language.html"
+      }
+    ]
+  },
+  {
+    "id": "lstm",
+    "title": "长短期记忆网络",
+    "english": "Long Short-Term Memory (LSTM)",
+    "description": "用状态处理序列，并通过门控管理信息；与注意力架构比较建模方式。",
+    "date": "2026-10-09",
+    "tags": [
+      "neural"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "用状态处理序列，并通过门控管理信息；与注意力架构比较建模方式。",
+    "shortEnglish": "LSTM",
+    "group": "neural",
+    "mapOrder": 3,
+    "foundationConceptIds": [
+      "deep-learning"
+    ],
+    "detailConceptId": "neural-networks",
+    "lessonId": null,
+    "historyEventIds": [
+      "lstm"
+    ],
+    "referenceIds": [
+      "res-zh-d2l-ai-dbed84149c"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 9.2",
+        "url": "https://zh.d2l.ai/chapter_recurrent-modern/lstm.html"
+      }
+    ]
+  },
+  {
+    "id": "optimization",
+    "title": "优化问题",
+    "english": "Optimization",
+    "description": "先定义目标和可行范围，选择参数与训练模型都需要明确优化问题。",
+    "date": "2026-10-09",
+    "tags": [
+      "optimization"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "先定义目标和可行范围，选择参数与训练模型都需要明确优化问题。",
+    "shortEnglish": "Optimization",
+    "group": "optimization",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "linear-algebra",
+      "training"
+    ],
+    "detailConceptId": "optimization",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-zh-d2l-ai-962c2b68aa",
+      "res-ax-dev-de6e11afbe"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 11.3",
+        "url": "https://zh.d2l.ai/chapter_optimization/gd.html"
+      },
+      {
+        "title": "Ax",
+        "url": "https://ax.dev/"
+      }
+    ]
+  },
+  {
+    "id": "probability",
+    "title": "概率与统计",
+    "english": "Probability & Statistics",
+    "description": "理解概率、条件概率与采样，区分观测结果与不确定性。",
+    "date": "2026-10-09",
+    "tags": [
+      "foundations"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "理解概率、条件概率与采样，区分观测结果与不确定性。",
+    "shortEnglish": "Probability & Statistics",
+    "group": "foundations",
+    "mapOrder": 1,
+    "foundationConceptIds": [],
+    "detailConceptId": "probabilistic-inference",
+    "lessonId": null,
+    "historyEventIds": [
+      "pearl-1988"
+    ],
+    "referenceIds": [
+      "res-zh-d2l-ai-5df1ef65f3"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · 2.6",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html"
+      }
+    ]
+  },
+  {
+    "id": "q-learning",
+    "title": "Q 学习",
+    "english": "Q-learning",
+    "description": "通过经验更新动作价值，是理解强化学习的一条代表性入口。",
+    "date": "2026-10-09",
+    "tags": [
+      "decision"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "通过经验更新动作价值，是理解强化学习的一条代表性入口。",
+    "shortEnglish": "Q-learning",
+    "group": "decision",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "reinforcement-learning"
+    ],
+    "detailConceptId": "reinforcement-learning",
+    "lessonId": null,
+    "historyEventIds": [
+      "q-learning"
+    ],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-19bd536f50"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Berkeley · CS188 5.3",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/rl/mfl.html"
+      }
+    ]
+  },
+  {
+    "id": "rag",
+    "title": "检索增强生成",
+    "english": "Retrieval-Augmented Generation (RAG)",
+    "description": "检索相关材料再生成答案；检索质量、来源与答案都需要检查。",
+    "date": "2026-10-09",
+    "tags": [
+      "systems"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "检索相关材料再生成答案；检索质量、来源与答案都需要检查。",
+    "shortEnglish": "RAG",
+    "group": "systems",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "language-models",
+      "data-evaluation"
+    ],
+    "detailConceptId": "agents",
+    "lessonId": null,
+    "historyEventIds": [
+      "rag"
+    ],
+    "referenceIds": [
+      "res-huggingface-co-116732f0a8"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Hugging Face · RAG Cookbook",
+        "url": "https://huggingface.co/learn/cookbook/en/rag_zephyr"
+      }
+    ]
+  },
+  {
+    "id": "reasoning",
+    "title": "推理与评测",
+    "english": "Reasoning & Evaluation",
+    "description": "比较具体任务上的表现、成本和可验证结果，关注能力的不均衡。",
+    "date": "2026-10-09",
+    "tags": [
+      "systems"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "比较具体任务上的表现、成本和可验证结果，关注能力的不均衡。",
+    "shortEnglish": "Reasoning & Evaluation",
+    "group": "systems",
+    "mapOrder": 3,
+    "foundationConceptIds": [
+      "language-models",
+      "reinforcement-learning",
+      "data-evaluation"
+    ],
+    "detailConceptId": "transformers",
+    "lessonId": null,
+    "historyEventIds": [
+      "o1",
+      "deepseek-r1"
+    ],
+    "referenceIds": [
+      "res-arxiv-org-4cd8fde22d"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "DeepSeek-R1 · 原始研究论文",
+        "url": "https://arxiv.org/abs/2501.12948"
+      }
+    ]
+  },
+  {
+    "id": "self-supervised",
+    "title": "自监督学习",
+    "english": "Self-supervised Learning",
+    "description": "从数据自身构造预测目标来学习表示；它与模型架构是不同维度。",
+    "date": "2026-10-09",
+    "tags": [
+      "learning"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "从数据自身构造预测目标来学习表示；它与模型架构是不同维度。",
+    "shortEnglish": "Self-supervised",
+    "group": "learning",
+    "mapOrder": 4,
+    "foundationConceptIds": [
+      "data-evaluation",
+      "training"
+    ],
+    "detailConceptId": "self-supervised",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-zh-d2l-ai-eb0c6b5b62"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Dive into Deep Learning · 动手学深度学习 · BERT",
+        "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html"
+      }
+    ]
+  },
+  {
+    "id": "sequential",
+    "title": "序贯决策",
+    "english": "Sequential Decision Making",
+    "description": "当前行动影响后续选择，需明确状态、动作、反馈与评价预算。",
+    "date": "2026-10-09",
+    "tags": [
+      "decision"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "当前行动影响后续选择，需明确状态、动作、反馈与评价预算。",
+    "shortEnglish": "Sequential Decisions",
+    "group": "decision",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "probability",
+      "search"
+    ],
+    "detailConceptId": "sequential",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-inst-eecs-berkeley-edu-3344ef980a"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Berkeley · CS188 4.1",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/markov-decision-processes.html"
+      }
+    ]
+  },
+  {
+    "id": "statistical-models",
+    "title": "统计学习模型",
+    "english": "Statistical Learning Models",
+    "description": "多种模型能解决同一个任务，比较假设、数据要求与验证误差。",
+    "date": "2026-10-09",
+    "tags": [
+      "probabilistic"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "多种模型能解决同一个任务，比较假设、数据要求与验证误差。",
+    "shortEnglish": "Statistical Models",
+    "group": "probabilistic",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "regression",
+      "classification",
+      "generalization"
+    ],
+    "detailConceptId": "classification",
+    "lessonId": null,
+    "historyEventIds": [
+      "svm-1995",
+      "random-forests"
+    ],
+    "referenceIds": [
+      "res-scikit-learn-org-a3bde06f62",
+      "res-scikit-learn-org-73de612c66"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "scikit-learn · Support Vector Machines · 支持向量机",
+        "url": "https://scikit-learn.org/stable/modules/svm.html"
+      },
+      {
+        "title": "scikit-learn · Random Forests · 随机森林",
+        "url": "https://scikit-learn.org/stable/modules/ensemble.html"
+      }
+    ]
+  },
+  {
+    "id": "supervised",
+    "title": "监督学习",
+    "english": "Supervised Learning",
+    "description": "用输入与目标值学习预测关系，先区分连续目标和类别目标。",
+    "date": "2026-10-09",
+    "tags": [
+      "learning"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "用输入与目标值学习预测关系，先区分连续目标和类别目标。",
+    "shortEnglish": "Supervised Learning",
+    "group": "learning",
+    "mapOrder": 0,
+    "foundationConceptIds": [
+      "data-evaluation"
+    ],
+    "detailConceptId": "supervised",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-developers-google-com-d2e89a7c61"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google · Introduction to ML",
+        "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml?hl=zh-cn"
+      }
+    ]
+  },
+  {
+    "id": "tool-use",
+    "title": "工具调用",
+    "english": "Tool Use",
+    "description": "把工具输入、输出和错误写清楚，独立核查调用结果。",
+    "date": "2026-10-09",
+    "tags": [
+      "systems"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "把工具输入、输出和错误写清楚，独立核查调用结果。",
+    "shortEnglish": "Tool Use",
+    "group": "systems",
+    "mapOrder": 1,
+    "foundationConceptIds": [
+      "language-models",
+      "logic"
+    ],
+    "detailConceptId": "agents",
+    "lessonId": null,
+    "historyEventIds": [
+      "toolformer"
+    ],
+    "referenceIds": [
+      "res-huggingface-co-0671127e4d"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Hugging Face · Tools",
+        "url": "https://huggingface.co/learn/agents-course/en/unit1/tools"
+      }
+    ]
+  },
+  {
+    "id": "training",
+    "title": "损失与参数更新",
+    "english": "Loss & Parameter Updates",
+    "description": "区分预测目标、损失和优化过程，用最小回归模型观察参数更新。",
+    "date": "2026-10-09",
+    "tags": [
+      "foundations"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "区分预测目标、损失和优化过程，用最小回归模型观察参数更新。",
+    "shortEnglish": "Loss & Training",
+    "group": "foundations",
+    "mapOrder": 2,
+    "foundationConceptIds": [
+      "linear-algebra"
+    ],
+    "detailConceptId": "training",
+    "lessonId": "regression-lab",
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-developers-google-com-e6ea2ed78a"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "Google · Linear Regression · 线性回归",
+        "url": "https://developers.google.com/machine-learning/crash-course/linear-regression?hl=zh-cn"
+      }
+    ]
+  },
+  {
+    "id": "unsupervised",
+    "title": "无监督学习",
+    "english": "Unsupervised Learning",
+    "description": "在没有目标标签时探索结构。发现的模式仍需要解释和验证。",
+    "date": "2026-10-09",
+    "tags": [
+      "learning"
+    ],
+    "difficulty": "入门",
+    "estimatedReadingTime": 2,
+    "prerequisites": [],
+    "draft": false,
+    "family": "Concept · 概念",
+    "problem": "在没有目标标签时探索结构。发现的模式仍需要解释和验证。",
+    "shortEnglish": "Unsupervised",
+    "group": "learning",
+    "mapOrder": 3,
+    "foundationConceptIds": [
+      "data-evaluation"
+    ],
+    "detailConceptId": "unsupervised",
+    "lessonId": null,
+    "historyEventIds": [],
+    "referenceIds": [
+      "res-scikit-learn-org-3e48badc01"
+    ],
+    "atlas": false,
+    "sections": {
+      "motivation": "",
+      "coreIdea": "",
+      "assumptions": "",
+      "limitations": "",
+      "engineering": "",
+      "alternatives": ""
+    },
+    "references": [
+      {
+        "title": "scikit-learn · Clustering",
+        "url": "https://scikit-learn.org/stable/modules/clustering.html"
+      }
+    ]
+  }
+]

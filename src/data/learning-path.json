@@ -1,0 +1,1156 @@
+[
+  {
+    "id": "first-step",
+    "camp": "trail",
+    "title": "Prediction Tasks · 预测任务",
+    "titleEn": "Prediction Tasks",
+    "titleZh": "预测任务",
+    "minutes": 5,
+    "prerequisites": [],
+    "knowledge": [
+      "supervised"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-see-supervised",
+        "label": "Stanford SEE CS229 · Supervised Learning · 监督学习",
+        "url": "https://see.stanford.edu/Course/CS229/47",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 跳到官方书签 36:17（Supervised Learning），看约 3 分钟，再用 2 分钟写下输入与目标。无需看完这一讲。"
+      },
+      {
+        "resourceId": "res-developers-google-com-d2e89a7c61",
+        "label": "Google · Introduction to ML",
+        "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "只看介绍与监督学习的开头；先不进入编程。"
+      }
+    ],
+    "check": "用自己的一个工程问题，写下输入与希望预测的结果。",
+    "outcomes": [
+      "用自己的一个工程问题，写下输入与希望预测的结果。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "first-prediction",
+    "camp": "trail",
+    "title": "Linear Regression · 线性回归",
+    "titleEn": "Linear Regression",
+    "titleZh": "线性回归",
+    "minutes": 8,
+    "prerequisites": [
+      "first-step"
+    ],
+    "knowledge": [
+      "regression",
+      "training"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-see-linear",
+        "label": "Stanford SEE CS229 · Linear Regression & Gradient Descent · 线性回归与梯度下降",
+        "url": "https://see.stanford.edu/Course/CS229/54",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 跳到 09:35（Linear Regression），先看约 5 分钟的直线与预测例子；再完成本关检查。"
+      },
+      {
+        "resourceId": "res-developers-google-com-e6ea2ed78a",
+        "label": "Google · Linear Regression · 线性回归",
+        "url": "https://developers.google.com/machine-learning/crash-course/linear-regression?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "只看开头的直线例子与参数说明；公式推导留到数学基础部分。"
+      }
+    ],
+    "check": "画一条直线，指出哪个数是预测值，哪个数来自观测。",
+    "outcomes": [
+      "画一条直线，指出哪个数是预测值，哪个数来自观测。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "first-category",
+    "camp": "trail",
+    "title": "Classification · 分类",
+    "titleEn": "Classification",
+    "titleZh": "分类",
+    "minutes": 10,
+    "prerequisites": [
+      "first-prediction"
+    ],
+    "knowledge": [
+      "classification"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-see-generalization",
+        "label": "Stanford SEE CS229 · Generalization & Logistic Regression · 泛化与逻辑回归",
+        "url": "https://see.stanford.edu/Course/CS229/42",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 跳到 49:49（Motivation of Logistic Regression），先看分类动机；用文字资料的阈值例子核对检查。"
+      },
+      {
+        "resourceId": "res-developers-google-com-5aaef929d8",
+        "label": "Google · Classification · 分类",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "先看分类概览；再查看一个阈值例子。"
+      },
+      {
+        "resourceId": "res-developers-google-com-95d5eee347",
+        "label": "Google · Classification Threshold · 分类阈值",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification/thresholding?hl=zh-cn",
+        "language": "中文",
+        "kind": "交互练习",
+        "scope": "只操作阈值滑块，观察预测改变；本关不要求掌握所有评价指标。"
+      }
+    ],
+    "check": "为故障识别写出两个类别，并指出改变阈值后要观察的错误。",
+    "outcomes": [
+      "为故障识别写出两个类别，并指出改变阈值后要观察的错误。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "basecamp",
+    "camp": "trail",
+    "title": "Evaluation & Generalization · 评价与泛化",
+    "titleEn": "Evaluation & Generalization",
+    "titleZh": "评价与泛化",
+    "minutes": 15,
+    "prerequisites": [
+      "first-prediction"
+    ],
+    "knowledge": [
+      "data-evaluation",
+      "generalization"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-see-generalization",
+        "label": "Stanford SEE CS229 · Generalization & Logistic Regression · 泛化与逻辑回归",
+        "url": "https://see.stanford.edu/Course/CS229/42",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 看 04:04–09:37（Underfitting & Overfitting）；再用数据划分资料完成训练/测试检查。"
+      },
+      {
+        "resourceId": "res-developers-google-com-188d3088c2",
+        "label": "Google · Generalization & Overfitting · 泛化与过拟合",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "选读数据集划分、泛化和过拟合的概览。"
+      },
+      {
+        "resourceId": "res-developers-google-com-911cab8534",
+        "label": "Google · Dataset Splits · 数据划分",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "只看训练、验证、测试的划分例子。"
+      }
+    ],
+    "check": "为一个小数据集标出训练与测试部分，写下什么不能提前用于训练。",
+    "outcomes": [
+      "为一个小数据集标出训练与测试部分，写下什么不能提前用于训练。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "vectors",
+    "camp": "supplies",
+    "title": "Linear Algebra · 线性代数",
+    "titleEn": "Linear Algebra",
+    "titleZh": "线性代数",
+    "minutes": 20,
+    "prerequisites": [
+      "basecamp"
+    ],
+    "knowledge": [
+      "linear-algebra"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-mit1806-geometry",
+        "label": "MIT 18.06 · Geometry of Linear Equations · 线性方程的几何",
+        "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-1-the-geometry-of-linear-equations/",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 看 Lecture 1 的行与列几何例子；本关先投入约 15 分钟并画出样本向量，不要求完成整讲。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-4be218a88d",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 2.3",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "只读标量、向量、矩阵与点积；暂不运行代码。"
+      }
+    ],
+    "check": "把一个样本写成向量，并标出一个矩阵的行列含义。",
+    "outcomes": [
+      "把一个样本写成向量，并标出一个矩阵的行列含义。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "chance",
+    "camp": "supplies",
+    "title": "Probability & Statistics · 概率与统计",
+    "titleEn": "Probability & Statistics",
+    "titleZh": "概率与统计",
+    "minutes": 20,
+    "prerequisites": [
+      "basecamp"
+    ],
+    "knowledge": [
+      "probability"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-berkeley-cs188-probability",
+        "label": "Berkeley CS188 · Probability · 概率",
+        "url": "https://youtu.be/Q9TPylxjNoA",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 选看 Lecture 13 的概率与事件例子，约 15 分钟；再写下观测与不确定性。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-5df1ef65f3",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 2.6",
+        "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "先读概率基础；统计估计需要时再深入。"
+      }
+    ],
+    "check": "用一个频率例子说明估计来自哪些观测，哪些不确定性还在。",
+    "outcomes": [
+      "用一个频率例子说明估计来自哪些观测，哪些不确定性还在。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "gradient",
+    "camp": "supplies",
+    "title": "Gradient Descent · 梯度下降",
+    "titleEn": "Gradient Descent",
+    "titleZh": "梯度下降",
+    "minutes": 25,
+    "prerequisites": [
+      "vectors"
+    ],
+    "knowledge": [
+      "optimization"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-see-linear",
+        "label": "Stanford SEE CS229 · Linear Regression & Gradient Descent · 线性回归与梯度下降",
+        "url": "https://see.stanford.edu/Course/CS229/54",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 跳到 26:17（Gradient Descent），先看到 44:22 前；画出下降方向与步长，跳过后面的矩阵推导。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-962c2b68aa",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 11.3",
+        "url": "https://zh.d2l.ai/chapter_optimization/gd.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "选读一维梯度下降；先画图再看公式。"
+      }
+    ],
+    "check": "在一维曲线上标出当前点、下降方向与步长。",
+    "outcomes": [
+      "在一维曲线上标出当前点、下降方向与步长。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "neural-camp",
+    "camp": "trail",
+    "title": "Neural Networks · 神经网络",
+    "titleEn": "Neural Networks",
+    "titleZh": "神经网络",
+    "minutes": 25,
+    "prerequisites": [
+      "gradient",
+      "basecamp"
+    ],
+    "knowledge": [
+      "neural-networks",
+      "deep-learning"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-mit6s191-2026-intro",
+        "label": "MIT 6.S191 · Introduction to Deep Learning · 深度学习导论（2026）",
+        "url": "https://www.youtube.com/watch?v=II4giR4vOOo",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 从 Lecture 1 选择神经元、网络结构与训练的基础部分，约 20 分钟；先画结构，公式有缺口再补文字。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-4f891233cd",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 4.1",
+        "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "先读多层感知机的结构图；反向传播放到后续选读。"
+      }
+    ],
+    "check": "画出输入、隐藏层、输出，检查自己是否能指出各层的参数。",
+    "outcomes": [
+      "画出输入、隐藏层、输出，检查自己是否能指出各层的参数。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "classical-models",
+    "camp": "data",
+    "title": "Classical ML Models · 经典机器学习模型",
+    "titleEn": "Classical ML Models",
+    "titleZh": "经典机器学习模型",
+    "minutes": 30,
+    "prerequisites": [
+      "basecamp",
+      "vectors"
+    ],
+    "knowledge": [
+      "statistical-models"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-cs229-2018",
+        "label": "Stanford CS229 · Machine Learning · 机器学习（Andrew Ng, 2018）",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 从 2018 播放列表选 Support Vector Machines，先看分类动机与图示，约 20 分钟；核函数推导留到后续。"
+      },
+      {
+        "resourceId": "res-scikit-learn-org-a3bde06f62",
+        "label": "scikit-learn · Support Vector Machines · 支持向量机",
+        "url": "https://scikit-learn.org/stable/modules/svm.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读 SVM 的分类图示与适用条件；暂不进入核函数推导。"
+      },
+      {
+        "resourceId": "res-scikit-learn-org-73de612c66",
+        "label": "scikit-learn · Random Forests · 随机森林",
+        "url": "https://scikit-learn.org/stable/modules/ensemble.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "从目录进入 Random forests，比较示例与 SVM 的输入、输出。"
+      }
+    ],
+    "check": "从资料中选择一个分类例子，列出输入特征、目标类别与测试数据；不把一种模型称为普遍最优。",
+    "outcomes": [
+      "从资料中选择一个分类例子，列出输入特征、目标类别与测试数据；不把一种模型称为普遍最优。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "clusters",
+    "camp": "data",
+    "title": "Clustering · 聚类",
+    "titleEn": "Clustering",
+    "titleZh": "聚类",
+    "minutes": 25,
+    "prerequisites": [
+      "basecamp",
+      "vectors"
+    ],
+    "knowledge": [
+      "unsupervised",
+      "clustering"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-cs229-2018",
+        "label": "Stanford CS229 · Machine Learning · 机器学习（Andrew Ng, 2018）",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 选择 K-means / Mixture of Gaussians 一讲，先看 K-means 的分组例子，约 20 分钟。"
+      },
+      {
+        "resourceId": "res-scikit-learn-org-3e48badc01",
+        "label": "scikit-learn · Clustering",
+        "url": "https://scikit-learn.org/stable/modules/clustering.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读 K-means 部分的图示与适用条件。"
+      }
+    ],
+    "check": "在一个散点图上分组，记录换一个分组数时会怎样变化。",
+    "outcomes": [
+      "在一个散点图上分组，记录换一个分组数时会怎样变化。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "self-supervision",
+    "camp": "data",
+    "title": "Self-supervised Learning · 自监督学习",
+    "titleEn": "Self-supervised Learning",
+    "titleZh": "自监督学习",
+    "minutes": 30,
+    "prerequisites": [
+      "neural-camp"
+    ],
+    "knowledge": [
+      "self-supervised"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-cs224n-2024",
+        "label": "Stanford CS224N · NLP with Deep Learning · 深度学习与自然语言处理（2024）",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 在 2024 视频目录找预训练语言模型的课，先看预测目标如何从文本生成，约 20 分钟。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-eb0c6b5b62",
+        "label": "Dive into Deep Learning · 动手学深度学习 · BERT",
+        "url": "https://zh.d2l.ai/chapter_natural-language-processing-pretraining/bert.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "选读预训练任务说明；不要求实现 BERT。"
+      }
+    ],
+    "check": "从教材例子指出训练输入与目标是怎样由文本形成的。",
+    "outcomes": [
+      "从教材例子指出训练输入与目标是怎样由文本形成的。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "cnn-route",
+    "camp": "representations",
+    "title": "Convolutional Networks · CNNs · 卷积神经网络",
+    "titleEn": "Convolutional Networks · CNNs",
+    "titleZh": "卷积神经网络",
+    "minutes": 30,
+    "prerequisites": [
+      "neural-camp"
+    ],
+    "knowledge": [
+      "cnn"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-introtodeeplearning-com-89247b19be",
+        "label": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/",
+        "language": "英文",
+        "kind": "Video course · 视频课程",
+        "scope": "Video alternative · 在 2026 Schedule 打开 Lecture 3（Deep Computer Vision），选看卷积的动机与局部窗口，约 25 分钟。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-7c2badc284",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 6.1",
+        "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/why-conv.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "选读从全连接层到卷积的动机与示意图。"
+      }
+    ],
+    "check": "画一个小图像与局部窗口，在教材中核对自己的示意图。",
+    "outcomes": [
+      "画一个小图像与局部窗口，在教材中核对自己的示意图。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "lstm-route",
+    "camp": "representations",
+    "title": "Sequence Models · LSTM · 序列模型",
+    "titleEn": "Sequence Models · LSTM",
+    "titleZh": "序列模型",
+    "minutes": 35,
+    "prerequisites": [
+      "neural-camp"
+    ],
+    "knowledge": [
+      "lstm"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-introtodeeplearning-com-89247b19be",
+        "label": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/",
+        "language": "英文",
+        "kind": "Video course · 视频课程",
+        "scope": "Video alternative · 打开 2026 Lecture 2（Deep Sequence Modeling），选看循环网络与门结构，约 25 分钟；代码可后学。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-dbed84149c",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 9.2",
+        "url": "https://zh.d2l.ai/chapter_recurrent-modern/lstm.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "先回看第 8 章序列模型，再选读 LSTM 门结构；代码可稍后读。"
+      }
+    ],
+    "check": "按教材画出信息在两个时间步之间如何流动。",
+    "outcomes": [
+      "按教材画出信息在两个时间步之间如何流动。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "transformer-route",
+    "camp": "representations",
+    "title": "Transformers & Attention · Transformer 与注意力",
+    "titleEn": "Transformers & Attention",
+    "titleZh": "Transformer 与注意力",
+    "minutes": 35,
+    "prerequisites": [
+      "neural-camp"
+    ],
+    "knowledge": [
+      "transformers"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-cs224n-2024",
+        "label": "Stanford CS224N · NLP with Deep Learning · 深度学习与自然语言处理（2024）",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 从 2024 目录选 Attention / Transformers，先看注意力与架构图，约 25 分钟。"
+      },
+      {
+        "resourceId": "res-zh-d2l-ai-c974032d3e",
+        "label": "Dive into Deep Learning · 动手学深度学习 · 10.7",
+        "url": "https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "遇到注意力缺口时回看 10.5–10.6；本关只核对架构图。"
+      }
+    ],
+    "check": "标出输入、注意力层与输出，并列出一个尚未理解的部件。",
+    "outcomes": [
+      "标出输入、注意力层与输出，并列出一个尚未理解的部件。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "graph-route",
+    "camp": "representations",
+    "title": "Graph Neural Networks · GNNs · 图神经网络",
+    "titleEn": "Graph Neural Networks · GNNs",
+    "titleZh": "图神经网络",
+    "minutes": 40,
+    "prerequisites": [
+      "neural-camp"
+    ],
+    "knowledge": [
+      "graph-neural-networks"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-web-stanford-edu-fc94e1f3fb",
+        "label": "Stanford · CS224W",
+        "url": "https://web.stanford.edu/class/cs224w/",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "从课程目录选图神经网络入门讲义；先只看消息传递示意。"
+      }
+    ],
+    "check": "为一个工程结构画出节点与边，再核对讲义中的消息传递步骤。",
+    "outcomes": [
+      "为一个工程结构画出节点与边，再核对讲义中的消息传递步骤。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "search-route",
+    "camp": "symbolic",
+    "title": "Search & Planning · 搜索与规划",
+    "titleEn": "Search & Planning",
+    "titleZh": "搜索与规划",
+    "minutes": 25,
+    "prerequisites": [
+      "first-step"
+    ],
+    "knowledge": [
+      "search"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-inst-eecs-berkeley-edu-831d25bec9",
+        "label": "Berkeley · CS188 1.2",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/search/state.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读状态空间与搜索问题的例子。"
+      }
+    ],
+    "check": "为一个路径问题列出初始状态、动作与目标。",
+    "outcomes": [
+      "为一个路径问题列出初始状态、动作与目标。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "logic-route",
+    "camp": "symbolic",
+    "title": "Logic & Knowledge Representation · 逻辑与知识表示",
+    "titleEn": "Logic & Knowledge Representation",
+    "titleZh": "逻辑与知识表示",
+    "minutes": 25,
+    "prerequisites": [
+      "first-step"
+    ],
+    "knowledge": [
+      "logic"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-inst-eecs-berkeley-edu-d9b7e8caf4",
+        "label": "Berkeley · CS188 10.2",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/language.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读逻辑语言的例子；暂不进入完整证明系统。"
+      }
+    ],
+    "check": "把一条工程规则写成命题，核对符号与自然语言是否一致。",
+    "outcomes": [
+      "把一条工程规则写成命题，核对符号与自然语言是否一致。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "formal-route",
+    "camp": "symbolic",
+    "title": "Formal Verification · 形式化验证",
+    "titleEn": "Formal Verification",
+    "titleZh": "形式化验证",
+    "minutes": 35,
+    "prerequisites": [
+      "logic-route"
+    ],
+    "knowledge": [
+      "formal-methods"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-z3prover-github-io-bea2dcd166",
+        "label": "Programming Z3",
+        "url": "https://z3prover.github.io/papers/programmingz3.html",
+        "language": "英文",
+        "kind": "作者教程与代码示例",
+        "scope": "选读第 2 节基础示例；代码运行需要 Python 与 Z3，首次可只跟读。"
+      }
+    ],
+    "check": "跟踪一个可满足与一个不可满足的例子，记录求解器给出的结果。",
+    "outcomes": [
+      "跟踪一个可满足与一个不可满足的例子，记录求解器给出的结果。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "bayes-route",
+    "camp": "decisions",
+    "title": "Bayesian Networks & Inference · 贝叶斯网络与推断",
+    "titleEn": "Bayesian Networks & Inference",
+    "titleZh": "贝叶斯网络与推断",
+    "minutes": 30,
+    "prerequisites": [
+      "chance"
+    ],
+    "knowledge": [
+      "probabilistic-inference",
+      "bayes-networks"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-berkeley-cs188-bayes",
+        "label": "Berkeley CS188 · Bayesian Networks · 贝叶斯网络",
+        "url": "https://youtu.be/XRNWpZLjETs",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 选看 Lecture 14 的概率图表示，约 20 分钟；再画三节点图。链接由官方课表确认，播放器未实测。"
+      },
+      {
+        "resourceId": "res-inst-eecs-berkeley-edu-816d7bbae3",
+        "label": "Berkeley · CS188 6.3",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/representation.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "看网络表示的例子；需要时从目录补 6.1–6.2。"
+      }
+    ],
+    "check": "画出一个三节点概率图，并指出自己准备询问的条件概率。",
+    "outcomes": [
+      "画出一个三节点概率图，并指出自己准备询问的条件概率。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "decision-route",
+    "camp": "decisions",
+    "title": "Sequential Decision Making · 序贯决策",
+    "titleEn": "Sequential Decision Making",
+    "titleZh": "序贯决策",
+    "minutes": 30,
+    "prerequisites": [
+      "chance",
+      "search-route"
+    ],
+    "knowledge": [
+      "sequential"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-berkeley-cs188-mdp",
+        "label": "Berkeley CS188 · Markov Decision Processes · 马尔可夫决策过程",
+        "url": "https://youtu.be/0CDpYf1KpOc",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 选看 Lecture 9 的状态、动作、转移与奖励例子，约 20 分钟。"
+      },
+      {
+        "resourceId": "res-inst-eecs-berkeley-edu-3344ef980a",
+        "label": "Berkeley · CS188 4.1",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/markov-decision-processes.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读 MDP 的定义与网格例子。"
+      }
+    ],
+    "check": "为一个两步决策写下状态、动作与奖励。",
+    "outcomes": [
+      "为一个两步决策写下状态、动作与奖励。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "rl-route",
+    "camp": "decisions",
+    "title": "Reinforcement Learning · RL · 强化学习",
+    "titleEn": "Reinforcement Learning · RL",
+    "titleZh": "强化学习",
+    "minutes": 35,
+    "prerequisites": [
+      "decision-route"
+    ],
+    "knowledge": [
+      "reinforcement-learning",
+      "q-learning"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-berkeley-cs188-rl",
+        "label": "Berkeley CS188 · Reinforcement Learning · 强化学习",
+        "url": "https://youtu.be/H70q_bRnm6Q",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 选看 Lecture 11 的学习与决策区别，约 25 分钟；再在文字资料中核对更新例子。"
+      },
+      {
+        "resourceId": "res-inst-eecs-berkeley-edu-19bd536f50",
+        "label": "Berkeley · CS188 5.3",
+        "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/rl/mfl.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读 Q-learning；返回第 5 章概览补强化学习背景。"
+      }
+    ],
+    "check": "按教材核对一次数值更新，并指出奖励来自哪里。",
+    "outcomes": [
+      "按教材核对一次数值更新，并指出奖励来自哪里。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "deep-rl-route",
+    "camp": "decisions",
+    "title": "Deep Reinforcement Learning · 深度强化学习",
+    "titleEn": "Deep Reinforcement Learning",
+    "titleZh": "深度强化学习",
+    "minutes": 40,
+    "prerequisites": [
+      "rl-route",
+      "neural-camp"
+    ],
+    "knowledge": [
+      "deep-rl"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-introtodeeplearning-com-89247b19be",
+        "label": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/",
+        "language": "英文",
+        "kind": "Video course · 视频课程",
+        "scope": "Video alternative · 打开 2026 Lecture 5（Deep Reinforcement Learning），选看神经网络与决策学习的结合，约 30 分钟。"
+      },
+      {
+        "resourceId": "res-introtodeeplearning-com-89247b19be",
+        "label": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/",
+        "language": "英文",
+        "kind": "Video course · 视频课程",
+        "scope": "在课程表选择 Deep Reinforcement Learning；本关先看 DQN 相关部分。"
+      }
+    ],
+    "check": "画出神经网络与反馈循环的连接，记录评价所需的一项指标。",
+    "outcomes": [
+      "画出神经网络与反馈循环的连接，记录评价所需的一项指标。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "experiment-design",
+    "camp": "experiments",
+    "title": "Experiment Design & Baselines · 实验定义与基线",
+    "titleEn": "Experiment Design & Baselines",
+    "titleZh": "实验定义与基线",
+    "minutes": 15,
+    "prerequisites": [
+      "basecamp"
+    ],
+    "knowledge": [
+      "optimization"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-ax-dev-de6e11afbe",
+        "label": "Ax",
+        "url": "https://ax.dev/",
+        "language": "英文",
+        "kind": "官方文档与示例",
+        "scope": "只看实验中参数、目标与约束的定义；先写清设计空间、评价预算和一个 Random Search（随机搜索）基线，不要求完成整个 Ax 教程。"
+      }
+    ],
+    "check": "我能为一个公开教学问题写出变量、目标、硬约束和预算，并说明如何用相同评价次数比较随机搜索。",
+    "outcomes": [
+      "写出一个公开教学实验的变量、目标、约束和评价预算。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "bo-route",
+    "camp": "experiments",
+    "title": "Bayesian Optimization · BO · 贝叶斯优化",
+    "titleEn": "Bayesian Optimization · BO",
+    "titleZh": "贝叶斯优化",
+    "minutes": 35,
+    "prerequisites": [
+      "experiment-design",
+      "chance"
+    ],
+    "knowledge": [
+      "bayesian-optimization"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-ax-dev-de6e11afbe",
+        "label": "Ax",
+        "url": "https://ax.dev/",
+        "language": "英文",
+        "kind": "官方文档与示例",
+        "scope": "从入门教程跟踪一个实验；按需查看参数、观测与建议点。"
+      }
+    ],
+    "check": "写下一个待调参数、一次评价的成本和可用预算。",
+    "outcomes": [
+      "写下一个待调参数、一次评价的成本和可用预算。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "pareto-route",
+    "camp": "experiments",
+    "title": "Multi-objective Optimization · 多目标优化",
+    "titleEn": "Multi-objective Optimization",
+    "titleZh": "多目标优化",
+    "minutes": 35,
+    "prerequisites": [
+      "experiment-design"
+    ],
+    "knowledge": [
+      "multi-objective"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-pymoo-org-950177fe9b",
+        "label": "pymoo · Getting started",
+        "url": "https://pymoo.org/getting_started/index.html",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "跟读多目标入门示例；先观察图与输出，运行需要 Python 与 pymoo。"
+      }
+    ],
+    "check": "从例子选出两个互有取舍的候选点，指出两个评价目标。",
+    "outcomes": [
+      "从例子选出两个互有取舍的候选点，指出两个评价目标。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "generation-camp",
+    "camp": "generation",
+    "title": "Generative Modeling · 生成建模",
+    "titleEn": "Generative Modeling",
+    "titleZh": "生成建模",
+    "minutes": 30,
+    "prerequisites": [
+      "neural-camp",
+      "chance"
+    ],
+    "knowledge": [
+      "generative-models"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-introtodeeplearning-com-89247b19be",
+        "label": "MIT 6.S191",
+        "url": "https://introtodeeplearning.com/",
+        "language": "英文",
+        "kind": "Video course · 视频课程",
+        "scope": "Video alternative · 打开 2026 Lecture 4（Deep Generative Modeling），选看生成模型的目标与例子，约 20 分钟。"
+      },
+      {
+        "resourceId": "res-introtodeeplearning-com-fa269e16b1",
+        "label": "MIT · Deep Generative Modeling",
+        "url": "https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L4.pdf",
+        "language": "英文",
+        "kind": "讲义 PDF",
+        "scope": "先浏览生成任务的例子；本关不读完整推导。"
+      }
+    ],
+    "check": "在讲义中选一个生成例子，列出训练数据与生成输出。",
+    "outcomes": [
+      "在讲义中选一个生成例子，列出训练数据与生成输出。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "gan-route",
+    "camp": "generation",
+    "title": "Generative Adversarial Networks · 生成对抗网络 · GANs",
+    "titleEn": "Generative Adversarial Networks",
+    "titleZh": "生成对抗网络 · GANs",
+    "minutes": 35,
+    "prerequisites": [
+      "generation-camp"
+    ],
+    "knowledge": [
+      "gan"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-introtodeeplearning-com-fa269e16b1",
+        "label": "MIT · Deep Generative Modeling",
+        "url": "https://introtodeeplearning.com/slides/6S191_MIT_DeepLearning_L4.pdf",
+        "language": "英文",
+        "kind": "讲义 PDF",
+        "scope": "在讲义中查找 GAN；只选读结构示意与训练目标。"
+      }
+    ],
+    "check": "按讲义画出两个网络的角色，并记录一项训练检查。",
+    "outcomes": [
+      "按讲义画出两个网络的角色，并记录一项训练检查。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "diffusion-route",
+    "camp": "generation",
+    "title": "Diffusion Models · 扩散模型",
+    "titleEn": "Diffusion Models",
+    "titleZh": "扩散模型",
+    "minutes": 40,
+    "prerequisites": [
+      "generation-camp"
+    ],
+    "knowledge": [
+      "diffusion"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-huggingface-co-b8bd5e3543",
+        "label": "Hugging Face · Diffusion Course",
+        "url": "https://huggingface.co/learn/diffusion-course/en/unit1/1.1",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "从第一单元开始选读；首次看原理与图示，暂不运行 Notebook。"
+      }
+    ],
+    "check": "按课程画出加噪与生成的两个过程，列出尚需补的数学。",
+    "outcomes": [
+      "按课程画出加噪与生成的两个过程，列出尚需补的数学。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "language-camp",
+    "camp": "systems",
+    "title": "Large Language Models · LLMs · 大语言模型",
+    "titleEn": "Large Language Models · LLMs",
+    "titleZh": "大语言模型",
+    "minutes": 30,
+    "prerequisites": [
+      "transformer-route",
+      "self-supervision"
+    ],
+    "knowledge": [
+      "foundation-models",
+      "language-models"
+    ],
+    "materials": [
+      {
+        "resourceId": "video-stanford-cs224n-2024",
+        "label": "Stanford CS224N · NLP with Deep Learning · 深度学习与自然语言处理（2024）",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+        "language": "English · 英文",
+        "kind": "Video · 视频",
+        "scope": "Video alternative · 从 2024 目录选 Language Models，先看预测下一个 token 的任务，约 20 分钟。"
+      },
+      {
+        "resourceId": "res-developers-google-com-394a40476a",
+        "label": "Google · Large Language Models · 大语言模型",
+        "url": "https://developers.google.com/machine-learning/crash-course/llm?hl=zh-cn",
+        "language": "中文",
+        "kind": "选读",
+        "scope": "选读 LLM 概览与训练部分；代码与微调可后续继续。"
+      }
+    ],
+    "check": "指出一个训练任务与一个使用任务，并记录资料中提到的局限。",
+    "outcomes": [
+      "指出一个训练任务与一个使用任务，并记录资料中提到的局限。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "tools-route",
+    "camp": "systems",
+    "title": "Tool Use · 工具调用",
+    "titleEn": "Tool Use",
+    "titleZh": "工具调用",
+    "minutes": 30,
+    "prerequisites": [
+      "language-camp"
+    ],
+    "knowledge": [
+      "tool-use"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-huggingface-co-0671127e4d",
+        "label": "Hugging Face · Tools",
+        "url": "https://huggingface.co/learn/agents-course/en/unit1/tools",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "选读工具接口的例子；暂不配置外部服务。"
+      }
+    ],
+    "check": "为一个只读工具写出名称、输入与输出。",
+    "outcomes": [
+      "为一个只读工具写出名称、输入与输出。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "agent-route",
+    "camp": "systems",
+    "title": "AI Agents & Workflows · AI 智能体与工作流",
+    "titleEn": "AI Agents & Workflows",
+    "titleZh": "AI 智能体与工作流",
+    "minutes": 35,
+    "prerequisites": [
+      "tools-route"
+    ],
+    "knowledge": [
+      "agents"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-huggingface-co-d3a62a9a11",
+        "label": "Hugging Face · Agent steps",
+        "url": "https://huggingface.co/learn/agents-course/en/unit1/agent-steps-and-structure",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "跟读 Think–Act–Observe 示例。"
+      }
+    ],
+    "check": "按课程记录一次工具调用及观察结果，指出停止条件。",
+    "outcomes": [
+      "按课程记录一次工具调用及观察结果，指出停止条件。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "rag-route",
+    "camp": "systems",
+    "title": "Retrieval-Augmented Generation · 检索增强生成 · RAG",
+    "titleEn": "Retrieval-Augmented Generation",
+    "titleZh": "检索增强生成 · RAG",
+    "minutes": 35,
+    "prerequisites": [
+      "language-camp"
+    ],
+    "knowledge": [
+      "rag"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-huggingface-co-116732f0a8",
+        "label": "Hugging Face · RAG Cookbook",
+        "url": "https://huggingface.co/learn/cookbook/en/rag_zephyr",
+        "language": "英文",
+        "kind": "选读",
+        "scope": "先看流程与检索部分；运行需要 Notebook、模型与相应环境。"
+      }
+    ],
+    "check": "为一个文档问题列出资料来源、检索结果与回答引用。",
+    "outcomes": [
+      "为一个文档问题列出资料来源、检索结果与回答引用。"
+    ],
+    "optional": false
+  },
+  {
+    "id": "reason-route",
+    "camp": "systems",
+    "title": "Reasoning & Evaluation · 推理与评测",
+    "titleEn": "Reasoning & Evaluation",
+    "titleZh": "推理与评测",
+    "minutes": 40,
+    "prerequisites": [
+      "agent-route"
+    ],
+    "knowledge": [
+      "reasoning"
+    ],
+    "materials": [
+      {
+        "resourceId": "res-arxiv-org-4cd8fde22d",
+        "label": "DeepSeek-R1 · 原始研究论文",
+        "url": "https://arxiv.org/abs/2501.12948",
+        "language": "英文",
+        "kind": "论文",
+        "scope": "研究阅读关：只读摘要、实验表与局限，公式和训练实现放到后续。"
+      }
+    ],
+    "check": "选一项结果，记录任务、比较对象与自己的疑问。",
+    "outcomes": [
+      "选一项结果，记录任务、比较对象与自己的疑问。"
+    ],
+    "optional": false
+  }
+]

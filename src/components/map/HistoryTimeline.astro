@@ -1,0 +1,23 @@
+---
+import { historyNodes } from '../../lib/history';
+import { href } from '../../lib/content';
+import EvidenceNote from './EvidenceNote.astro';
+const featuredCount=historyNodes.filter(n=>n.featured).length;
+const branches=[...new Set(historyNodes.map(n=>n.trackLabel))];
+interface Props { showAll?: boolean; }
+const {showAll=false}=Astro.props;
+---
+<div class="view-intro"><h2>问题变了，方法也在发展。</h2><p>{showAll?'这里展示全部历史记录。':`先看 ${featuredCount} 个编辑选取的转折，再展开全部节点。`}日期标注的是对应论文、活动或发布，不统一解释为“发明年”。</p></div>
+<div class="history-filter" data-history-filter><label class="history-query">搜索节点、问题或贡献<input type="search" data-history-query placeholder="例如：Transformer、实验昂贵、序列…" /></label><label>技术分支<select data-history-track><option value="">全部分支</option>{branches.map(label=><option>{label}</option>)}</select></label><label>时期<select data-history-era><option value="">全部年份</option><option value="early">1943–1989</option><option value="middle">1990–2011</option><option value="recent">2012–2025</option></select></label><label class="milestone-check"><input type="checkbox" data-history-featured checked={!showAll} /> 只看 {featuredCount} 个关键转折</label><button class="text-button" data-history-clear>清除筛选，显示全部</button></div>
+<p class="tiny" data-history-count role="status">显示 {showAll?historyNodes.length:featuredCount} / {historyNodes.length} 个节点</p>
+<ol class="history-events">{historyNodes.map(n=><li id={`event-${n.id}`} data-history-item data-featured={String(n.featured)} data-year={n.year} data-track={n.trackLabel} data-search={`${n.title.zh} ${n.title.en} ${n.problem_or_motivation_zh} ${n.contribution_zh} ${n.trackLabel}`} hidden={!showAll&&!n.featured}><div class="event-year"><strong>{n.year}</strong><small>{n.yearLabel}</small></div><a class="event-card" href={href(`map/history/${n.id}/`)}><div class="event-tags"><span>{n.trackLabel}</span><span>{n.subjectLabel}</span></div><h3>{n.title.en}</h3><span class="english-name">{n.title.zh}</span><p>{n.problem_or_motivation_zh}</p><div class="event-contribution"><span>贡献</span>{n.contribution_zh}</div><span class="card-link">查看贡献、边界与证据 →</span></a></li>)}</ol>
+<p class="history-empty" hidden data-history-empty>没有匹配的节点。试试更短的关键词，或清除筛选。</p>
+<EvidenceNote />
+<div class="callout"><strong>历史之外，如何跟进当代研究？</strong><p>趋势报告与评测结果作为观察资料单独阅读，不把报告的出版年当成新算法的诞生年。</p><a class="text-link" href="https://hai.stanford.edu/ai-index/2026-ai-index-report">Stanford AI Index · 2026 资料入口 ↗</a></div>
+<script>
+const query=document.querySelector<HTMLInputElement>('[data-history-query]');
+if(query){const track=document.querySelector<HTMLSelectElement>('[data-history-track]')!;const era=document.querySelector<HTMLSelectElement>('[data-history-era]')!;const featured=document.querySelector<HTMLInputElement>('[data-history-featured]')!;const items=[...document.querySelectorAll<HTMLElement>('[data-history-item]')];
+function filter(){const q=query!.value.trim().toLowerCase();let count=0;for(const item of items){const y=Number(item.dataset.year);const eraOK=era.value===''||(era.value==='early'?y<=1989:era.value==='middle'?y>=1990&&y<=2011:y>=2012);const show=(!featured.checked||item.dataset.featured==='true')&&(!track.value||item.dataset.track===track.value)&&eraOK&&(item.dataset.search||'').toLowerCase().includes(q);item.hidden=!show;if(show)count++;}document.querySelector('[data-history-count]')!.textContent=`显示 ${count} / ${items.length} 个节点`;document.querySelector<HTMLElement>('[data-history-empty]')!.hidden=count>0;}
+query.addEventListener('input',()=>{if(query.value.trim())featured.checked=false;filter();});[track,era].forEach(el=>el.addEventListener('change',()=>{featured.checked=false;filter();}));featured.addEventListener('change',filter);
+document.querySelector('[data-history-clear]')!.addEventListener('click',()=>{query.value='';track.value='';era.value='';featured.checked=false;filter();});filter();}
+</script>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href } from '../lib/content';
+---
+<Layout>
+<section class="hero quiet-hero">
+<div><span class="eyebrow">AI FOR ENGINEERS</span><h1>看清 AI 全局。<br />开始你的<em>下一步。</em></h1><p class="intro">用地图定位，用课程学习，逐步点亮知识。</p><div class="actions"><a class="button" href={href('map/')}>Explore map · 查看全图 →</a><a class="text-link" data-home-next href={href('learn/engineering-ai-foundations/#level-first-step')}>Start learning · 从 5 分钟开始 →</a></div><p class="hero-note" data-home-progress>English-first terms · 中英术语 / 公开课程与资料</p></div>
+<a class="hero-experiment overview-preview" href={href('map/')} aria-label="Open AI Knowledge Map · 打开知识全图"><div class="map-label"><span>Knowledge Map · 知识地图</span><span class="tag">39 concepts</span></div><svg viewBox="0 0 440 230" role="img" aria-label="知识地图入口示意"><g fill="none" stroke="var(--line)" stroke-width="2"><path d="M220 110L90 55M220 110L350 55M220 110L90 175M220 110L350 175"/></g><g fill="var(--soft)" stroke="var(--line)"><rect x="15" y="26" width="150" height="58" rx="9"/><rect x="275" y="26" width="150" height="58" rx="9"/><rect x="15" y="146" width="150" height="58" rx="9"/><rect x="275" y="146" width="150" height="58" rx="9"/><rect x="154" y="87" width="132" height="46" rx="9" fill="var(--surface)" stroke="var(--accent)"/></g><g fill="var(--ink)" font-size="13" text-anchor="middle"><text x="90" y="60">Tasks · 任务</text><text x="350" y="60">Models · 模型</text><text x="90" y="180">Foundations · 基础</text><text x="350" y="180">Systems · 系统</text><text x="220" y="115">Artificial Intelligence</text></g></svg><div class="experiment-footer"><span>入口示意</span><strong>展开完整地图 ↗</strong></div></a>
+</section>
+<section class="home-shortcuts" aria-label="Explore · 探索"><a href={href('learn/')}><strong>Learning Paths</strong><span>学习路径 · 选择目标 →</span></a><a href={href('map/?view=history#view-history')}><strong>AI History</strong><span>历史演进 · 查看全图 →</span></a><a href={href('resources/')}><strong>Resources</strong><span>名校视频课与资料 →</span></a></section>
+<p class="secondary-entry"><a href={href('learn/personalize/')}>Personalize my path · 按目标与时间定制路径 →</a></p>
+</Layout>
+<script>
+import {readLearningProgress} from '../lib/storage/progress-store';
+import {pathState} from '../lib/path-state.mjs';
+import steps from '../data/learning-path.json';
+import paths from '../data/learning/paths.json';
+function resume(){const profile=readLearningProgress();if(!Object.keys(profile.unitStatus).length)return;const state=pathState(steps,profile.unitStatus),path=paths.find(p=>p.id===profile.selectedPath)||paths[0];if(!path)return;const next=path.unitIds.map(id=>steps.find(s=>s.id===id)!).find(s=>!path.optionalUnitIds.includes(s.id)&&state.ready.has(s.id));const link=document.querySelector<HTMLAnchorElement>('[data-home-next]')!;link.href=`${import.meta.env.BASE_URL}learn/${path.id}/${next?'#level-'+next.id:''}`;link.textContent=next?`Continue · 继续：${next.titleEn} →`:'Choose next topic · 选择下一步 →';document.querySelector('[data-home-progress]')!.textContent=`${state.lit.size}/39 concepts covered · 已覆盖知识点`;}
+resume();addEventListener('pageshow',resume);addEventListener('storage',resume);
+</script>

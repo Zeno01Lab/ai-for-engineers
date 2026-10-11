@@ -1,0 +1,84 @@
+---
+import { site, navigation } from '../config';
+import { href, draftPreview } from '../lib/content';
+import '../styles/global.css';
+import '../styles/learning.css';
+import '../styles/history.css';
+import '../styles/global-map.css';
+import '../styles/simplify.css';
+import 'katex/dist/katex.min.css';
+interface Props { title?: string; description?: string; noindex?: boolean; wide?: boolean; }
+const { title, description = site.description, noindex = false, wide = false } = Astro.props;
+const pageTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.tagline}`;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const section = Astro.url.pathname.slice(import.meta.env.BASE_URL.length).replace(/^\/+/, '').split('/')[0];
+const navSection = ['notes', 'atlas', 'start', 'tutorials'].includes(section) ? 'learn' : section;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8f7f2" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {(noindex || draftPreview) && <meta name="robots" content="noindex,nofollow" />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <script is:inline>
+      try { const saved = localStorage.getItem('afe-theme'); document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">跳至内容</a>
+    <header class="header wrap">
+      <a class="brand" href={href()} aria-label="AI for Engineers 首页"><span class="brand-icon" aria-hidden="true">a<span>i</span></span><span><strong>AI for Engineers</strong><small class="brand-subtitle">Zeno 的 AI 工程学习指南</small></span></a>
+      <button class="mobile-menu icon-button" aria-label="展开导航" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <nav id="primary-nav" aria-label="主导航">
+        {navigation.map(([label, path]) => <a href={href(`${path}/`)} aria-current={navSection === path ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="open-search" aria-label="搜索网站"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+        <button class="icon-button" id="theme" aria-label="切换深色模式" aria-pressed="false"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg></button>
+      </div>
+    </header>
+    {draftPreview && <div class="preview-banner">本地草稿预览 · 此模式不会进入生产构建</div>}
+    <main id="main" class:list={['wrap',{'wide-map-page':wide}]}><slot /></main>
+    <footer class="footer wrap">
+      <div><a class="footer-name" href={href()}>AI for Engineers</a><p>把方法放回问题里，把学习连接到实践。</p></div>
+      <div><a href={href('about/')}>关于 Zeno</a><span class="dot">·</span><a href={href('about/#contribute')}>参与修订</a><span class="dot">·</span><a href={site.repositoryUrl || site.githubUrl}>{site.repositoryUrl ? '网站仓库' : 'Zeno01Lab 的 GitHub'} ↗</a><p class="tiny">面向工科学生 · 内容持续修订</p></div>
+    </footer>
+    <dialog id="search-dialog" aria-labelledby="search-title" data-index={href('search-index.json')}>
+      <div class="dialog-head"><h2 id="search-title">搜索知识与资源</h2><button id="close-search" class="icon-button" aria-label="关闭搜索">×</button></div>
+      <label class="sr-only" for="site-search">搜索关键词</label><input id="site-search" type="search" placeholder="试试：优化、Bayesian、CS188…" autocomplete="off" />
+      <p id="search-status" class="tiny" role="status">输入关键词，查找算法、文章和学习资源。</p><ul id="search-results" class="search-results"></ul>
+    </dialog>
+    <script>
+      const root = document.documentElement;
+      const theme = document.querySelector<HTMLButtonElement>('#theme')!;
+      const syncTheme = () => { const dark = root.dataset.theme === 'dark'; theme.setAttribute('aria-pressed', String(dark)); theme.setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式'); };
+      syncTheme(); theme.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('afe-theme', root.dataset.theme); } catch {} syncTheme(); });
+      const menu = document.querySelector<HTMLButtonElement>('.mobile-menu')!;
+      menu.addEventListener('click', () => { const expanded = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(expanded)); menu.setAttribute('aria-label', expanded ? '收起导航' : '展开导航'); document.querySelector('#primary-nav')!.classList.toggle('open', expanded); });
+      const dialog = document.querySelector<HTMLDialogElement>('#search-dialog')!;
+      const input = document.querySelector<HTMLInputElement>('#site-search')!;
+      const status = document.querySelector('#search-status')!;
+      const results = document.querySelector('#search-results')!;
+      type Entry = { title: string; description: string; url: string; kind: string; tags: string[] };
+      let index: Entry[] = []; let loaded = false;
+      async function openSearch() { dialog.showModal(); input.focus(); if (!loaded) { try { const response = await fetch(dialog.dataset.index!); if (!response.ok) throw new Error(); index = await response.json(); loaded = true; render(); } catch { status.textContent = '暂时无法加载搜索，请使用顶部导航。'; } } }
+      document.querySelector('#open-search')!.addEventListener('click', openSearch);
+      document.querySelector('#close-search')!.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
+      function render() { const query = input.value.trim().toLowerCase(); results.replaceChildren(); if (!query) { status.textContent = '输入关键词，查找算法、文章和学习资源。'; return; } const matches = index.filter(e => `${e.title} ${e.description} ${e.tags.join(' ')}`.toLowerCase().includes(query)); status.textContent = matches.length ? `找到 ${matches.length} 项结果` : '没有找到结果。可以尝试英文术语或更短的关键词。'; matches.slice(0,15).forEach(e => { const li = document.createElement('li'); const link = document.createElement('a'); link.href = e.url; link.textContent = `${e.title} →`; const small = document.createElement('small'); small.textContent = `${e.kind} · ${e.description}`; li.append(link,small); results.append(li); }); }
+      input.addEventListener('input', render);
+      document.addEventListener('keydown', (e) => { if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); if (!dialog.open) openSearch(); } });
+    </script>
+    <script src="../scripts/disclosure.ts"></script>
+  </body>
+</html>

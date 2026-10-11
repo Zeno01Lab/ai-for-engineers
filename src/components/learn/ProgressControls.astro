@@ -1,0 +1,13 @@
+---
+import paths from '../../data/learning/paths.json';
+import {href} from '../../lib/content';
+interface Props{currentPath?:string|null}
+const{currentPath=null}=Astro.props;
+---
+<details class="progress-controls" data-progress-controls data-progress-page-path={currentPath||''} aria-label="Local learning progress · 本地学习记录"><summary>Progress tools · 目标、备份与恢复</summary>
+<div><label>Learning goal · 学习目标<select data-progress-path><option value="" data-url={href('learn/')}>Full curriculum · 全部课程</option>{paths.map(p=><option value={p.id} data-url={href(`learn/${p.id}/`)} selected={currentPath===p.id}>{p.title.en} · {p.title.zh}</option>)}</select></label><a class="text-link" href={href('learn/')} data-progress-open>Open selected path · 打开所选路径 →</a></div>
+<div class="progress-portability"><button type="button" data-progress-export>Export JSON · 导出记录</button><label class="progress-file-label">Import JSON · 导入记录<input type="file" accept=".json,application/json" data-progress-import/></label><label>Import mode · 导入方式<select data-progress-import-mode><option value="merge">Merge · 合并，保留其他单元</option><option value="replace">Replace · 替换全部单元记录</option></select></label><button type="button" data-progress-reset>Reset learning records · 清空学习记录</button><button type="button" data-progress-restore hidden>Undo reset · 撤销清空</button></div>
+<p class="tiny">记录保存在此浏览器，可导出备份。完成与已有基础是自我报告；能力自评独立保存。</p>
+<p class="tiny" data-progress-feedback role="status" aria-live="polite"></p>
+</details>
+<script>import '../../scripts/progress-controls';</script>

@@ -1,0 +1,345 @@
+{
+  "mcculloch-pitts": {
+    "subject_kind": "theoretical_model",
+    "method_ids": [
+      "neural-networks"
+    ],
+    "featured": false,
+    "source_labels": [
+      "McCulloch–Pitts Neuron"
+    ]
+  },
+  "turing-1950": {
+    "subject_kind": "foundational_work",
+    "method_ids": [],
+    "featured": true,
+    "source_labels": [
+      "Computing Machinery and Intelligence"
+    ]
+  },
+  "dartmouth": {
+    "subject_kind": "field_event",
+    "method_ids": [],
+    "featured": true,
+    "source_labels": [
+      "Dartmouth Summer Research Project on AI"
+    ]
+  },
+  "perceptron": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "classification",
+      "neural-networks"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Perceptron"
+    ]
+  },
+  "samuel-checkers": {
+    "subject_kind": "system",
+    "method_ids": [
+      "reinforcement-learning",
+      "search"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Some Studies in Machine Learning Using the Game of Checkers"
+    ]
+  },
+  "dendral": {
+    "subject_kind": "system",
+    "method_ids": [
+      "search"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Heuristic DENDRAL"
+    ]
+  },
+  "eliza": {
+    "subject_kind": "system",
+    "method_ids": [],
+    "featured": false,
+    "source_labels": [
+      "ELIZA"
+    ]
+  },
+  "astar": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "search"
+    ],
+    "featured": false,
+    "source_labels": [
+      "A* Search"
+    ]
+  },
+  "backprop-1986": {
+    "subject_kind": "training_method",
+    "method_ids": [
+      "neural-networks"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Learning representations by back-propagating errors"
+    ]
+  },
+  "pearl-1988": {
+    "subject_kind": "book",
+    "method_ids": [
+      "probabilistic-inference"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Probabilistic Reasoning in Intelligent Systems"
+    ]
+  },
+  "cnn-1989": {
+    "subject_kind": "architecture",
+    "method_ids": [
+      "neural-networks"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Backpropagation Applied to Handwritten Zip Code Recognition"
+    ]
+  },
+  "q-learning": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "reinforcement-learning"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Q-learning"
+    ]
+  },
+  "svm-1995": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "classification"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Support-vector Networks"
+    ]
+  },
+  "lstm": {
+    "subject_kind": "architecture",
+    "method_ids": [
+      "neural-networks"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Long Short-Term Memory"
+    ]
+  },
+  "ego": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "bayesian-optimization"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Efficient Global Optimization (EGO)"
+    ]
+  },
+  "random-forests": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "regression",
+      "classification"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Random Forests"
+    ]
+  },
+  "nsga-ii": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "multi-objective"
+    ],
+    "featured": false,
+    "source_labels": [
+      "NSGA-II"
+    ]
+  },
+  "imagenet": {
+    "subject_kind": "dataset",
+    "method_ids": [
+      "data-evaluation"
+    ],
+    "featured": false,
+    "source_labels": [
+      "ImageNet"
+    ]
+  },
+  "alexnet": {
+    "subject_kind": "architecture",
+    "method_ids": [
+      "neural-networks",
+      "data-evaluation"
+    ],
+    "featured": true,
+    "source_labels": [
+      "ImageNet Classification with Deep Convolutional Neural Networks"
+    ]
+  },
+  "gan": {
+    "subject_kind": "model_family",
+    "method_ids": [
+      "generative-models"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Generative Adversarial Nets"
+    ]
+  },
+  "dqn": {
+    "subject_kind": "algorithm",
+    "method_ids": [
+      "reinforcement-learning",
+      "neural-networks"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Deep Q-Network (DQN)"
+    ]
+  },
+  "alphago": {
+    "subject_kind": "system",
+    "method_ids": [
+      "reinforcement-learning",
+      "search"
+    ],
+    "featured": true,
+    "source_labels": [
+      "AlphaGo"
+    ]
+  },
+  "transformer": {
+    "subject_kind": "architecture",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Attention Is All You Need"
+    ]
+  },
+  "bert": {
+    "subject_kind": "model",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": false,
+    "source_labels": [
+      "BERT"
+    ]
+  },
+  "gpt3": {
+    "subject_kind": "model",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Language Models are Few-Shot Learners"
+    ]
+  },
+  "rag": {
+    "subject_kind": "system_architecture",
+    "method_ids": [
+      "agents",
+      "transformers"
+    ],
+    "featured": true,
+    "source_labels": [
+      "Retrieval-Augmented Generation (RAG)"
+    ]
+  },
+  "ddpm": {
+    "subject_kind": "model_family",
+    "method_ids": [
+      "generative-models"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Denoising Diffusion Probabilistic Models"
+    ]
+  },
+  "alphafold2": {
+    "subject_kind": "system",
+    "method_ids": [
+      "neural-networks",
+      "data-evaluation"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Highly accurate protein structure prediction with AlphaFold"
+    ]
+  },
+  "instructgpt": {
+    "subject_kind": "training_method",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Training language models to follow instructions with human feedback"
+    ]
+  },
+  "chatgpt": {
+    "subject_kind": "product_release",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Introducing ChatGPT"
+    ]
+  },
+  "react": {
+    "subject_kind": "system_architecture",
+    "method_ids": [
+      "agents"
+    ],
+    "featured": true,
+    "source_labels": [
+      "ReAct"
+    ]
+  },
+  "toolformer": {
+    "subject_kind": "training_method",
+    "method_ids": [
+      "agents"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Toolformer"
+    ]
+  },
+  "o1": {
+    "subject_kind": "model_release",
+    "method_ids": [
+      "transformers"
+    ],
+    "featured": false,
+    "source_labels": [
+      "Learning to reason with LLMs"
+    ]
+  },
+  "deepseek-r1": {
+    "subject_kind": "model",
+    "method_ids": [
+      "transformers",
+      "reinforcement-learning"
+    ],
+    "featured": true,
+    "source_labels": [
+      "DeepSeek-R1"
+    ]
+  }
+}

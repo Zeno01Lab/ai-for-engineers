@@ -1,0 +1,18 @@
+---
+interface Props { options: string[]; placeholder?: string; resourceFilters?: boolean; }
+const { options, placeholder = '搜索名称、问题或关键词…', resourceFilters = false } = Astro.props;
+---
+<div class="filters"><label class="sr-only" for="filter-query">筛选列表</label><input id="filter-query" type="search" placeholder={placeholder} /><div class="filter-tabs" role="group" aria-label="按类别筛选"><button class="active" data-filter="全部" aria-pressed="true">全部</button>{options.map(option => <button data-filter={option} aria-pressed="false">{option}</button>)}</div></div>
+{resourceFilters && <div class="resource-filter-controls"><label>难度<select data-extra-filter="difficulty"><option value="">全部</option><option>入门</option><option>进阶</option></select></label><label>编程要求<select data-extra-filter="coding"><option value="">全部</option><option value="optional">概念阅读可不编程</option><option value="required">实践需要编程</option><option value="varies">依所选课程而定</option></select></label><label>资料形式<select data-extra-filter="format"><option value="">全部</option><option value="text">文字或文档</option><option value="video">视频</option><option value="navigation">课程导航</option></select></label><button class="text-button" data-clear-filters>清除筛选</button></div>}
+<p class="tiny filter-count" aria-live="polite"></p>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#filter-query')!;
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const items = [...document.querySelectorAll<HTMLElement>('[data-item]')];
+  const extra=[...document.querySelectorAll<HTMLSelectElement>('[data-extra-filter]')];
+  let category = '全部';
+  const filter = () => { let count = 0; const query = input.value.trim().toLowerCase(); items.forEach(item => { const show = (category === '全部' || item.dataset.category === category) && (item.dataset.search || item.textContent || '').toLowerCase().includes(query) && extra.every(select=>!select.value || (item.dataset[select.dataset.extraFilter!]||'').split('|').includes(select.value)); item.hidden = !show; if (show) count++; }); document.querySelector('.filter-count')!.textContent = count ? `显示 ${count} / ${items.length} 项` : '暂无匹配内容，请调整筛选条件。'; };
+  buttons.forEach(button => button.addEventListener('click', () => { category = button.dataset.filter!; buttons.forEach(b => { const active = b === button; b.classList.toggle('active',active); b.setAttribute('aria-pressed',String(active)); }); filter(); }));
+  input.addEventListener('input',filter);extra.forEach(select=>select.addEventListener('change',filter));
+  document.querySelector('[data-clear-filters]')?.addEventListener('click',()=>{input.value='';extra.forEach(s=>s.value='');category='全部';buttons.forEach(b=>{const active=b.dataset.filter==='全部';b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});filter();});filter();
+</script>

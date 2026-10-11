@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from '../components/Heading.astro';
+import StructureMap from '../components/map/StructureMap.astro';
+import HistoryTimeline from '../components/map/HistoryTimeline.astro';
+import ProblemNavigator from '../components/map/ProblemNavigator.astro';
+import EngineeringMap from '../components/map/EngineeringMap.astro';
+import GlobalMap from '../components/map/GlobalMap.astro';
+import {knowledgeMap} from '../lib/global-map';
+import steps from '../data/learning-path.json';
+import { href } from '../lib/content';
+---
+<Layout wide title="AI Knowledge & History Maps · 知识与历史地图" description="一张知识大图，一张历史演进大图；课程顺序与前置关系在学习路径中查看。"><Heading eyebrow="EXPLORE" title="AI Maps · AI 地图" description="点击节点，查看资料与联系。" />
+<nav class="map-perspectives" aria-label="知识地图视角">{[['structure','Knowledge Map · 知识大图'],['history','AI History · 历史演进'],['engineering','Engineering · 工程问题']].map(([id,title])=><a href={href(`map/?view=${id}#view-${id}`)} data-perspective={id} class:list={{active:id==='structure'}} aria-current={id==='structure'?'page':undefined}><strong>{title}</strong></a>)}</nav>
+<section id="view-structure" data-map-panel="structure" tabindex="-1"><GlobalMap mode="structure" /><details class="coverage-note"><summary>Scope · 地图范围</summary><p>代表性概览：八个区域可以交叉，覆盖主要学习入口，尚未收录所有方法。能力阶段由你自评。</p></details><details class="map-reading-fallback"><summary>按文字列表阅读方法与历史入口</summary><StructureMap /></details><details class="map-reading-fallback"><summary>39 个知识点的课程与资料入口</summary><div class="node-course-list">{knowledgeMap.nodes.map(n=><section><h3>{n.titleEn}<small class="term-translation">{n.titleZh}</small></h3>{steps.filter(s=>s.knowledge.includes(n.id)).map(s=><div><a class="text-link" href={href(`learn/#level-${s.id}`)}>{s.title} · 选读范围与检查 →</a>{s.materials.map(m=><p><a href={m.url} target="_blank" rel="noopener noreferrer">{m.label} ↗</a><small> · {m.language} · {m.kind}</small></p>)}</div>)}</section>)}</div></details></section>
+<section id="view-history" data-map-panel="history" hidden tabindex="-1"><GlobalMap mode="history" /><details class="coverage-note"><summary>Scope & dates · 范围与年份</summary><p>保留全部 34 个节点与 24 条编辑性关系，代表性覆盖 1943–2025，并非完整历史目录。横向距离不表示发展速度；年份依据见节点。</p></details><details class="map-reading-fallback"><summary>按时间列表阅读与筛选全部历史记录</summary><HistoryTimeline showAll /></details></section>
+<section id="view-engineering" data-map-panel="engineering" hidden tabindex="-1"><ProblemNavigator /><EngineeringMap /></section>
+<div class="map-next"><a class="text-link" href={href('learn/')}>Learning Paths · 开始学习，点亮地图 →</a></div>
+<noscript><style>[data-map-panel][hidden],[data-history-item][hidden]{display:block!important}</style><p class="tiny">当前显示两张全局大图和工程问题。交互需要 JavaScript；文字列表和节点详情可直接访问。</p></noscript>
+</Layout>
+<script>
+const links=[...document.querySelectorAll<HTMLAnchorElement>('[data-perspective]')];
+const panels=[...document.querySelectorAll<HTMLElement>('[data-map-panel]')];
+function activate(view:string,update=false){if(!['structure','history','engineering'].includes(view))view='structure';panels.forEach(p=>p.hidden=p.dataset.mapPanel!==view);links.forEach(a=>{const current=a.dataset.perspective===view;a.classList.toggle('active',current);if(current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});if(update){const url=new URL(location.href);url.searchParams.set('view',view);url.searchParams.delete('node');url.hash=`view-${view}`;history.pushState({},'',url);document.querySelector<HTMLElement>(`#view-${view}`)?.focus({preventScroll:true});}dispatchEvent(new CustomEvent('global-map-view'));}
+function restoreView(){activate(new URL(location.href).searchParams.get('view')||'structure');if(location.hash)requestAnimationFrame(()=>document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView());}
+restoreView();
+links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();activate(a.dataset.perspective!,true);}));
+addEventListener('popstate',restoreView);
+</script>

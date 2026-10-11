@@ -1,0 +1,36 @@
+{
+  "name": "ai-for-engineers",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "verify": "npm run sync:data && node scripts/verify-knowledge.mjs && node scripts/verify-progress.mjs && node scripts/verify-learning-path.mjs && node scripts/verify-global-map.mjs && node scripts/verify-history.mjs && node scripts/verify-learning.mjs && node scripts/verify-personalize.mjs && npm run check && npm run build && node scripts/verify-build.mjs && node scripts/verify-privacy.mjs",
+    "drafts": "node scripts/preview-drafts.mjs",
+    "check:links": "node scripts/check-external-links.mjs",
+    "sync:data": "node scripts/sync-knowledge.mjs",
+    "predev": "npm run sync:data",
+    "precheck": "npm run sync:data",
+    "prebuild": "npm run sync:data"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.2",
+    "@astrojs/mdx": "8.0.3",
+    "astro": "7.3.8",
+    "katex": "^0.16.22",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "6.0.0",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/node": "^26.6.5",
+    "typescript": "^5.9.3"
+  }
+}
